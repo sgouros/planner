@@ -1,0 +1,1 @@
+json.partial! "schedule_actions/schedule_action", schedule_action: @schedule_action

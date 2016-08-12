@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @schedule.project_id %>
+</p>
+
+<p>
+  <strong>Subproject:</strong>
+  <%= @schedule.subproject_id %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

@@ -1,0 +1,57 @@
+<%= form_for(invoice) do |f| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <% invoice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_issue %>
+    <%= f.date_select :date_of_issue %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contractor_fiscal_code %>
+    <%= f.text_field :contractor_fiscal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contractor_name %>
+    <%= f.text_field :contractor_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payoff_deadline %>
+    <%= f.date_select :payoff_deadline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :undertaking_certificate_id %>
+    <%= f.number_field :undertaking_certificate_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

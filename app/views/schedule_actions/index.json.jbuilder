@@ -1,0 +1,1 @@
+json.array! @schedule_actions, partial: 'schedule_actions/schedule_action', as: :schedule_action

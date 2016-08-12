@@ -1,0 +1,107 @@
+<%= form_for(subproject) do |f| %>
+  <% if subproject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subproject.errors.count, "error") %> prohibited this subproject from being saved:</h2>
+
+      <ul>
+      <% subproject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :budget %>
+    <%= f.number_field :budget %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :progress_code %>
+    <%= f.number_field :progress_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_code %>
+    <%= f.number_field :prefecture_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :incorporation_date %>
+    <%= f.date_select :incorporation_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :incorporation_protocol %>
+    <%= f.text_field :incorporation_protocol %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amendments %>
+    <%= f.text_area :amendments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phase_code %>
+    <%= f.number_field :phase_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :implementation_code %>
+    <%= f.number_field :implementation_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priority_code %>
+    <%= f.number_field :priority_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :proposed_badget %>
+    <%= f.number_field :proposed_badget %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supervisor_body_id %>
+    <%= f.number_field :supervisor_body_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :project_id %>
+    <%= f.number_field :project_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accountable_id %>
+    <%= f.number_field :accountable_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :implementation_body_id %>
+    <%= f.number_field :implementation_body_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "undertaking_certificates/undertaking_certificate", undertaking_certificate: @undertaking_certificate

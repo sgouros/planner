@@ -1,0 +1,32 @@
+<%= form_for(act_plan) do |f| %>
+  <% if act_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(act_plan.errors.count, "error") %> prohibited this act_plan from being saved:</h2>
+
+      <ul>
+      <% act_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :target_id %>
+    <%= f.number_field :target_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

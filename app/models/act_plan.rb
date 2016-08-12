@@ -1,0 +1,2 @@
+class ActPlan < ApplicationRecord
+end

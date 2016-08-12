@@ -1,0 +1,2 @@
+class CollectiveDecision < ApplicationRecord
+end

@@ -1,0 +1,1 @@
+json.array! @expence_forecasts, partial: 'expence_forecasts/expence_forecast', as: :expence_forecast

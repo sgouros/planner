@@ -1,0 +1,2 @@
+json.extract! collective_decision_update, :id, :protocol, :start_date, :description, :comments, :collective_decision_id, :created_at, :updated_at
+json.url collective_decision_update_url(collective_decision_update, format: :json)

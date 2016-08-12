@@ -1,0 +1,1 @@
+json.array! @undertaking_certificates, partial: 'undertaking_certificates/undertaking_certificate', as: :undertaking_certificate

@@ -1,0 +1,2 @@
+module AccountablesHelper
+end

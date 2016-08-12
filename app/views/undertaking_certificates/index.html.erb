@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Undertaking Certificates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Protocol</th>
+      <th>Start date</th>
+      <th>Title</th>
+      <th>Amount</th>
+      <th>Subproject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @undertaking_certificates.each do |undertaking_certificate| %>
+      <tr>
+        <td><%= undertaking_certificate.protocol %></td>
+        <td><%= undertaking_certificate.start_date %></td>
+        <td><%= undertaking_certificate.title %></td>
+        <td><%= undertaking_certificate.amount %></td>
+        <td><%= undertaking_certificate.subproject_id %></td>
+        <td><%= link_to 'Show', undertaking_certificate %></td>
+        <td><%= link_to 'Edit', edit_undertaking_certificate_path(undertaking_certificate) %></td>
+        <td><%= link_to 'Destroy', undertaking_certificate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Undertaking Certificate', new_undertaking_certificate_path %>

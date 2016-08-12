@@ -1,0 +1,2 @@
+class Accountable < ApplicationRecord
+end

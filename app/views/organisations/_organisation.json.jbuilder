@@ -1,0 +1,2 @@
+json.extract! organisation, :id, :code, :name, :address, :phone, :fax, :contact_persion, :email, :is_this_my_organisation, :created_at, :updated_at
+json.url organisation_url(organisation, format: :json)

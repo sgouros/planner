@@ -1,0 +1,1 @@
+json.array! @act_plans, partial: 'act_plans/act_plan', as: :act_plan

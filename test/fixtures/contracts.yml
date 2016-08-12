@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_cents: 1
+  start_date: 2016-08-12
+  subproject_id: 1
+  contractor_id: 1
+
+two:
+  amount_cents: 1
+  start_date: 2016-08-12
+  subproject_id: 1
+  contractor_id: 1

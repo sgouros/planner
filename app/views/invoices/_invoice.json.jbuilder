@@ -1,0 +1,2 @@
+json.extract! invoice, :id, :code, :description, :date_of_issue, :contractor_fiscal_code, :contractor_name, :amount, :payoff_deadline, :undertaking_certificate_id, :created_at, :updated_at
+json.url invoice_url(invoice, format: :json)

@@ -1,0 +1,2 @@
+json.extract! undertaking_certificate, :id, :protocol, :start_date, :title, :amount, :subproject_id, :created_at, :updated_at
+json.url undertaking_certificate_url(undertaking_certificate, format: :json)

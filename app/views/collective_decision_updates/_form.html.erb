@@ -1,0 +1,42 @@
+<%= form_for(collective_decision_update) do |f| %>
+  <% if collective_decision_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collective_decision_update.errors.count, "error") %> prohibited this collective_decision_update from being saved:</h2>
+
+      <ul>
+      <% collective_decision_update.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :protocol %>
+    <%= f.text_field :protocol %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :collective_decision_id %>
+    <%= f.number_field :collective_decision_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

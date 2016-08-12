@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @act_plan.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @act_plan.description %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @act_plan.target_id %>
+</p>
+
+<%= link_to 'Edit', edit_act_plan_path(@act_plan) %> |
+<%= link_to 'Back', act_plans_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Protocol:</strong>
+  <%= @undertaking_certificate.protocol %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @undertaking_certificate.start_date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @undertaking_certificate.title %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @undertaking_certificate.amount %>
+</p>
+
+<p>
+  <strong>Subproject:</strong>
+  <%= @undertaking_certificate.subproject_id %>
+</p>
+
+<%= link_to 'Edit', edit_undertaking_certificate_path(@undertaking_certificate) %> |
+<%= link_to 'Back', undertaking_certificates_path %>

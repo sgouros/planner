@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Iis code</th>
+      <th>Prefecture code</th>
+      <th>Incorporation date</th>
+      <th>Incorporation protocol</th>
+      <th>Phase code</th>
+      <th>Priority code</th>
+      <th>Classification code</th>
+      <th>Has multiple collective decisions</th>
+      <th>Credit first quarter</th>
+      <th>Credit second quarter</th>
+      <th>Credit third quarter</th>
+      <th>Credit fourth quarter</th>
+      <th>Payments until last year according to sae</th>
+      <th>Iban</th>
+      <th>Expense code</th>
+      <th>Ppi payments</th>
+      <th>Proposed credits</th>
+      <th>Credit limit of implementation body</th>
+      <th>Comments</th>
+      <th>Supervisor body</th>
+      <th>Act</th>
+      <th>Collective decision</th>
+      <th>Budget</th>
+      <th>Budget history</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.code %></td>
+        <td><%= project.title %></td>
+        <td><%= project.iis_code %></td>
+        <td><%= project.prefecture_code %></td>
+        <td><%= project.incorporation_date %></td>
+        <td><%= project.incorporation_protocol %></td>
+        <td><%= project.phase_code %></td>
+        <td><%= project.priority_code %></td>
+        <td><%= project.classification_code %></td>
+        <td><%= project.has_multiple_collective_decisions %></td>
+        <td><%= project.credit_first_quarter %></td>
+        <td><%= project.credit_second_quarter %></td>
+        <td><%= project.credit_third_quarter %></td>
+        <td><%= project.credit_fourth_quarter %></td>
+        <td><%= project.payments_until_last_year_according_to_sae %></td>
+        <td><%= project.IBAN %></td>
+        <td><%= project.expense_code %></td>
+        <td><%= project.PPI_payments %></td>
+        <td><%= project.proposed_credits %></td>
+        <td><%= project.credit_limit_of_implementation_body %></td>
+        <td><%= project.comments %></td>
+        <td><%= project.supervisor_body_id %></td>
+        <td><%= project.act_id %></td>
+        <td><%= project.collective_decision_id %></td>
+        <td><%= project.budget %></td>
+        <td><%= project.budget_history %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

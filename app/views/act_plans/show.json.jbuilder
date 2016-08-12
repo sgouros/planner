@@ -1,0 +1,1 @@
+json.partial! "act_plans/act_plan", act_plan: @act_plan

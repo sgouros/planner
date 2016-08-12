@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  protocol: MyString
+  start_date: 2016-08-12
+  title: MyText
+  amount: 1
+  subproject_id: 1
+
+two:
+  protocol: MyString
+  start_date: 2016-08-12
+  title: MyText
+  amount: 1
+  subproject_id: 1

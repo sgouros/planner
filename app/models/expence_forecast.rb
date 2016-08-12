@@ -1,0 +1,2 @@
+class ExpenceForecast < ApplicationRecord
+end

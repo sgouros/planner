@@ -1,0 +1,2 @@
+class ContractUpdate < ApplicationRecord
+end

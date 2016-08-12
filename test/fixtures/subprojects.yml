@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  title: MyText
+  budget: 1
+  description: MyText
+  progress_code: 1
+  prefecture_code: 1
+  incorporation_date: 2016-08-12
+  incorporation_protocol: MyString
+  amendments: MyText
+  phase_code: 1
+  implementation_code: 1
+  priority_code: 1
+  comments: MyText
+  proposed_badget: 1
+  supervisor_body_id: 1
+  project_id: 1
+  accountable_id: 1
+  implementation_body_id: 1
+
+two:
+  code: MyString
+  title: MyText
+  budget: 1
+  description: MyText
+  progress_code: 1
+  prefecture_code: 1
+  incorporation_date: 2016-08-12
+  incorporation_protocol: MyString
+  amendments: MyText
+  phase_code: 1
+  implementation_code: 1
+  priority_code: 1
+  comments: MyText
+  proposed_badget: 1
+  supervisor_body_id: 1
+  project_id: 1
+  accountable_id: 1
+  implementation_body_id: 1

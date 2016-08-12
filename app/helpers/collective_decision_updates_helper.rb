@@ -1,0 +1,2 @@
+module CollectiveDecisionUpdatesHelper
+end

@@ -1,0 +1,1 @@
+json.array! @collective_decision_updates, partial: 'collective_decision_updates/collective_decision_update', as: :collective_decision_update

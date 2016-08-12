@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  description: MyText
+  date_of_issue: 2016-08-12
+  contractor_fiscal_code: MyString
+  contractor_name: MyString
+  amount: 1
+  payoff_deadline: 2016-08-12
+  undertaking_certificate_id: 1
+
+two:
+  code: MyString
+  description: MyText
+  date_of_issue: 2016-08-12
+  contractor_fiscal_code: MyString
+  contractor_name: MyString
+  amount: 1
+  payoff_deadline: 2016-08-12
+  undertaking_certificate_id: 1

@@ -1,0 +1,2 @@
+module ContractUpdatesHelper
+end

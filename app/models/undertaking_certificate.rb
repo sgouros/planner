@@ -1,0 +1,2 @@
+class UndertakingCertificate < ApplicationRecord
+end

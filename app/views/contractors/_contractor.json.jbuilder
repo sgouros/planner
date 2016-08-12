@@ -1,0 +1,2 @@
+json.extract! contractor, :id, :name, :fiscal_code, :tax_department, :address, :phone, :fax, :contact_person, :email, :comments, :created_at, :updated_at
+json.url contractor_url(contractor, format: :json)

@@ -1,0 +1,1 @@
+json.partial! "expence_forecasts/expence_forecast", expence_forecast: @expence_forecast
