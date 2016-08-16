@@ -1,0 +1,50 @@
+%p#notice= notice
+%h1 Expence Forecasts
+%table
+  %thead
+    %tr
+      %th January
+      %th February
+      %th March
+      %th April
+      %th May
+      %th June
+      %th July
+      %th August
+      %th September
+      %th October
+      %th November
+      %th December
+      %th Next year
+      %th Next two years
+      %th Next three years
+      %th Next four years
+      %th Next five years
+      %th Subproject
+      %th{:colspan => "3"}
+  %tbody
+    - @expence_forecasts.each do |expence_forecast|
+      %tr
+        %td= expence_forecast.january
+        %td= expence_forecast.february
+        %td= expence_forecast.march
+        %td= expence_forecast.april
+        %td= expence_forecast.may
+        %td= expence_forecast.june
+        %td= expence_forecast.july
+        %td= expence_forecast.august
+        %td= expence_forecast.september
+        %td= expence_forecast.october
+        %td= expence_forecast.november
+        %td= expence_forecast.december
+        %td= expence_forecast.next_year
+        %td= expence_forecast.next_two_years
+        %td= expence_forecast.next_three_years
+        %td= expence_forecast.next_four_years
+        %td= expence_forecast.next_five_years
+        %td= expence_forecast.subproject_id
+        %td= link_to 'Show', expence_forecast
+        %td= link_to 'Edit', edit_expence_forecast_path(expence_forecast)
+        %td= link_to 'Destroy', expence_forecast, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Expence Forecast', new_expence_forecast_path

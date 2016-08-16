@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Act Plans
+%table
+  %thead
+    %tr
+      %th Code
+      %th Description
+      %th Target
+      %th{:colspan => "3"}
+  %tbody
+    - @act_plans.each do |act_plan|
+      %tr
+        %td= act_plan.code
+        %td= act_plan.description
+        %td= act_plan.target_id
+        %td= link_to 'Show', act_plan
+        %td= link_to 'Edit', edit_act_plan_path(act_plan)
+        %td= link_to 'Destroy', act_plan, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Act Plan', new_act_plan_path

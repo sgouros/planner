@@ -1,0 +1,28 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @organisation.code
+%p
+  %strong Name:
+  = @organisation.name
+%p
+  %strong Address:
+  = @organisation.address
+%p
+  %strong Phone:
+  = @organisation.phone
+%p
+  %strong Fax:
+  = @organisation.fax
+%p
+  %strong Contact persion:
+  = @organisation.contact_persion
+%p
+  %strong Email:
+  = @organisation.email
+%p
+  %strong Is this my organisation:
+  = @organisation.is_this_my_organisation
+= link_to 'Edit', edit_organisation_path(@organisation)
+|
+= link_to 'Back', organisations_path

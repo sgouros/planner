@@ -1,0 +1,32 @@
+%p#notice= notice
+%h1 Contractors
+%table
+  %thead
+    %tr
+      %th Name
+      %th Fiscal code
+      %th Tax department
+      %th Address
+      %th Phone
+      %th Fax
+      %th Contact person
+      %th Email
+      %th Comments
+      %th{:colspan => "3"}
+  %tbody
+    - @contractors.each do |contractor|
+      %tr
+        %td= contractor.name
+        %td= contractor.fiscal_code
+        %td= contractor.tax_department
+        %td= contractor.address
+        %td= contractor.phone
+        %td= contractor.fax
+        %td= contractor.contact_person
+        %td= contractor.email
+        %td= contractor.comments
+        %td= link_to 'Show', contractor
+        %td= link_to 'Edit', edit_contractor_path(contractor)
+        %td= link_to 'Destroy', contractor, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Contractor', new_contractor_path

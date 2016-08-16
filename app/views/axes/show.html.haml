@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @axis.code
+%p
+  %strong Description:
+  = @axis.description
+= link_to 'Edit', edit_axis_path(@axis)
+|
+= link_to 'Back', axes_path

@@ -1,0 +1,38 @@
+= form_for(contractor) do |f|
+  - if contractor.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(contractor.errors.count, "error")
+        prohibited this contractor from being saved:
+      %ul
+        - contractor.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :fiscal_code
+    = f.text_field :fiscal_code
+  .field
+    = f.label :tax_department
+    = f.text_field :tax_department
+  .field
+    = f.label :address
+    = f.text_area :address
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :fax
+    = f.text_field :fax
+  .field
+    = f.label :contact_person
+    = f.text_field :contact_person
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :comments
+    = f.text_area :comments
+  .actions
+    = f.submit

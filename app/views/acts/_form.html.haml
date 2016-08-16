@@ -1,0 +1,23 @@
+= form_for(act) do |f|
+  - if act.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(act.errors.count, "error")
+        prohibited this act from being saved:
+      %ul
+        - act.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :code
+    = f.text_field :code
+
+  .field
+    = f.label :description
+    = f.text_area :description
+
+  .field
+    = f.label :act_plan_id
+    = f.number_field :act_plan_id
+
+  .actions
+    = f.submit

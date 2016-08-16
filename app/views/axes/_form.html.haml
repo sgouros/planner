@@ -1,0 +1,17 @@
+= form_for(axis) do |f|
+  - if axis.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(axis.errors.count, "error")
+        prohibited this axis from being saved:
+      %ul
+        - axis.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit

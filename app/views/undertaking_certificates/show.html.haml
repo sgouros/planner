@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Protocol:
+  = @undertaking_certificate.protocol
+%p
+  %strong Start date:
+  = @undertaking_certificate.start_date
+%p
+  %strong Title:
+  = @undertaking_certificate.title
+%p
+  %strong Amount:
+  = @undertaking_certificate.amount
+%p
+  %strong Subproject:
+  = @undertaking_certificate.subproject_id
+= link_to 'Edit', edit_undertaking_certificate_path(@undertaking_certificate)
+|
+= link_to 'Back', undertaking_certificates_path

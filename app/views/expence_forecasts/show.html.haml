@@ -1,0 +1,58 @@
+%p#notice= notice
+%p
+  %strong January:
+  = @expence_forecast.january
+%p
+  %strong February:
+  = @expence_forecast.february
+%p
+  %strong March:
+  = @expence_forecast.march
+%p
+  %strong April:
+  = @expence_forecast.april
+%p
+  %strong May:
+  = @expence_forecast.may
+%p
+  %strong June:
+  = @expence_forecast.june
+%p
+  %strong July:
+  = @expence_forecast.july
+%p
+  %strong August:
+  = @expence_forecast.august
+%p
+  %strong September:
+  = @expence_forecast.september
+%p
+  %strong October:
+  = @expence_forecast.october
+%p
+  %strong November:
+  = @expence_forecast.november
+%p
+  %strong December:
+  = @expence_forecast.december
+%p
+  %strong Next year:
+  = @expence_forecast.next_year
+%p
+  %strong Next two years:
+  = @expence_forecast.next_two_years
+%p
+  %strong Next three years:
+  = @expence_forecast.next_three_years
+%p
+  %strong Next four years:
+  = @expence_forecast.next_four_years
+%p
+  %strong Next five years:
+  = @expence_forecast.next_five_years
+%p
+  %strong Subproject:
+  = @expence_forecast.subproject_id
+= link_to 'Edit', edit_expence_forecast_path(@expence_forecast)
+|
+= link_to 'Back', expence_forecasts_path

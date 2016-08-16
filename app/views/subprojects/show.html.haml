@@ -1,0 +1,58 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @subproject.code
+%p
+  %strong Title:
+  = @subproject.title
+%p
+  %strong Budget:
+  = @subproject.budget
+%p
+  %strong Description:
+  = @subproject.description
+%p
+  %strong Progress code:
+  = @subproject.progress_code
+%p
+  %strong Prefecture code:
+  = @subproject.prefecture_code
+%p
+  %strong Incorporation date:
+  = @subproject.incorporation_date
+%p
+  %strong Incorporation protocol:
+  = @subproject.incorporation_protocol
+%p
+  %strong Amendments:
+  = @subproject.amendments
+%p
+  %strong Phase code:
+  = @subproject.phase_code
+%p
+  %strong Implementation code:
+  = @subproject.implementation_code
+%p
+  %strong Priority code:
+  = @subproject.priority_code
+%p
+  %strong Comments:
+  = @subproject.comments
+%p
+  %strong Proposed badget:
+  = @subproject.proposed_badget
+%p
+  %strong Supervisor body:
+  = @subproject.supervisor_body_id
+%p
+  %strong Project:
+  = @subproject.project_id
+%p
+  %strong Accountable:
+  = @subproject.accountable_id
+%p
+  %strong Implementation body:
+  = @subproject.implementation_body_id
+= link_to 'Edit', edit_subproject_path(@subproject)
+|
+= link_to 'Back', subprojects_path

@@ -1,0 +1,26 @@
+= form_for(contract_update) do |f|
+  - if contract_update.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(contract_update.errors.count, "error")
+        prohibited this contract_update from being saved:
+      %ul
+        - contract_update.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :update_version
+    = f.text_field :update_version
+  .field
+    = f.label :amount
+    = f.number_field :amount
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :comments
+    = f.text_area :comments
+  .field
+    = f.label :contract_id
+    = f.number_field :contract_id
+  .actions
+    = f.submit

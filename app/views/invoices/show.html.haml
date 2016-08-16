@@ -1,0 +1,28 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @invoice.code
+%p
+  %strong Description:
+  = @invoice.description
+%p
+  %strong Date of issue:
+  = @invoice.date_of_issue
+%p
+  %strong Contractor fiscal code:
+  = @invoice.contractor_fiscal_code
+%p
+  %strong Contractor name:
+  = @invoice.contractor_name
+%p
+  %strong Amount:
+  = @invoice.amount
+%p
+  %strong Payoff deadline:
+  = @invoice.payoff_deadline
+%p
+  %strong Undertaking certificate:
+  = @invoice.undertaking_certificate_id
+= link_to 'Edit', edit_invoice_path(@invoice)
+|
+= link_to 'Back', invoices_path

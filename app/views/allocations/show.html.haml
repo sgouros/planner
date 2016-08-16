@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Protocol:
+  = @allocation.protocol
+%p
+  %strong Start date:
+  = @allocation.start_date
+%p
+  %strong Amount:
+  = @allocation.amount
+%p
+  %strong Project:
+  = @allocation.project_id
+= link_to 'Edit', edit_allocation_path(@allocation)
+|
+= link_to 'Back', allocations_path

@@ -1,0 +1,31 @@
+%p#notice= notice
+%p
+  %strong Surname:
+  = @user.surname
+%p
+  %strong Phone:
+  = @user.phone
+%p
+  %strong Email:
+  = @user.email
+%p
+  %strong Hashed password:
+  = @user.hashed_password
+%p
+  %strong Admin:
+  = @user.admin
+%p
+  %strong Organisation:
+  = @user.organisation_id
+%p
+  %strong Manager:
+  = @user.manager
+%p
+  %strong Normalized name:
+  = @user.normalized_name
+%p
+  %strong Normalized surname:
+  = @user.normalized_surname
+= link_to 'Edit', edit_user_path(@user)
+|
+= link_to 'Back', users_path

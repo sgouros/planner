@@ -1,0 +1,20 @@
+= form_for(measure) do |f|
+  - if measure.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(measure.errors.count, "error")
+        prohibited this measure from being saved:
+      %ul
+        - measure.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :axis_id
+    = f.number_field :axis_id
+  .actions
+    = f.submit

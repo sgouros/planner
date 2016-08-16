@@ -1,0 +1,26 @@
+= form_for(undertaking_certificate) do |f|
+  - if undertaking_certificate.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(undertaking_certificate.errors.count, "error")
+        prohibited this undertaking_certificate from being saved:
+      %ul
+        - undertaking_certificate.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :protocol
+    = f.text_field :protocol
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :title
+    = f.text_area :title
+  .field
+    = f.label :amount
+    = f.number_field :amount
+  .field
+    = f.label :subproject_id
+    = f.number_field :subproject_id
+  .actions
+    = f.submit

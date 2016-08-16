@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Update version:
+  = @contract_update.update_version
+%p
+  %strong Amount:
+  = @contract_update.amount
+%p
+  %strong Start date:
+  = @contract_update.start_date
+%p
+  %strong Comments:
+  = @contract_update.comments
+%p
+  %strong Contract:
+  = @contract_update.contract_id
+= link_to 'Edit', edit_contract_update_path(@contract_update)
+|
+= link_to 'Back', contract_updates_path

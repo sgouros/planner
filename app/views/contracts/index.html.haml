@@ -1,0 +1,22 @@
+%p#notice= notice
+%h1 Contracts
+%table
+  %thead
+    %tr
+      %th Amount cents
+      %th Start date
+      %th Subproject
+      %th Contractor
+      %th{:colspan => "3"}
+  %tbody
+    - @contracts.each do |contract|
+      %tr
+        %td= contract.amount_cents
+        %td= contract.start_date
+        %td= contract.subproject_id
+        %td= contract.contractor_id
+        %td= link_to 'Show', contract
+        %td= link_to 'Edit', edit_contract_path(contract)
+        %td= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Contract', new_contract_path

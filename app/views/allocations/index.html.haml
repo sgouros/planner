@@ -1,0 +1,22 @@
+%p#notice= notice
+%h1 Allocations
+%table
+  %thead
+    %tr
+      %th Protocol
+      %th Start date
+      %th Amount
+      %th Project
+      %th{:colspan => "3"}
+  %tbody
+    - @allocations.each do |allocation|
+      %tr
+        %td= allocation.protocol
+        %td= allocation.start_date
+        %td= allocation.amount
+        %td= allocation.project_id
+        %td= link_to 'Show', allocation
+        %td= link_to 'Edit', edit_allocation_path(allocation)
+        %td= link_to 'Destroy', allocation, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Allocation', new_allocation_path

@@ -1,0 +1,65 @@
+= form_for(expence_forecast) do |f|
+  - if expence_forecast.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(expence_forecast.errors.count, "error")
+        prohibited this expence_forecast from being saved:
+      %ul
+        - expence_forecast.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :january
+    = f.number_field :january
+  .field
+    = f.label :february
+    = f.number_field :february
+  .field
+    = f.label :march
+    = f.number_field :march
+  .field
+    = f.label :april
+    = f.number_field :april
+  .field
+    = f.label :may
+    = f.number_field :may
+  .field
+    = f.label :june
+    = f.number_field :june
+  .field
+    = f.label :july
+    = f.number_field :july
+  .field
+    = f.label :august
+    = f.number_field :august
+  .field
+    = f.label :september
+    = f.number_field :september
+  .field
+    = f.label :october
+    = f.number_field :october
+  .field
+    = f.label :november
+    = f.number_field :november
+  .field
+    = f.label :december
+    = f.number_field :december
+  .field
+    = f.label :next_year
+    = f.number_field :next_year
+  .field
+    = f.label :next_two_years
+    = f.number_field :next_two_years
+  .field
+    = f.label :next_three_years
+    = f.number_field :next_three_years
+  .field
+    = f.label :next_four_years
+    = f.number_field :next_four_years
+  .field
+    = f.label :next_five_years
+    = f.number_field :next_five_years
+  .field
+    = f.label :subproject_id
+    = f.number_field :subproject_id
+  .actions
+    = f.submit

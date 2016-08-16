@@ -1,0 +1,30 @@
+%p#notice= notice
+%h1 Invoices
+%table
+  %thead
+    %tr
+      %th Code
+      %th Description
+      %th Date of issue
+      %th Contractor fiscal code
+      %th Contractor name
+      %th Amount
+      %th Payoff deadline
+      %th Undertaking certificate
+      %th{:colspan => "3"}
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= invoice.code
+        %td= invoice.description
+        %td= invoice.date_of_issue
+        %td= invoice.contractor_fiscal_code
+        %td= invoice.contractor_name
+        %td= invoice.amount
+        %td= invoice.payoff_deadline
+        %td= invoice.undertaking_certificate_id
+        %td= link_to 'Show', invoice
+        %td= link_to 'Edit', edit_invoice_path(invoice)
+        %td= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Invoice', new_invoice_path

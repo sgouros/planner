@@ -1,0 +1,29 @@
+= form_for(accountable) do |f|
+  - if accountable.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(accountable.errors.count, "error")
+        prohibited this accountable from being saved:
+      %ul
+        - accountable.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :surname
+    = f.text_field :surname
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :fax
+    = f.text_field :fax
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :organisation_id
+    = f.number_field :organisation_id
+  .actions
+    = f.submit

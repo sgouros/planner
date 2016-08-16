@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1 Contract Updates
+%table
+  %thead
+    %tr
+      %th Update version
+      %th Amount
+      %th Start date
+      %th Comments
+      %th Contract
+      %th{:colspan => "3"}
+  %tbody
+    - @contract_updates.each do |contract_update|
+      %tr
+        %td= contract_update.update_version
+        %td= contract_update.amount
+        %td= contract_update.start_date
+        %td= contract_update.comments
+        %td= contract_update.contract_id
+        %td= link_to 'Show', contract_update
+        %td= link_to 'Edit', edit_contract_update_path(contract_update)
+        %td= link_to 'Destroy', contract_update, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Contract Update', new_contract_update_path

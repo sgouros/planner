@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @target.code
+%p
+  %strong Description:
+  = @target.description
+%p
+  %strong Measure:
+  = @target.measure_id
+= link_to 'Edit', edit_target_path(@target)
+|
+= link_to 'Back', targets_path

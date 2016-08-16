@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1 Collective Decision Updates
+%table
+  %thead
+    %tr
+      %th Protocol
+      %th Start date
+      %th Description
+      %th Comments
+      %th Collective decision
+      %th{:colspan => "3"}
+  %tbody
+    - @collective_decision_updates.each do |collective_decision_update|
+      %tr
+        %td= collective_decision_update.protocol
+        %td= collective_decision_update.start_date
+        %td= collective_decision_update.description
+        %td= collective_decision_update.comments
+        %td= collective_decision_update.collective_decision_id
+        %td= link_to 'Show', collective_decision_update
+        %td= link_to 'Edit', edit_collective_decision_update_path(collective_decision_update)
+        %td= link_to 'Destroy', collective_decision_update, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Collective Decision Update', new_collective_decision_update_path

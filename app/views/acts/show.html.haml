@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @act.code
+%p
+  %strong Description:
+  = @act.description
+%p
+  %strong Act plan:
+  = @act.act_plan_id
+= link_to 'Edit', edit_act_path(@act)
+|
+= link_to 'Back', acts_path

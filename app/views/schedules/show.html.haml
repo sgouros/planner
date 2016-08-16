@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Project:
+  = @schedule.project_id
+%p
+  %strong Subproject:
+  = @schedule.subproject_id
+= link_to 'Edit', edit_schedule_path(@schedule)
+|
+= link_to 'Back', schedules_path

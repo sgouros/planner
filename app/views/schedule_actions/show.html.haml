@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Description:
+  = @schedule_action.description
+%p
+  %strong Start date:
+  = @schedule_action.start_date
+%p
+  %strong End date:
+  = @schedule_action.end_date
+%p
+  %strong Schedule:
+  = @schedule_action.schedule_id
+= link_to 'Edit', edit_schedule_action_path(@schedule_action)
+|
+= link_to 'Back', schedule_actions_path

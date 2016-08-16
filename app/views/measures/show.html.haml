@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @measure.code
+%p
+  %strong Description:
+  = @measure.description
+%p
+  %strong Axis:
+  = @measure.axis_id
+= link_to 'Edit', edit_measure_path(@measure)
+|
+= link_to 'Back', measures_path

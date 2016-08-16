@@ -1,0 +1,26 @@
+%p#notice= notice
+%h1 Accountables
+%table
+  %thead
+    %tr
+      %th Surname
+      %th Name
+      %th Phone
+      %th Fax
+      %th Email
+      %th Organisation
+      %th{:colspan => "3"}
+  %tbody
+    - @accountables.each do |accountable|
+      %tr
+        %td= accountable.surname
+        %td= accountable.name
+        %td= accountable.phone
+        %td= accountable.fax
+        %td= accountable.email
+        %td= accountable.organisation_id
+        %td= link_to 'Show', accountable
+        %td= link_to 'Edit', edit_accountable_path(accountable)
+        %td= link_to 'Destroy', accountable, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Accountable', new_accountable_path

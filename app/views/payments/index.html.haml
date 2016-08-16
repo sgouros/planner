@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1 Payments
+%table
+  %thead
+    %tr
+      %th Code
+      %th Amount
+      %th Transaction date
+      %th Payment type code
+      %th Invoice
+      %th{:colspan => "3"}
+  %tbody
+    - @payments.each do |payment|
+      %tr
+        %td= payment.code
+        %td= payment.amount
+        %td= payment.transaction_date
+        %td= payment.payment_type_code
+        %td= payment.invoice_id
+        %td= link_to 'Show', payment
+        %td= link_to 'Edit', edit_payment_path(payment)
+        %td= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Payment', new_payment_path

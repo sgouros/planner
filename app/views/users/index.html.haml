@@ -1,0 +1,32 @@
+%p#notice= notice
+%h1 Users
+%table
+  %thead
+    %tr
+      %th Surname
+      %th Phone
+      %th Email
+      %th Hashed password
+      %th Admin
+      %th Organisation
+      %th Manager
+      %th Normalized name
+      %th Normalized surname
+      %th{:colspan => "3"}
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.surname
+        %td= user.phone
+        %td= user.email
+        %td= user.hashed_password
+        %td= user.admin
+        %td= user.organisation_id
+        %td= user.manager
+        %td= user.normalized_name
+        %td= user.normalized_surname
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New User', new_user_path

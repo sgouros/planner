@@ -1,0 +1,50 @@
+%p#notice= notice
+%h1 Subprojects
+%table
+  %thead
+    %tr
+      %th Code
+      %th Title
+      %th Budget
+      %th Description
+      %th Progress code
+      %th Prefecture code
+      %th Incorporation date
+      %th Incorporation protocol
+      %th Amendments
+      %th Phase code
+      %th Implementation code
+      %th Priority code
+      %th Comments
+      %th Proposed badget
+      %th Supervisor body
+      %th Project
+      %th Accountable
+      %th Implementation body
+      %th{:colspan => "3"}
+  %tbody
+    - @subprojects.each do |subproject|
+      %tr
+        %td= subproject.code
+        %td= subproject.title
+        %td= subproject.budget
+        %td= subproject.description
+        %td= subproject.progress_code
+        %td= subproject.prefecture_code
+        %td= subproject.incorporation_date
+        %td= subproject.incorporation_protocol
+        %td= subproject.amendments
+        %td= subproject.phase_code
+        %td= subproject.implementation_code
+        %td= subproject.priority_code
+        %td= subproject.comments
+        %td= subproject.proposed_badget
+        %td= subproject.supervisor_body_id
+        %td= subproject.project_id
+        %td= subproject.accountable_id
+        %td= subproject.implementation_body_id
+        %td= link_to 'Show', subproject
+        %td= link_to 'Edit', edit_subproject_path(subproject)
+        %td= link_to 'Destroy', subproject, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Subproject', new_subproject_path

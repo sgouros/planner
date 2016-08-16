@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @payment.code
+%p
+  %strong Amount:
+  = @payment.amount
+%p
+  %strong Transaction date:
+  = @payment.transaction_date
+%p
+  %strong Payment type code:
+  = @payment.payment_type_code
+%p
+  %strong Invoice:
+  = @payment.invoice_id
+= link_to 'Edit', edit_payment_path(@payment)
+|
+= link_to 'Back', payments_path

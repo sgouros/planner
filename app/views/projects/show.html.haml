@@ -1,0 +1,82 @@
+%p#notice= notice
+%p
+  %strong Code:
+  = @project.code
+%p
+  %strong Title:
+  = @project.title
+%p
+  %strong Iis code:
+  = @project.iis_code
+%p
+  %strong Prefecture code:
+  = @project.prefecture_code
+%p
+  %strong Incorporation date:
+  = @project.incorporation_date
+%p
+  %strong Incorporation protocol:
+  = @project.incorporation_protocol
+%p
+  %strong Phase code:
+  = @project.phase_code
+%p
+  %strong Priority code:
+  = @project.priority_code
+%p
+  %strong Classification code:
+  = @project.classification_code
+%p
+  %strong Has multiple collective decisions:
+  = @project.has_multiple_collective_decisions
+%p
+  %strong Credit first quarter:
+  = @project.credit_first_quarter
+%p
+  %strong Credit second quarter:
+  = @project.credit_second_quarter
+%p
+  %strong Credit third quarter:
+  = @project.credit_third_quarter
+%p
+  %strong Credit fourth quarter:
+  = @project.credit_fourth_quarter
+%p
+  %strong Payments until last year according to sae:
+  = @project.payments_until_last_year_according_to_sae
+%p
+  %strong Iban:
+  = @project.IBAN
+%p
+  %strong Expense code:
+  = @project.expense_code
+%p
+  %strong Ppi payments:
+  = @project.PPI_payments
+%p
+  %strong Proposed credits:
+  = @project.proposed_credits
+%p
+  %strong Credit limit of implementation body:
+  = @project.credit_limit_of_implementation_body
+%p
+  %strong Comments:
+  = @project.comments
+%p
+  %strong Supervisor body:
+  = @project.supervisor_body_id
+%p
+  %strong Act:
+  = @project.act_id
+%p
+  %strong Collective decision:
+  = @project.collective_decision_id
+%p
+  %strong Budget:
+  = @project.budget
+%p
+  %strong Budget history:
+  = @project.budget_history
+= link_to 'Edit', edit_project_path(@project)
+|
+= link_to 'Back', projects_path
