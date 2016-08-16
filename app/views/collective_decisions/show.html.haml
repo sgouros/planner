@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Code:
+  = @collective_decision.code
+%p
+  %b Description:
+  = @collective_decision.description
+
+= link_to 'Edit', edit_collective_decision_path(@collective_decision)
+\|
+= link_to 'Back', collective_decisions_path

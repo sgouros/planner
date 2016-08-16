@@ -1,0 +1,1 @@
+json.partial! "collective_decisions/collective_decision", collective_decision: @collective_decision

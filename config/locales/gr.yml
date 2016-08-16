@@ -1,0 +1,445 @@
+gr:
+  planner: Planner
+  planner_description: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
+  edit_password: αλλαγή συνθηματικού
+  login: σύνδεση
+  logout: αποσύνδεση
+  welcome: καλώς ορίσατε!
+  please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
+  logged_in: καλώς ορίσατε!
+  invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
+  logged_out: αποσυνδεθήκατε επιτυχώς
+  access_denied: απαγορεύεται η πρόσβαση
+  current_user: χειριστής
+  cu: χειριστής
+  administrator: διαχειριστής
+  start_page: αρχική σελίδα
+  or: ή
+  to: προς
+  options: επιλογές
+  edit: τροποποίηση
+  delete: διαγραφή
+  show: προβολή
+  submit: καταχώρηση
+  back: επιστροφή
+  are_you_sure: "είστε σίγουρος-η;"
+  cancel: άκυρο
+  other_data: λοιπά στοιχεία
+  user_info: στοιχεία χειριστή
+  no_user: χωρίς χειριστή
+  confirm_delete: είστε σίγουρος/η οτι επιθυμείτε τη διαγραφή;
+  details: λεπτομέρειες
+  create: δημιουργία
+  page_not_found: η σελίδα που ζητήσατε δεν υπάρχει
+  admin_and_manager: διαχειριστής - συντονιστής
+  date: ημερομηνία
+  matrix: μητρώο δεσμεύσεων
+  Matrix: Μητρώο Δεσμεύσεων
+  current_user: χειριστής
+  implementationbody: Φορέας
+  email: ηλεκτρονικό ταχυδρομείο
+  password: κωδικός
+  print_footer: Bond - Ηλεκτρονικό Mητρώο Δεσμεύσεων Περιφέρειας Α.Μ.Θ.
+  manager: συντονιστής
+
+#------------------------users---------------------------
+  users_index: συνοπτικά στοιχεία χειριστών
+  users: χειριστές
+  show_user: αναλυτικά στοιχεία χειριστή
+  edit_user: τροποποίηση στοιχείων χειριστή
+  user_created: ο νέος λογαριασμός χειριστή δημιουργήθηκε επιτυχώς
+  user_updated: τα στοιχεία χειριστή ενημερώθηκαν επιτυχώς
+  new_user: νέος χειριστής
+  user_deleted: τα στοιχεία του χειριστή διαγράφηκαν επιτυχώς
+  user_info: στοιχεία χειριστή
+  user_details: στοιχεία χειριστή
+  no_users_exist: δεν υπάρχουν χειριστές
+  my_user_info: τα στοιχεία μου
+  user_added: τα στοιχεία χειριστή καταχωρήθηκαν με επιτυχία
+  users_info: στοιχεία χειριστών
+  user: χειριστής
+  all_users: όλοι οι χειριστές
+
+  user:
+    name: όνομα
+    surname: επίθετο
+    phone: τηλέφωνο
+    email: ηλεκτρονικό ταχυδρομείο
+    mail: email
+    password: κωδικός πρόσβασης
+    password_confirmation: επαλήθευση κωδικού
+    manager: συντονιστής
+    admin: διαχειριστής
+    implementation_body: φορέας στον οποίο ανήκει
+    full_name: ονοματεπώνυμο
+    comments: παρατηρήσεις
+
+# ------------------- search ------------------------
+  search_results: αποτελέσματα αναζήτησης
+  search: αναζήτηση
+  no_search_results: δεν βρέθηκαν αποτελέσματα από την αναζήτησή σας
+
+#---------------- collective decision ---------------
+  collective_decision_id: συλλογική απόφαση
+  collective_decision: συλλογική απόφαση (1)
+  collective_decision_deleted: η συλλογική απόφαση διεγράφη
+  collective_decision_updated: τα στοιχεία της συλλογικής απόφασης τροποποιήθηκαν επιτυχώς
+  edit_collective_decision: τροποποίηση στοιχείων συλλογικής απόφασης
+  collective_decisions: συλλογικές αποφάσεις
+  collective_decisions_index: συνοπτικά στοιχεία συλλογικών αποφάσεων
+  no_collective_decisions_exist: δεν υπάρχουν συλλογικές αποφάσεις
+  new_collective_decision: νέα συλλογική απόφαση
+  collective_decision_created: η νέα συλλογική απόφαση καταχωρήθηκε επιτυχώς
+  collective_decision_details: προβολή στοιχείων συλλογικής απόφασης
+
+  collective_decision:
+    code: κωδικός (1)
+    year: έτος
+    comments: παρατηρήσεις
+    total_due: απλήρωτες υποχρεώσεις
+    due_30: 1-30 ημερών
+    due_60: 30-60 ημερών
+    due_90: 60-90 ημερών
+    due_90_plus: '> 90 ημερών'
+    projects: έργα
+
+
+
+#--------------------- implementation_body --------------------------
+
+  implementation_body: φορέας υλοποίησης
+  implementation_body_id: φορέας υλοποίησης
+  implementation_body_deleted: τα στοιχεία του φορέα υλοποίησης διαγράφηκαν
+  implementation_body_updated: τα στοιχεία του φορέα υλοποίησης τροποποιήθηκαν επιτυχώς
+  edit_implementation_body: τροποποίηση στοιχείων φορέα υλοποίησης
+  implementation_bodies_index: συνοπτικά στοιχεία φορέων υλοποίησης
+  implementation_bodies: φορείς υλοποίησης
+  no_implementation_bodies_exist: δεν υπάρχουν φορείς υλοποίησης
+  new_implementation_body: νέος φορέας υλοποίησης
+  implementation_body_details: προβολή στοιχείων φορέα υλοποίησης
+  implementation_body_created: ο νέος φορέας υλοποίησης καταχωρήθηκε επιτυχώς
+
+  implementation_body:
+    central_body_name: ονομασία κεντρικού φορέα
+    central_body_code: κωδικός κεντρικού φορέα
+    central_body: κεντρικός φορέας
+    special_body_name: ονομασία ειδικού φορέα
+    special_body_code: κωδικός ειδικού φορέα
+    special_body: ειδικός φορέας
+    department_name: υπηρεσία
+    department: υπηρεσία
+    tin: ΑΦΜ υπηρεσίας
+    tax_office: ΔΟΥ υπηρεσίας
+    address: ταχυδρομική διεύθυνση
+    phone: τηλέφωνο υπηρεσίας
+    fax: φαξ υπηρεσίας
+    email: email υπηρεσίας
+    comments: παρατηρήσεις
+
+#----------------------------projects ----------------------
+  projects_index: συνοπτικά στοιχεία έργων
+  projects: έργα
+  project: έργο
+  relative_project: σχετιζόμενο έργο
+  show_project: αναλυτικά στοιχεία έργου
+  edit_project: τροποποίηση στοιχείων έργου
+  project_created: το έργο δημιουργήθηκε επιτυχώς
+  project_updated: τα στοιχεία έργου ενημερώθηκαν επιτυχώς
+  new_project: νέο έργο
+  project_deleted: τα στοιχεία του έργου διαγράφηκαν επιτυχώς
+  project_info: στοιχεία έργου
+  project_details: στοιχεία έργου
+  no_projects_exist: δεν υπάρχουν έργα
+
+  project:
+    project: έργο
+    title: τίτλος (4)
+    ppi_code: ΚΑΕ (3)
+    collective_decision: συλλογική απόφαση (1)
+    budget: προϋπολογισμός (5)
+    credit: εγκεκριμένη πίστωση (6)
+    implementation_body: φορέας υλοποίησης
+    implementation_body_department: υπηρεσία υλοποίησης
+    user: χειριστής
+    credit_date: ημερομηνία έγκρισης πίστωσης (7)
+    credit_protocol: πρωτόκολο έγκρισης πίστωσης
+    credit_full_protocol: πρωτόκολο έγκρισης πίστωσης
+    credit_tun: ΑΔΑ έγκρισης πίστωσης
+    total_allocation: συνολικό ποσό κατανομής (8)
+    credit_limit: όριο πίστωσης φορέα (2)
+    credit_balance: υπολοιπόμενη πίστωση (13)
+    iban: ΙΒΑΝ
+    iis_code: κωδικός ΟΠΣ
+    prefecture: νομός
+    total_due: απλήρωτες υποχρεώσεις
+    due_30: 1-30 ημερών
+    due_60: 30-60 ημερών
+    due_90: 60-90 ημερών
+    due_90_plus: '> 90 ημερών'
+    comments: παρατηρήσεις
+
+#----------------- invoices --------------------
+  invoices_index: συνοπτικά στοιχεία τιμολογίων
+  invoices: τιμολόγια
+  invoice: τιμολόγιο
+  relative_invoice: σχετιζόμενο τιμολόγιο
+  show_invoice: αναλυτικά στοιχεία τιμολογίου
+  edit_invoice: τροποποίηση στοιχείων τιμολογίου
+  invoice_created: το τιμολόγιο δημιουργήθηκε επιτυχώς
+  invoice_updated: τα στοιχεία τιμολογίου ενημερώθηκαν επιτυχώς
+  new_invoice: νέο τιμολόγιο
+  invoice_deleted: τα στοιχεία του τιμολογίου διαγράφηκαν επιτυχώς
+  invoice_info: στοιχεία τιμολογίου
+  invoice_details: στοιχεία τιμολογίου
+  no_invoices_exist: δεν υπάρχουν τιμολόγια
+
+  invoice:
+    invoice: τιμολόγιο
+    related_project: σχετιζόμενο έργο
+    ppi_code: ΚΑΕ σχετιζόμενου έργου
+    related_certificate: σχετιζόμενη πιστοποίηση υποχρέωσης
+    date: ημερομηνία τιμολογίου(16)
+    i_number: α/α τιμολογίου (14)
+    contractor_tin: ΑΦΜ εκδότη τιμολογίου (17)
+    description: περιγραφή εργασιών (15)
+    payoff_deadline: υποχρέωση εξόφλησης έως (25)
+    contractor_name: επωνυμία εκδότη τιμολογίου
+    full_contractor: ΑΦΜ - επωνυμία αναδόχου
+    comments: σχόλια
+    amount: ποσό τιμολογίου (18)
+    total_invoice_due: απλήρωτες υποχρεώσεις (24)
+    due_30: 1-30 ημερών
+    due_60: 30-60 ημερών
+    due_90: 60-90 ημερών
+    due_90_plus: '> 90 ημερών'
+    comments: παρατηρήσεις
+
+#------------------- paychecks ----------------------
+  paychecks_index: συνοπτικά στοιχεία παραστατικών πληρωμής
+  paychecks: παραστατικά πληρωμής
+  paycheck: παραστατικό πληρωμής
+  relative_paycheck: σχετιζόμενο παραστατικό πληρωμής
+  show_paycheck: αναλυτικά στοιχεία παραστατικού πληρωμής
+  edit_paycheck: τροποποίηση στοιχείων παραστατικού πληρωμής
+  paycheck_created: το παραστατικό πληρωμής δημιουργήθηκε επιτυχώς
+  paycheck_updated: τα στοιχεία παραστατικού πληρωμής ενημερώθηκαν επιτυχώς
+  new_paycheck: νέο παραστατικό πληρωμής
+  paycheck_deleted: τα στοιχεία του παραστατικού πληρωμής διαγράφηκαν επιτυχώς
+  paycheck_info: στοιχεία παραστατικού πληρωμής
+  paycheck_details: στοιχεία παραστατικού πληρωμής
+  no_paychecks_exist: δεν υπάρχουν παραστατικά πληρωμής
+
+
+  paycheck:
+    paycheck: παραστατικό πληρωμής (22)
+    project: σχετιζόμενο έργο
+    ppi_code: ΚΑΕ σχετιζόμενου έργου
+    invoice: σχετιζόμενο τιμολόγιο
+    contractor_name: ονομασία αναδόχου
+    invoice_amount: ποσό τιμολογίου
+    p_number: α/α παραστατικού (19)
+    amount: ποσό (20)
+    payoff_date: ημερομηνία εξόφλησης (21)
+    kind: είδος παραστατικού (22)
+    note: 'Σημείωση:'
+    comments: παρατηρήσεις
+    note_body: Σε περίπτωση που ένα παραστατικό εξωφλεί πολλά τιμολόγια μαζί, στο πεδίο ποσό (20) δεν τοποθετούμε το συνολικό ποσό του παραστατικού πληρωμής, αλλά το ΕΠΙΜΕΡΟΥΣ ποσό που αναλογεί στην εξώφληση του ΣΥΓΚΕΚΡΙΜΕΝΟΥ τιμολογίου. Σε μία τέτοια περίπτωση σημειώνουμε το συνολικό ποσό της επιταγής στις παρατηρήσεις!
+    certificate: πιστοποίηση υποχρέωσης
+    invoice: τιμολόγιο
+#---------------------- certificates------------------
+  certificates_index: συνοπτικά στοιχεία πιστοποιήσεων υποχρέωσης
+  certificates: πιστοποιήσεις υποχρέωσης
+  certificate: πιστοποίηση υποχρέωσης
+  relative_certificate: σχετιζόμενη πιστοποίηση υποχρέωσης
+  show_certificate: αναλυτικά στοιχεία πιστοποίησης υποχρέωσης
+  edit_certificate: τροποποίηση στοιχείων πιστοποίησης υποχρέωσης
+  certificate_created: η πιστοποίηση υποχρέωσης δημιουργήθηκε επιτυχώς
+  certificate_updated: τα στοιχεία πιστοποίησης υποχρέωσης ενημερώθηκαν επιτυχώς
+  new_certificate: νέα πιστοποίηση υποχρέωσης
+  certificate_deleted: τα στοιχεία πιστοποίησης υποχρέωσης διαγράφηκαν επιτυχώς
+  certificate_info: στοιχεία πιστοποίησης υποχρέωσης
+  certificate_details: στοιχεία πιστοποίησης υποχρέωσης
+  no_certificates_exist: δεν υπάρχουν πιστοποιήσεις υποχρέωσης
+
+  certificate:
+    certificate: πιστοποίηση υποχρέωσης
+    related_project: σχετιζόμενο έργο
+    ppi_code: ΚΑΕ σχετιζόμενου έργου
+    full_protocol: αριθμός πρωτοκόλλου (9)
+    protocol: αριθμός πρωτοκόλλου (9)
+    date: ημερομηνία (10)
+    title: τίτλος (11)
+    amount: ποσό (12)
+    pending_undertakings: εκκρεμείς δεσμεύσεις (23)
+    total_due: απλήρωτες υποχρεώσεις
+    due_30: 1-30 ημερών
+    due_60: 30-60 ημερών
+    due_90: 60-90 ημερών
+    due_90_plus: '> 90 ημερών'
+    comments: σχόλια
+
+
+
+
+
+
+
+#---------------------- misc ----------------------
+#rails g kaminari:views default      rails g kaminari:config     config/initializers/kaminari_config.rb
+  views:
+    pagination:
+      previous: προηγούμενη
+      next: επόμενη
+      last: τελευταία
+      first: πρώτη
+      truncate: "..."
+
+  datetime:
+    distance_in_words:
+      x_days: "ημέρες"
+
+  number:
+    format:
+      delimiter: ","
+
+#------------------------------errors---------------------
+  following_errors_prohibited_saving: τα παρακάτω ζητήματα εμποδίζουν την αποθήκευση
+  no_department_selected: επιλέξετε τουλάχιστον ένα τμήμα
+  no_user_selected: επιλέξετε τουλάχιστον έναν χειριστή
+  errors:
+    messages:
+      invalid_currency: "επιβεβαιώσετε οτι τα ποσά σας είναι σωστά και οτι τα δεκαδικά ψηφία χωρίζονται με κόμματα"
+  activerecord:
+    errors:
+      models:
+
+        user:
+          attributes:
+            name:
+              blank: "συμπληρώστε όνομα"
+            surname:
+              blank: "συμπληρώστε επίθετο"
+            phone:
+              blank: "συμπληρώστε τηλέφωνο"
+            email:
+              blank: "συμπληρώστε διεύθυνση ηλεκτρονικού ταχυδρομείου"
+              too_short: "η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι πολύ μικρή"
+              invalid: "συμπληρώστε έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+            password:
+              blank: "συμπληρώστε κωδικό πρόσβασης"
+              confirmation: "συμπληρώστε την επαλήθευση κωδικού"
+              too_short: "χρησιμοποιήστε περισσότερους χαρακτήρες για τον κωδικό πρόσβασής σας"
+
+        project:
+          attributes:
+            title:
+              blank: "καταχωρήστε τον τίτλο του έργου (4)"
+            ppi_code:
+              blank: "καταχωρήστε τον ΚΑΕ του έργου (3)"
+              invalid: "καταχωρήστε έγκυρο ΚΑΕ για το έργο (3)"
+              project_should_be_unique: "υπάρχει ήδη έργο με τον συγκεκριμένο ΚΑΕ"
+            credit_date:
+              blank: "καταχωρήστε ημερομηνία έγκρισης πίστωσης (7)"
+            iis_code:
+              invalid: "καταχωρήστε έγκυρο κωδικό ΟΠΣ για το έργο (6 ψηφία)"
+            iban:
+              invalid: "καταχωρηστε έγκυρο κωδικό ΙΒΑΝ για το έργο (23 ψηφία)"
+            collective_decision_id:
+              blank: "καταχωρήστε Συλλογική Απόφαση (1)"
+            user_id:
+              blank: "επλέξτε χειριστή για το έργο"
+            implementation_body_id:
+              blank: "επιλέξτε φορέα υλοποίησης έργου"
+            credit_limit:
+              not_a_number: "καταχωρήστε όριο πίστωσης φορέα (2)"
+            budget:
+              not_a_number: "καταχωρήστε τον προϋπολογισμό του έργου (4)"
+            credit:
+              not_a_number: "καταχωρήστε το ποσό πίστωσης για το έργο (6)"
+            total_allocation:
+              not_a_number: "καταχωρήστε το συνολικό ποσό κατανομής για το έργο (8)"
+              should_be_less_than_credit: "φροντίστε ώστε το συνολικό ποσό κατανομής (8) να μην υπερβαίνει την εγκεκριμένη πίστωση (6)"
+
+        certificate:
+          attributes:
+            title:
+              blank: "καταχωρήστε τον τίτλο της πιστοποίησης υποχρέωσης (11)"
+            protocol:
+              blank: "καταχωρήστε το πρωτόκολλο της πιστοποίησης υποχρέωσης (9)"
+              certificate_should_be_unique: "υπάρχει και άλλη πιστοποίηση υποχρέωσης με τον ίδιο συνδυασμό πρωτοκόλλου - ημερομηνίας"
+            amount:
+              not_a_number: "καταχωρήστε το ποσό της πιστοποίησης υποχρέωσης (12)"
+              total_undertakings_should_be_less_than_project_budget: "παρακαλώ φροντίστε ώστε το σύνολο των πιστοποιήσεων (%{tot_undertakings}) να μην υπερβαίνει τον Π/Υ του έργου (%{pr_budget})"
+            date:
+              should_be_later_than_credit_date: "παρακαλω φροντίστε η ημερομηνία (10) να είναι μεταγενέστερη από τις %{cr_date} (ημερομηνία έγκρισης πίστωσης έργου)"
+              blank: "καταχωρήστε ημερομηνία πιστοποίησης υποχρέωσης"
+
+        invoice:
+          attributes:
+            i_number:
+              blank: "καταχωρήστε τον αύξοντα αριθμό του τιμολογίου (14)"
+              invoice_should_be_unique: "υπάρχει ήδη τιμολόγιο με τον ίδιο συνδυασμό α/α - ημερομηνίας"
+            amount:
+              not_a_number: "καταχωρήστε το ποσό τιμολογίου (18)"
+              total_invoices_should_be_less_than_certificate_amount: "φροντίστε ώστε το σύνολο των τιμολογίων (%{tot_invoices}) να μην υπερβαίνει το ποσό της πιστοποίησης υποχρέωσης (%{uc_amount})"
+            contractor_tin:
+              blank: "καταχωρήστε το ΑΦΜ του εκδότη (17)"
+              invalid: "καταχωρήστε έγκυρο ΑΦΜ εκδότη (17)"
+            contractor_name:
+              blank: "καταχωρήστε την επωνυμία του εκδότη"
+            description:
+              blank: "καταχωρήστε την περιγραφή εργασιών του τιμολογίου (15)"
+            date:
+              should_be_later_than_undertaking_date: "φροντίστε η ημερομηνία τιμολογίου (16) να είναι μεταγενέστερη από τις %{u_date} (ημ. πιστοποίησης υποχρέωσης)"
+              blank: "καταχωρήστε ημερομηνία τιμολογίου"
+            payoff_deadline:
+              blank: "καταχωρήστε ημερομηνία υποχρέωσης εξόφλησης (25)"
+              should_be_later_than_invoice_date: "φροντίστε η ημερομηνία υποχρέωσης εξόφλησης (25) να έπεται αυτής του τιμολογίου (16)"
+
+        paycheck:
+          attributes:
+            p_number:
+              blank: "καταχωρήστε τον αύξοντα αριθμό του παραστατικού (19)"
+            amount:
+              not_a_number: "καταχωρήστε το ποσό παραστατικού (20)"
+              total_paychecks_should_be_less_than_invoice_amount: "φροντίστε ώστε το σύνολο των παραστατικών (%{tot_paychecks}) να μην υπερβαίνει το ποσό τιμολογίου (%{inv_amount})"
+            kind:
+              blank: "καταχωρήστε το είδος του παραστατικού (22)"
+            payoff_date:
+              should_be_later_than_invoice_date: "φροντίστε η ημερομηνία εξόφλησης (21) να είναι μεταγενέστερη από τις %{i_date} (ημερομηνία τιμολογίου)"
+              blank: "καταχωρήστε ημερομηνία εξόφλησης (21)"
+
+        collective_decision:
+          attributes:
+            code:
+              blank: "καταχωρήστε κωδικό συλλογικής απόφασης (1)"
+            year:
+              blank: "καταχωρήστε έτος συλλογικής απόφασης"
+
+        implementation_body:
+          attributes:
+            department_name:
+              blank: "καταχωρήστε το όνομα της υπηρεσίας σας"
+            central_body_name:
+              blank: "καταχωρήστε όνομα κεντρικού φορέα"
+            central_body_code:
+              blank: "καταχωρήστε κωδικό κεντρικού φορέα"
+            special_body_name:
+              blank: "καταχωρήστε όνομα ειδικού φορέα"
+            special_body_code:
+              blank: "καταχωρήστε κωδικό ειδικού φορέα"
+            tin:
+              blank: "καταχωρήστε ΑΦΜ φορέα"
+              invalid: "συμπληρώστε έγκυρο ΑΦΜ φορέα"
+            tax_office:
+              blank: "καταχωρήστε ΔΟΥ φορέα"
+            address:
+              blank: "καταχωρήστε ταχυδρομική διεύθυνση"
+            phone:
+              blank: "καταχωρήστε τηλέφωνο"
+            fax:
+              blank: "καταχωρήστε φαξ"
+            email:
+              blank: "καταχωρήστε email"
+              too_short: "η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι πολύ μικρή"
+              invalid: "συμπληρώστε έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"

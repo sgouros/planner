@@ -1,0 +1,16 @@
+= form_for @collective_decision do |f|
+  - if @collective_decision.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@collective_decision.errors.count, "error")} prohibited this collective_decision from being saved:"
+      %ul
+        - @collective_decision.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,23 @@
+%h1 Listing collective_decisions
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @collective_decisions.each do |collective_decision|
+      %tr
+        %td= collective_decision.code
+        %td= collective_decision.description
+        %td= link_to 'Show', collective_decision
+        %td= link_to 'Edit', edit_collective_decision_path(collective_decision)
+        %td= link_to 'Destroy', collective_decision, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Collective decision', new_collective_decision_path
