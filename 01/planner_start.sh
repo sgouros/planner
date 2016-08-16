@@ -6,7 +6,7 @@ MYAPP="planner"
 
 echo -n "Fetching planner source from Github (git pull origin)...\n"
 	cd ~/code/RoR/$MYAPP
-	git pull origin
+	git pull origin master
 
 echo -n "3. starting IDE...\n"
 	atom --dev
