@@ -28,6 +28,8 @@ git push origin my_todo
 τελικά:
 git checkout master
 git merge my_todo
+git push origin master
+
 git branch -d my_todo
 git push origin :my_todo
 
