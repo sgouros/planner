@@ -95,6 +95,7 @@ gr:
   collective_decision:
     code: κωδικός (1)
     year: έτος
+    description: περιγραφή
     comments: παρατηρήσεις
     total_due: απλήρωτες υποχρεώσεις
     due_30: 1-30 ημερών
