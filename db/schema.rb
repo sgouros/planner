@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822055108) do
+ActiveRecord::Schema.define(version: 20160822092754) do
 
   create_table "accountables", force: :cascade do |t|
     t.string   "surname"
@@ -184,24 +184,36 @@ ActiveRecord::Schema.define(version: 20160822055108) do
     t.integer  "priority_code"
     t.integer  "classification_code"
     t.boolean  "has_multiple_collective_decisions"
-    t.integer  "credit_first_quarter"
-    t.integer  "credit_second_quarter"
-    t.integer  "credit_third_quarter"
-    t.integer  "credit_fourth_quarter"
-    t.integer  "payments_until_last_year_according_to_sae"
+    t.integer  "credit_first_quarter_cents",                      limit: 15, default: 10
+    t.integer  "credit_second_quarter_cents",                     limit: 13, default: 0
+    t.integer  "credit_third_quarter_cents",                      limit: 13, default: 0
+    t.integer  "credit_fourth_quarter_cents",                     limit: 13, default: 0
+    t.integer  "payments_until_last_year_according_to_sae_cents", limit: 13, default: 0
     t.string   "IBAN"
     t.string   "expense_code"
-    t.integer  "PPI_payments"
-    t.text     "proposed_credits"
-    t.integer  "credit_limit_of_implementation_body"
+    t.integer  "ppi_payments_cents",                              limit: 13, default: 0
+    t.integer  "credit_limit_cents",                              limit: 13, default: 0
     t.text     "comments"
     t.integer  "supervisor_body_id"
     t.integer  "act_id"
     t.integer  "collective_decision_id"
-    t.integer  "budget"
+    t.integer  "budget_cents",                                    limit: 13, default: 0
     t.text     "budget_history"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.integer  "proposed_credit_1_cents",                         limit: 13, default: 0
+    t.integer  "proposed_credit_2_cents",                         limit: 13, default: 0
+    t.integer  "proposed_credit_3_cents",                         limit: 13, default: 0
+    t.integer  "proposed_credit_4_cents",                         limit: 13, default: 0
+    t.integer  "proposed_credit_5_cents",                         limit: 13, default: 0
+    t.string   "proposed_credit_year_1"
+    t.string   "proposed_credit_year_2"
+    t.string   "proposed_credit_year_3"
+    t.string   "proposed_credit_year_4"
+    t.string   "proposed_credit_year_5"
+    t.integer  "user_id"
+    t.integer  "manager_id"
+    t.text     "normalized_title"
   end
 
   create_table "schedule_actions", force: :cascade do |t|

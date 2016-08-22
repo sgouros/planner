@@ -15,29 +15,36 @@ require 'faker'
 FactoryGirl.define do
   factory :collective_decision do
     description Faker::Hacker.say_something_smart
+    year '2016'
+  end
+end
+
+@sae031   = FactoryGirl.create(:collective_decision, code:'ΣΑΕ031')
+@saep031  = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ031')
+@saep0311 = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ0311')
+@saep0312 = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ0312')
+@saep0318 = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ0318')
+@saep531  = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ531')
+@saep831  = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ831')
+@saep3312 = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ3312')
+@saep3318 = FactoryGirl.create(:collective_decision, code:'ΣΑΕΠ3318')
+@samp031  = FactoryGirl.create(:collective_decision, code:'ΣΑΜΠ031')
+@sana0088 = FactoryGirl.create(:collective_decision, code:'ΣΑΝΑ0088')
+@sana0108 = FactoryGirl.create(:collective_decision, code:'ΣΑΝΑ0108')
+@sana0208 = FactoryGirl.create(:collective_decision, code:'ΣΑΝΑ0208')
+@sana0368 = FactoryGirl.create(:collective_decision, code:'ΣΑΝΑ0368')
+@sana0418 = FactoryGirl.create(:collective_decision, code:'ΣΑΝΑ0418')
+
+
+FactoryGirl.define do
+  factory :project do
+    description Faker::Hacker.say_something_smart
+    year '2016'
   end
 end
 
 
-
-@sae031  = FactoryGirl.create(:collective_decision, code:'ΣΑΕ031',   year:'2013')
-# @saep031 =CollectiveDecision.create( code:'ΣΑΕΠ031',  year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @saep131 =CollectiveDecision.create( code:'ΣΑΕΠ131',  year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @saep0313=CollectiveDecision.create( code:'ΣΑΕΠ0312', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @saep0318=CollectiveDecision.create( code:'ΣΑΕΠ0318', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @saep3312=CollectiveDecision.create( code:'ΣΑΕΠ3312', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @saep3318=CollectiveDecision.create( code:'ΣΑΕΠ3318', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @samp031 =CollectiveDecision.create( code:'ΣΑΜΠ031',  year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @samp0313=CollectiveDecision.create( code:'ΣΑΜΠ0313', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0203=CollectiveDecision.create( code:'ΣΑΝΑ0203', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0363=CollectiveDecision.create( code:'ΣΑΝΑ0363', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0088=CollectiveDecision.create( code:'ΣΑΝΑ0088', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0108=CollectiveDecision.create( code:'ΣΑΝΑ0108', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0208=CollectiveDecision.create( code:'ΣΑΝΑ0208', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0368=CollectiveDecision.create( code:'ΣΑΝΑ0368', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @sana0418=CollectiveDecision.create( code:'ΣΑΝΑ0418', year:'2013', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-#
-# @p2013ΕΠ03180036=Project.create( ppi_code:'2013ΕΠ03180036', title:'Αντικατάσταση εσωτερικού δικτύου ύδρευσης στους οικισμούς Ν. Σιδηροχώρι - Γλυφάδα',  normalized_title:'ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΕΣΩΤΕΡΙΚΟΥ ΔΙΚΤΥΟΥ ΥΔΡΕΥΣΗΣ ΣΤΟΥΣ ΟΙΚΙΣΜΟΥΣ Ν. ΣΙΔΗΡΟΧΩΡΙ - ΓΛΥΦΑΔΑ', budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Ροδόπη',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
+# @p2013ΕΠ03180036=Project.create( code:'2013ΕΠ03180036', title:'Αντικατάσταση εσωτερικού δικτύου ύδρευσης στους οικισμούς Ν. Σιδηροχώρι - Γλυφάδα',  normalized_title:'ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΕΣΩΤΕΡΙΚΟΥ ΔΙΚΤΥΟΥ ΥΔΡΕΥΣΗΣ ΣΤΟΥΣ ΟΙΚΙΣΜΟΥΣ Ν. ΣΙΔΗΡΟΧΩΡΙ - ΓΛΥΦΑΔΑ', budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Ροδόπη',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
 # @p2013ΕΠ03180037=Project.create( ppi_code:'2013ΕΠ03180037', title:'Οικοπάρκο Αλτιναλμαζή',                                                              normalized_title:'ΟΙΚΟΠΑΡΚΟ ΑΛΤΙΝΑΛΜΑΖΗ',                                                             budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Ροδόπη',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
 # @p2013ΕΠ03180038=Project.create( ppi_code:'2013ΕΠ03180038', title:'Παροχή υπηρεσιών συμβούλου τεχνικής υποστήριξης για την ωρίμαση έργων Φαλακρού',     normalized_title:'ΠΑΡΟΧΗ ΥΠΗΡΕΣΙΩΝ ΣΥΜΒΟΥΛΟΥ ΤΕΧΝΙΚΗΣ ΥΠΟΣΤΗΡΙΞΗΣ ΓΙΑ ΤΗΝ ΩΡΙΜΑΝΣΗ ΕΡΓΩΝ ΦΑΛΑΚΡΟΥ',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Δράμα',          comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
 # @p2013ΕΠ03180039=Project.create( ppi_code:'2013ΕΠ03180039', title:'Προμήθεια υλικών φωτισμού εμπορικού κέντρου ΔΚ Δράμας',                              normalized_title:'ΠΡΟΜΗΘΕΙΑ ΥΛΙΚΩΝ ΦΩΤΙΣΜΟΥ ΕΜΠΟΡΙΚΟΥ ΚΕΝΤΡΟΥ ΔΚ ΔΡΑΜΑΣ',                             budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Δράμα',          comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
@@ -45,7 +52,7 @@ end
 # @p2013ΕΠ33120003=Project.create( ppi_code:'2013ΕΠ33120003', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Quality"',     normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Quality"',    budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
 # @p2013ΕΠ33120004=Project.create( ppi_code:'2013ΕΠ33120004', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Regional"',    normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Regional"',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
 # @p2013ΕΠ33120005=Project.create( ppi_code:'2013ΕΠ33120005', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Cultural"',    normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Cultural"',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-#
+# #
 # @saep3312.projects << @p2013ΕΠ33120003
 # @saep3312.projects << @p2013ΕΠ33120004
 # @saep3312.projects << @p2013ΕΠ33120005
