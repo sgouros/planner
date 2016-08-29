@@ -8,63 +8,129 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav.navbar.navbar-default
+    %nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
-        / Brand and toggle get grouped for better mobile display
         .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => root_path}
-            = t :planner
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              = link_to_auto_active t(:new_project), new_project_path
-            %li
-              = link_to_auto_active t(:new_act), new_act_path
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Dropdown
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider{:role => "separator"}
-                %li
-                  %a{:href => "#"} Separated link
-                %li.divider{:role => "separator"}
-                %li
-                  %a{:href => "#"} One more separated link
-          %form.navbar-form.navbar-left
-            .form-group
-              %input.form-control{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default{:type => "submit"} Submit
+          %a.navbar-brand{:href => "#"} Project name
+        #navbar.navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{:href => "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Dropdown
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider{:role => "separator"}
-                %li
-                  %a{:href => "#"} Separated link
-        / /.navbar-collapse
-      / /.container-fluid
+              %a{:href => "#"} Dashboard
+            %li
+              %a{:href => "#"} Settings
+            %li
+              %a{:href => "#"} Profile
+            %li
+              %a{:href => "#"} Help
+          %form.navbar-form.navbar-right
+            %input.form-control{:placeholder => "Search...", :type => "text"}/
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          %ul.nav.nav-sidebar
+            %li.active
+              %a{:href => "#"}
+                Overview
+                %span.sr-only (current)
+            %li
+              %a{:href => "#"} Reports
+            %li
+              %a{:href => "#"} Analytics
+            %li
+              %a{:href => "#"} Export
+          %ul.nav.nav-sidebar
+            %li
+              %a{:href => ""} Nav item
+            %li
+              %a{:href => ""} Nav item again
+            %li
+              %a{:href => ""} One more nav
+            %li
+              %a{:href => ""} Another nav item
+            %li
+              %a{:href => ""} More navigation
+          %ul.nav.nav-sidebar
+            %li
+              %a{:href => ""} Nav item again
+            %li
+              %a{:href => ""} One more nav
+            %li
+              %a{:href => ""} Another nav item
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          %h1.page-header Dashboard
+          .row.placeholders
+            .col-xs-6.col-sm-3.placeholder
+              %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}/
+              %h4 Label
+              %span.text-muted Something else
+            .col-xs-6.col-sm-3.placeholder
+              %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}/
+              %h4 Label
+              %span.text-muted Something else
+            .col-xs-6.col-sm-3.placeholder
+              %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}/
+              %h4 Label
+              %span.text-muted Something else
+            .col-xs-6.col-sm-3.placeholder
+              %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}/
+              %h4 Label
+              %span.text-muted Something else
+          %h2.sub-header Section title
+          .table-responsive
+            %table.table.table-striped
+              %thead
+                %tr
+                  %th #
+                  %th Header
+                  %th Header
+                  %th Header
+                  %th Header
+              %tbody
+                %tr
+                  %td 1,001
+                  %td Lorem
+                  %td ipsum
+                  %td dolor
+                  %td sit
+                %tr
+                  %td 1,002
+                  %td amet
+                  %td consectetur
+                  %td adipiscing
+                  %td elit
+                %tr
+                  %td 1,003
+                  %td Integer
+                  %td nec
+                  %td odio
+                  %td Praesent
+                %tr
+                  %td 1,003
+                  %td libero
+                  %td Sed
+                  %td cursus
+                  %td ante
+                %tr
+                  %td 1,004
+                  %td dapibus
+                  %td diam
+                  %td Sed
+                  %td nisi
+                %tr
+                  %td 1,005
+                  %td Nulla
+                  %td quis
+                  %td sem
+                  %td at
 
-    = yield
+
+            = yield
+
+  %footer.footer
+    .container-fluid
+      %p.text-muted Copyright Περιφέρεια Ανατολικής Μακεδονίας - Θράκης
