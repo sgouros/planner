@@ -14,7 +14,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :collective_decision do
-    description Faker::Hacker.say_something_smart
+    description {Faker::Hacker.say_something_smart}
     year '2016'
   end
 end
@@ -38,31 +38,68 @@ end
 
 FactoryGirl.define do
   factory :project do
-    description Faker::Hacker.say_something_smart
-    year '2016'
+    sequence(:title) {|n| "Έργο #{n}"}
+    iis_code {rand(4000..8000)}
+    prefecture_code {rand(1..5)}
+    incorporation_protocol {rand(1..3000)}
+    incorporation_date {rand(5).years.ago}
+    phase_code {rand(1..5)}
+    priority_code {rand(1..5)}
+    classification_code {rand(1..5)}
+    has_multiple_collective_decisions true
+    credit_first_quarter_cents {rand(10000..50000)}
+    credit_second_quarter_cents {rand(10000..50000)}
+    credit_third_quarter_cents {rand(10000..50000)}
+    credit_fourth_quarter_cents {rand(10000..50000)}
+    payments_until_last_year_according_to_sae_cents{rand(10000..50000)}
+    sequence(:iban) {|n| "GR013210321056070880900000#{n}"}
+    expense_code {rand(1..5)}
+    ppi_payments_cents {rand(10000..50000)}
+    credit_limit_cents {rand(500000..900000)}
+    comments {Faker::Hacker.say_something_smart}
+    supervisor_body_id {rand(1..5)}
+    act_id {rand(1..5)}
+    collective_decision_id {rand(1..5)}
+    budget_cents {rand(50000..800000)}
+    budget_history "this is budget history"
+    created_at {rand(2).years.ago}
+    updated_at {rand(2).years.ago}
+    proposed_credit_1_cents {rand(10000..50000)}
+    proposed_credit_2_cents {rand(10000..50000)}
+    proposed_credit_3_cents {rand(10000..50000)}
+    proposed_credit_4_cents {rand(10000..50000)}
+    proposed_credit_5_cents {rand(10000..50000)}
+    proposed_credit_year_1 "2016"
+    proposed_credit_year_2 "2017"
+    proposed_credit_year_3 "2018"
+    proposed_credit_year_4 "2019"
+    proposed_credit_year_5 "2020"
+    user_id {rand(1..5)}
+    manager_id {rand(1..5)}
+    sequence(:normalized_title) {|n| "ΕΡΓΟ #{n}"}
   end
 end
 
 
-# @p2013ΕΠ03180036=Project.create( code:'2013ΕΠ03180036', title:'Αντικατάσταση εσωτερικού δικτύου ύδρευσης στους οικισμούς Ν. Σιδηροχώρι - Γλυφάδα',  normalized_title:'ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΕΣΩΤΕΡΙΚΟΥ ΔΙΚΤΥΟΥ ΥΔΡΕΥΣΗΣ ΣΤΟΥΣ ΟΙΚΙΣΜΟΥΣ Ν. ΣΙΔΗΡΟΧΩΡΙ - ΓΛΥΦΑΔΑ', budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Ροδόπη',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ03180037=Project.create( ppi_code:'2013ΕΠ03180037', title:'Οικοπάρκο Αλτιναλμαζή',                                                              normalized_title:'ΟΙΚΟΠΑΡΚΟ ΑΛΤΙΝΑΛΜΑΖΗ',                                                             budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Ροδόπη',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ03180038=Project.create( ppi_code:'2013ΕΠ03180038', title:'Παροχή υπηρεσιών συμβούλου τεχνικής υποστήριξης για την ωρίμαση έργων Φαλακρού',     normalized_title:'ΠΑΡΟΧΗ ΥΠΗΡΕΣΙΩΝ ΣΥΜΒΟΥΛΟΥ ΤΕΧΝΙΚΗΣ ΥΠΟΣΤΗΡΙΞΗΣ ΓΙΑ ΤΗΝ ΩΡΙΜΑΝΣΗ ΕΡΓΩΝ ΦΑΛΑΚΡΟΥ',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Δράμα',          comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ03180039=Project.create( ppi_code:'2013ΕΠ03180039', title:'Προμήθεια υλικών φωτισμού εμπορικού κέντρου ΔΚ Δράμας',                              normalized_title:'ΠΡΟΜΗΘΕΙΑ ΥΛΙΚΩΝ ΦΩΤΙΣΜΟΥ ΕΜΠΟΡΙΚΟΥ ΚΕΝΤΡΟΥ ΔΚ ΔΡΑΜΑΣ',                             budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Δράμα',          comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ03180040=Project.create( ppi_code:'2013ΕΠ03180040', title:'Εγκατάσταση επεξεργασίας λυμάτων Καλλιράχης Θάσου',                                  normalized_title:'ΕΓΚΑΤΑΣΤΑΣΗ ΕΠΕΞΕΡΓΑΣΙΑΣ ΛΥΜΑΤΩΝ ΚΑΛΛΙΡΑΧΗΣ ΘΑΣΟΥ',                                 budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Καβάλα',         comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ33120003=Project.create( ppi_code:'2013ΕΠ33120003', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Quality"',     normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Quality"',    budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ33120004=Project.create( ppi_code:'2013ΕΠ33120004', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Regional"',    normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Regional"',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# @p2013ΕΠ33120005=Project.create( ppi_code:'2013ΕΠ33120005', title:'Κάλυψη εθνικής συμμετοχής έργου BLACK SEA BASIN 2007 - 2013 με τίτλο "Cultural"',    normalized_title:'ΚΑΛΥΨΗ ΕΘΝΙΚΗΣ ΣΥΜΜΕΤΟΧΗΣ ΕΡΓΟΥ BLACK SEA BASIN 2007 - 2013 ΜΕ ΤΙΤΛΟ "Cultural"',   budget_cents:'20000000', credit_cents:'12000000',   credit_date:'2013-03-17 20:13:10', credit_protocol:'1352/569', allocation_cents:'1500000',   credit_limit_cents:'8000000', iban:'GR0132103210', iis_code:'45716', prefecture:'Περιφέρεια ΑΜΘ', comments:'no ', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35' )
-# #
-# @saep3312.projects << @p2013ΕΠ33120003
-# @saep3312.projects << @p2013ΕΠ33120004
-# @saep3312.projects << @p2013ΕΠ33120005
-# @saep0318.projects << @p2013ΕΠ03180036
-# @saep0318.projects << @p2013ΕΠ03180037
-# @saep0318.projects << @p2013ΕΠ03180038
-# @saep0318.projects << @p2013ΕΠ03180039
-# @saep0318.projects << @p2013ΕΠ03180040
-#
-#
+@p2013ΕΠ03180036=FactoryGirl.create(:project, code:'2013ΕΠ03180036')
+@p2013ΕΠ03180037=FactoryGirl.create(:project, code:'2013ΕΠ03180037')
+@p2013ΕΠ03180038=FactoryGirl.create(:project, code:'2013ΕΠ03180038')
+@p2013ΕΠ03180039=FactoryGirl.create(:project, code:'2013ΕΠ03180039')
+@p2013ΕΠ03180040=FactoryGirl.create(:project, code:'2013ΕΠ03180040')
+@p2013ΕΠ33120003=FactoryGirl.create(:project, code:'2013ΕΠ33120003')
+@p2013ΕΠ33120004=FactoryGirl.create(:project, code:'2013ΕΠ33120004')
+@p2013ΕΠ33120005=FactoryGirl.create(:project, code:'2013ΕΠ33120005')
+
+@saep3312.projects << @p2013ΕΠ33120003
+@saep3312.projects << @p2013ΕΠ33120004
+@saep3312.projects << @p2013ΕΠ33120005
+@saep0318.projects << @p2013ΕΠ03180036
+@saep0318.projects << @p2013ΕΠ03180037
+@saep0318.projects << @p2013ΕΠ03180038
+@saep0318.projects << @p2013ΕΠ03180039
+@saep0318.projects << @p2013ΕΠ03180040
+
+
 # @ib1=ImplementationBody.create( special_body_name:'Δήμος Κομοτηνής',                           special_body_code:'01202', address:'Bύρωνος 13 Κομοτηνή',    phone:'2531023320', fax:'255138451',  email:'sgouros@yahoo.com', name:'Τεχνική Υπηρεσία ΠΕ ',                   comments:'', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35', body_code:'213', body_name:'Αποκεντρωμένη Διοίκηση ΑΜΘ' )
 # @ib2=ImplementationBody.create( special_body_name:'Δήμος Δράμας',                              special_body_code:'01202', address:'Bύρωνος 1 Δράμα ',       phone:'2531023320', fax:'255138451',  email:'sgouros@yahoo.com', name:'Τεχνική Υπηρεσία',                       comments:'', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35', body_code:'213', body_name:'Αποκεντρωμένη Διοίκηση ΑΜΘ' )
 # @ib3=ImplementationBody.create( special_body_name:'Δήμος Καβάλας',                             special_body_code:'01202', address:'Bύρωνος 13 Καβάλα ',     phone:'2531023320', fax:'255138451',  email:'sgouros@yahoo.com', name:'Τεχνική Υπηρεσία',                       comments:'', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35', body_code:'213', body_name:'Αποκεντρωμένη Διοίκηση ΑΜΘ' )
