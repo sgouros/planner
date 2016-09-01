@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829062510) do
+ActiveRecord::Schema.define(version: 20160901093545) do
 
   create_table "accountables", force: :cascade do |t|
     t.string   "surname"
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 20160829062510) do
     t.text     "address"
     t.string   "phone"
     t.string   "fax"
-    t.string   "contact_persion"
+    t.string   "contact_person"
     t.string   "email"
     t.boolean  "is_this_my_organisation"
     t.datetime "created_at",              null: false

@@ -38,7 +38,7 @@ end
 
 FactoryGirl.define do
   factory :project do
-    sequence(:title) {|n| "Έργο #{n}"}
+    sequence(:title) {|n| "Έργο_#{n}"}
     iis_code {rand(4000..8000)}
     prefecture_code {rand(1..5)}
     incorporation_protocol {rand(1..3000)}
@@ -99,6 +99,58 @@ end
 @saep0318.projects << @p2013ΕΠ03180039
 @saep0318.projects << @p2013ΕΠ03180040
 
+FactoryGirl.define do
+  factory :accountable do
+    surname {Faker::Name.last_name}
+    sequence(:name) {|n| "accountable_#{n}"}
+    phone {Faker::PhoneNumber.phone_number}
+    fax {Faker::PhoneNumber.phone_number}
+    email {Faker::Internet.email}
+  end
+end
+
+@accountable1 = FactoryGirl.create(:accountable)
+@accountable2 = FactoryGirl.create(:accountable)
+@accountable3 = FactoryGirl.create(:accountable)
+@accountable4 = FactoryGirl.create(:accountable)
+@accountable5 = FactoryGirl.create(:accountable)
+@accountable6 = FactoryGirl.create(:accountable)
+@accountable7 = FactoryGirl.create(:accountable)
+@accountable8 = FactoryGirl.create(:accountable)
+@accountable9 = FactoryGirl.create(:accountable)
+@accountable10 = FactoryGirl.create(:accountable)
+
+
+FactoryGirl.define do
+  factory :organisation do
+    sequence(:code) {|n| "organisation_#{n}"}
+    name {Faker::Company.name}
+    address {Faker::Address.street_address + ", " + Faker::Address.zip + ", " + Faker::Address.city}
+    phone {Faker::PhoneNumber.phone_number}
+    fax {Faker::PhoneNumber.phone_number}
+    contact_person {Faker::Name.name}
+    email {Faker::Internet.email}
+    is_this_my_organisation false
+  end
+end
+
+@org1 = FactoryGirl.create(:organisation)
+@org2 = FactoryGirl.create(:organisation)
+@org3 = FactoryGirl.create(:organisation, is_this_my_organisation: true)
+@org4 = FactoryGirl.create(:organisation)
+@org5 = FactoryGirl.create(:organisation)
+@org6 = FactoryGirl.create(:organisation)
+
+@org1.accountables << @accountable1
+@org1.accountables << @accountable2
+@org1.accountables << @accountable3
+@org2.accountables << @accountable4
+@org2.accountables << @accountable5
+@org3.accountables << @accountable6
+@org4.accountables << @accountable7
+@org5.accountables << @accountable8
+@org5.accountables << @accountable9
+@org5.accountables << @accountable10
 
 # @ib1=ImplementationBody.create( special_body_name:'Δήμος Κομοτηνής',                           special_body_code:'01202', address:'Bύρωνος 13 Κομοτηνή',    phone:'2531023320', fax:'255138451',  email:'sgouros@yahoo.com', name:'Τεχνική Υπηρεσία ΠΕ ',                   comments:'', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35', body_code:'213', body_name:'Αποκεντρωμένη Διοίκηση ΑΜΘ' )
 # @ib2=ImplementationBody.create( special_body_name:'Δήμος Δράμας',                              special_body_code:'01202', address:'Bύρωνος 1 Δράμα ',       phone:'2531023320', fax:'255138451',  email:'sgouros@yahoo.com', name:'Τεχνική Υπηρεσία',                       comments:'', created_at: '2013-03-17 20:13:10',  updated_at: '2013-03-18 09:59:35', body_code:'213', body_name:'Αποκεντρωμένη Διοίκηση ΑΜΘ' )
