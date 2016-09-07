@@ -63,7 +63,7 @@ FactoryGirl.define do
 #    supervisor_body_id {rand(1..5)}
 #    act_id {rand(1..5)}
 #    collective_decision_id {rand(1..5)}
-    budget_cents {rand(50000..800000)}
+    budget_cents {rand(500000..80000000)}
     budget_history "this is budget history"
     created_at {rand(2).years.ago}
     updated_at {rand(2).years.ago}
@@ -101,9 +101,32 @@ end
 @saep0318.projects << @p2013ΕΠ03180039
 @saep0318.projects << @p2013ΕΠ03180040
 
+@p2013ΕΠ03180036.supervisor_body_id=1
+@p2013ΕΠ03180037.supervisor_body_id=1
+@p2013ΕΠ03180038.supervisor_body_id=1
+@p2013ΕΠ03180039.supervisor_body_id=1
+@p2013ΕΠ03180040.supervisor_body_id=2
+@p2013ΕΠ33120003.supervisor_body_id=2
+@p2013ΕΠ33120004.supervisor_body_id=2
+@p2013ΕΠ33120005.supervisor_body_id=2
 
+@p2013ΕΠ03180036.user_id=1
+@p2013ΕΠ03180037.user_id=1
+@p2013ΕΠ03180038.user_id=1
+@p2013ΕΠ03180039.user_id=1
+@p2013ΕΠ03180040.user_id=2
+@p2013ΕΠ33120003.user_id=2
+@p2013ΕΠ33120004.user_id=2
+@p2013ΕΠ33120005.user_id=2
 
-
+@p2013ΕΠ03180036.manager_id=1
+@p2013ΕΠ03180037.manager_id=1
+@p2013ΕΠ03180038.manager_id=1
+@p2013ΕΠ03180039.manager_id=1
+@p2013ΕΠ03180040.manager_id=1
+@p2013ΕΠ33120003.manager_id=1
+@p2013ΕΠ33120004.manager_id=1
+@p2013ΕΠ33120005.manager_id=1
 
 
 # ---------------- organisations ----------------
@@ -118,7 +141,7 @@ FactoryGirl.define do
     email {Faker::Internet.email}
     is_this_my_organisation false
   end
-
+end
 
 @organisation1 = FactoryGirl.create(:organisation)
 @organisation2 = FactoryGirl.create(:organisation)
@@ -238,7 +261,7 @@ FactoryGirl.define do
     protocol {rand(1..8000)+"//"+rand(1..3000)}
     start_date {rand(4).years.ago}
     sequence(:title) {|n| "title_#{n}"}
-    amount {rand(1000..20000}
+    amount_cents {rand(100000..2000000)}
   end
 end
 
@@ -257,7 +280,7 @@ FactoryGirl.define do
     date_of_issue {rand(4).years.ago}
     contractor_fiscal_code {rand(1000000..9999999)}
     contractor_name {Faker::Name.name}
-    amount {rand(1000..20000}
+    amount_cents {rand(100000..2000000)}
     payoff_deadline {Time.now + rand(5).months}
   end
 end
@@ -278,7 +301,7 @@ end
 FactoryGirl.define do
   factory :payment do
     sequence(:code) {|n| "payment_#{n}"}
-    amount {rand(1000..15000}
+    amount_cents {rand(100000..1500000)}
     transaction_date {rand(4).months.ago}
     payment_type_code {rand(1..5)}
   end
@@ -324,7 +347,7 @@ FactoryGirl.define do
   factory :allocation do
     protocol {rand(1..8000)+"//"+rand(1..3000)}
     start_date {rand(2).years.ago}
-    amount {rand(10000..100000}
+    amount_cents {rand(1000000..10000000)}
   end
 end
 
@@ -349,7 +372,7 @@ end
 # ---------------- contracts ----------------
 FactoryGirl.define do
   factory :contract do
-    amount_cents {rand(1000000..10000000}
+    amount_cents {rand(1000000..10000000)}
     start_date {rand(1).years.ago}
   end
 end
@@ -372,11 +395,38 @@ end
 @subproject4.contracts << @contract4
 @subproject5.contracts << @contract5
 
+@subproject1.supervisor_body_id=1
+@subproject2.supervisor_body_id=1
+@subproject3.supervisor_body_id=1
+@subproject4.supervisor_body_id=1
+@subproject5.supervisor_body_id=1
+@subproject6.supervisor_body_id=2
+@subproject7.supervisor_body_id=2
+@subproject8.supervisor_body_id=2
+
+@subproject1.implementation_body_id=3
+@subproject2.implementation_body_id=3
+@subproject3.implementation_body_id=3
+@subproject4.implementation_body_id=4
+@subproject5.implementation_body_id=4
+@subproject6.implementation_body_id=4
+@subproject7.implementation_body_id=5
+@subproject8.implementation_body_id=5
+
+@subproject1.accountable_id_id=2
+@subproject2.accountable_id_id=2
+@subproject3.accountable_id_id=3
+@subproject4.accountable_id_id=3
+@subproject5.accountable_id_id=4
+@subproject6.accountable_id_id=4
+@subproject7.accountable_id_id=5
+@subproject8.accountable_id_id=5
+
 # ---------------- contract_updates ----------------
 FactoryGirl.define do
   factory :contract_update do
     sequence(:update_version) {|n| "version_#{n}"}
-    amount {rand(10000..100000}
+    amount_cents {rand(1000000..10000000)}
     start_date {rand(1).years.ago}
     comments {Faker::Hacker.say_something_smart}
   end
@@ -437,7 +487,7 @@ FactoryGirl.define do
     implementation_code {rand(1..5)}
     priority_code {rand(1..5)}
     comments {Faker::Hacker.say_something_smart}
-    proposed_budget {rand(50000..100000)}
+    proposed_budget {rand(5000000..10000000)}
   end
 end
 
@@ -525,8 +575,8 @@ FactoryGirl.define do
   end
 end
 
-@user1 = FactoryGirl.create(:user, :name 'Γιώργος', surname 'Σγούρος'     , :normalized_name 'ΓΙΩΡΓΟΣ', :normalized_title 'ΣΓΟΥΡΟΣ'     , :manager true , :admin true)
-@user2 = FactoryGirl.create(:user, :name 'Νατάσα' , surname 'Λαμπρινίδου' , :normalized_name 'ΝΑΤΑΣΑ' , :normalized_title 'ΛΑΜΠΡΙΝΙΔΟΥ' , :manager false, :admin false)
+@user1 = FactoryGirl.create(  :user,  name:'Γιώργος', surname: 'Σγούρος',  normalized_name:'ΓΙΩΡΓΟΣ',  normalized_title:'ΣΓΟΥΡΟΣ' , manager: true ,  admin: true)
+@user2 = FactoryGirl.create(:user, name: 'Νατάσα' ,surname: 'Λαμπρινίδου',normalized_name: 'ΝΑΤΑΣΑ' ,normalized_title: 'ΛΑΜΠΡΙΝΙΔΟΥ' ,manager: false,admin: false)
 
 @organisation1.users << @user1
 @organisation2.users << @user2
@@ -534,23 +584,23 @@ end
 # ---------------- expence_forecasts ----------------
 FactoryGirl.define do
   factory :expence_forecast do
-      january {rand(10000..50000)}
-      february {rand(10000..50000)}
-      march {rand(10000..50000)}
-      april {rand(10000..50000)}
-      may {rand(10000..50000)}
-      june {rand(10000..50000)}
-      july {rand(10000..50000)}
-      august {rand(10000..50000)}
-      september {rand(10000..50000)}
-      october {rand(10000..50000)}
-      november {rand(10000..50000)}
-      december {rand(10000..50000)}
-      next_year {rand(10000..50000)}
-      next_two_years {rand(10000..50000)}
-      next_three_years {rand(10000..50000)}
-      next_four_years {rand(10000..50000)}
-      next_five_years {rand(10000..50000)}
+      january {rand(1000000..5000000)}
+      february {rand(1000000..5000000)}
+      march {rand(1000000..5000000)}
+      april {rand(1000000..5000000)}
+      may {rand(1000000..5000000)}
+      june {rand(1000000..5000000)}
+      july {rand(1000000..5000000)}
+      august {rand(1000000..5000000)}
+      september {rand(1000000..5000000)}
+      october {rand(1000000..5000000)}
+      november {rand(1000000..5000000)}
+      december {rand(1000000..5000000)}
+      next_year {rand(1000000..5000000)}
+      next_two_years {rand(1000000..5000000)}
+      next_three_years {rand(1000000..5000000)}
+      next_four_years {rand(1000000..5000000)}
+      next_five_years {rand(1000000..5000000)}
   end
 end
 
