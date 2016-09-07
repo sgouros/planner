@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :expence_forecasts
   resources :contractors
   resources :undertaking_certificates
-  resources :accountables
   resources :acts
   resources :act_plans
   resources :targets

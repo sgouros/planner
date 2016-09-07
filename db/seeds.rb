@@ -103,27 +103,7 @@ end
 
 
 
-# ---------------- accountables ----------------
-FactoryGirl.define do
-  factory :accountable do
-    surname {Faker::Name.last_name}
-    sequence(:name) {|n| "accountable_#{n}"}
-    phone {Faker::PhoneNumber.phone_number}
-    fax {Faker::PhoneNumber.phone_number}
-    email {Faker::Internet.email}
-  end
-end
 
-@accountable1  = FactoryGirl.create(:accountable)
-@accountable2  = FactoryGirl.create(:accountable)
-@accountable3  = FactoryGirl.create(:accountable)
-@accountable4  = FactoryGirl.create(:accountable)
-@accountable5  = FactoryGirl.create(:accountable)
-@accountable6  = FactoryGirl.create(:accountable)
-@accountable7  = FactoryGirl.create(:accountable)
-@accountable8  = FactoryGirl.create(:accountable)
-@accountable9  = FactoryGirl.create(:accountable)
-@accountable10 = FactoryGirl.create(:accountable)
 
 
 # ---------------- organisations ----------------
@@ -138,7 +118,7 @@ FactoryGirl.define do
     email {Faker::Internet.email}
     is_this_my_organisation false
   end
-end
+
 
 @organisation1 = FactoryGirl.create(:organisation)
 @organisation2 = FactoryGirl.create(:organisation)
@@ -146,17 +126,6 @@ end
 @organisation4 = FactoryGirl.create(:organisation)
 @organisation5 = FactoryGirl.create(:organisation)
 @organisation6 = FactoryGirl.create(:organisation)
-
-@organisation1.accountables << @accountable1
-@organisation1.accountables << @accountable2
-@organisation1.accountables << @accountable3
-@organisation2.accountables << @accountable4
-@organisation2.accountables << @accountable5
-@organisation3.accountables << @accountable6
-@organisation4.accountables << @accountable7
-@organisation5.accountables << @accountable8
-@organisation5.accountables << @accountable9
-@organisation5.accountables << @accountable10
 
 # ---------------- axes ----------------
 FactoryGirl.define do
@@ -481,12 +450,20 @@ end
 @subproject7=FactoryGirl.create(:subproject)
 @subproject8=FactoryGirl.create(:subproject)
 
-@subproject1.undertaking_certificats << @undertaking_certificate1
-@subproject2.undertaking_certificats << @undertaking_certificate2
-@subproject3.undertaking_certificats << @undertaking_certificate3
-@subproject4.undertaking_certificats << @undertaking_certificate4
-@subproject5.undertaking_certificats << @undertaking_certificate5
+@subproject1.undertaking_certificates << @undertaking_certificate1
+@subproject2.undertaking_certificates << @undertaking_certificate2
+@subproject3.undertaking_certificates << @undertaking_certificate3
+@subproject4.undertaking_certificates << @undertaking_certificate4
+@subproject5.undertaking_certificates << @undertaking_certificate5
 
+@p2013ΕΠ03180036.subprojects << @subproject1
+@p2013ΕΠ03180036.subprojects << @subproject2
+@p2013ΕΠ03180036.subprojects << @subproject3
+@p2013ΕΠ03180039.subprojects << @subproject4
+@p2013ΕΠ03180040.subprojects << @subproject5
+@p2013ΕΠ33120003.subprojects << @subproject6
+@p2013ΕΠ33120003.subprojects << @subproject7
+@p2013ΕΠ33120005.subprojects << @subproject8
 
 
 
