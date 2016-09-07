@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907084851) do
+ActiveRecord::Schema.define(version: 20160907085608) do
 
   create_table "act_plans", force: :cascade do |t|
     t.string   "code"
@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20160907084851) do
   create_table "allocations", force: :cascade do |t|
     t.string   "protocol"
     t.date     "start_date"
-    t.integer  "amount"
+    t.integer  "amount_cents"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "axes", force: :cascade do |t|
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
 
   create_table "contract_updates", force: :cascade do |t|
     t.string   "update_version"
-    t.integer  "amount"
+    t.integer  "amount_cents"
     t.date     "start_date"
     t.text     "comments"
     t.integer  "contract_id"
@@ -96,26 +96,26 @@ ActiveRecord::Schema.define(version: 20160907084851) do
   end
 
   create_table "expence_forecasts", force: :cascade do |t|
-    t.integer  "january"
-    t.integer  "february"
-    t.integer  "march"
-    t.integer  "april"
-    t.integer  "may"
-    t.integer  "june"
-    t.integer  "july"
-    t.integer  "august"
-    t.integer  "september"
-    t.integer  "october"
-    t.integer  "november"
-    t.integer  "december"
-    t.integer  "next_year"
-    t.integer  "next_two_years"
-    t.integer  "next_three_years"
-    t.integer  "next_four_years"
-    t.integer  "next_five_years"
+    t.integer  "january_cents"
+    t.integer  "february_cents"
+    t.integer  "march_cents"
+    t.integer  "april_cents"
+    t.integer  "may_cents"
+    t.integer  "june_cents"
+    t.integer  "july_cents"
+    t.integer  "august_cents"
+    t.integer  "september_cents"
+    t.integer  "october_cents"
+    t.integer  "november_cents"
+    t.integer  "december_cents"
+    t.integer  "next_year_cents"
+    t.integer  "next_two_years_cents"
+    t.integer  "next_three_years_cents"
+    t.integer  "next_four_years_cents"
+    t.integer  "next_five_years_cents"
     t.integer  "subproject_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
     t.date     "date_of_issue"
     t.string   "contractor_fiscal_code"
     t.string   "contractor_name"
-    t.integer  "amount"
+    t.integer  "amount_cents"
     t.date     "payoff_deadline"
     t.integer  "undertaking_certificate_id"
     t.datetime "created_at",                 null: false
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
 
   create_table "payments", force: :cascade do |t|
     t.string   "code"
-    t.integer  "amount"
+    t.integer  "amount_cents"
     t.date     "transaction_date"
     t.integer  "payment_type_code"
     t.integer  "invoice_id"
@@ -224,7 +224,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
   create_table "subprojects", force: :cascade do |t|
     t.string   "code"
     t.text     "title"
-    t.integer  "budget"
+    t.integer  "budget_cents"
     t.text     "description"
     t.integer  "progress_code"
     t.integer  "prefecture_code"
@@ -235,7 +235,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
     t.integer  "implementation_code"
     t.integer  "priority_code"
     t.text     "comments"
-    t.integer  "proposed_badget"
+    t.integer  "proposed_budget_cents"
     t.integer  "supervisor_body_id"
     t.integer  "project_id"
     t.integer  "accountable_id"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20160907084851) do
     t.string   "protocol"
     t.date     "start_date"
     t.text     "title"
-    t.integer  "amount"
+    t.integer  "amount_cents"
     t.integer  "subproject_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
