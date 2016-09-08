@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907085608) do
+ActiveRecord::Schema.define(version: 20160908111146) do
 
   create_table "act_plans", force: :cascade do |t|
     t.string   "code"
@@ -200,7 +200,7 @@ ActiveRecord::Schema.define(version: 20160907085608) do
     t.string   "proposed_credit_year_3"
     t.string   "proposed_credit_year_4"
     t.string   "proposed_credit_year_5"
-    t.integer  "user_id"
+    t.integer  "accountable_id"
     t.integer  "manager_id"
     t.text     "normalized_title"
   end
@@ -242,6 +242,7 @@ ActiveRecord::Schema.define(version: 20160907085608) do
     t.integer  "implementation_body_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.text     "normalized_title"
   end
 
   create_table "targets", force: :cascade do |t|
