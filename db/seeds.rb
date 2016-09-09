@@ -258,13 +258,13 @@ FactoryGirl.define do
     prefecture_code {rand(1..5)}
     incorporation_date {rand(5).years.ago}
     incorporation_protocol {rand(1..3000)}
-# amendments
     phase_code {rand(1..5)}
     implementation_code {rand(1..5)}
     priority_code {rand(1..5)}
     comments {Faker::Hacker.say_something_smart}
     proposed_budget_cents {rand(5000000..10000000)}
     sequence(:normalized_title) {|n| "SUBPROJECT_#{n}"}
+    # amendments
   end
 end
 
@@ -288,3 +288,223 @@ end
                                   supervisor_body:      @organisation1,
                                   implementation_body:  @organisation4,
                                   project:              @p2013ΕΠ33120003)
+
+
+# ---------------- undertaking_certificates ----------------
+FactoryGirl.define do
+  factory :undertaking_certificate do
+    protocol {rand(1..8000)}
+    start_date {rand(4).years.ago}
+    sequence(:title) {|n| "title_#{n}"}
+    amount_cents {rand(100000..2000000)}
+  end
+end
+
+@undertaking_certificate1 = FactoryGirl.create(:undertaking_certificate, subproject:@subproject1)
+@undertaking_certificate2 = FactoryGirl.create(:undertaking_certificate, subproject:@subproject1)
+@undertaking_certificate3 = FactoryGirl.create(:undertaking_certificate, subproject:@subproject1)
+@undertaking_certificate4 = FactoryGirl.create(:undertaking_certificate, subproject:@subproject2)
+@undertaking_certificate5 = FactoryGirl.create(:undertaking_certificate, subproject:@subproject2)
+
+# ---------------- invoices ----------------
+FactoryGirl.define do
+  factory :invoice do
+    sequence(:code) {|n| "invoice_#{n}"}
+    description {Faker::Hacker.say_something_smart}
+    date_of_issue {rand(4).years.ago}
+    contractor_fiscal_code {rand(1000000..9999999)}
+    contractor_name {Faker::Name.name}
+    amount_cents {rand(100000..2000000)}
+    payoff_deadline {Time.now + rand(5).months}
+  end
+end
+
+@invoice1 = FactoryGirl.create(:invoice, undertaking_certificate: @undertaking_certificate1)
+@invoice2 = FactoryGirl.create(:invoice, undertaking_certificate: @undertaking_certificate1)
+@invoice3 = FactoryGirl.create(:invoice, undertaking_certificate: @undertaking_certificate1)
+@invoice4 = FactoryGirl.create(:invoice, undertaking_certificate: @undertaking_certificate2)
+@invoice5 = FactoryGirl.create(:invoice, undertaking_certificate: @undertaking_certificate3)
+
+
+# ---------------- payments ----------------
+FactoryGirl.define do
+  factory :payment do
+    sequence(:code) {|n| "payment_#{n}"}
+    amount_cents {rand(100000..1500000)}
+    transaction_date {rand(4).months.ago}
+    payment_type_code {rand(1..5)}
+  end
+end
+
+@payment1 = FactoryGirl.create(:payment, invoice:@invoice1)
+@payment2 = FactoryGirl.create(:payment, invoice:@invoice1)
+@payment3 = FactoryGirl.create(:payment, invoice:@invoice2)
+@payment4 = FactoryGirl.create(:payment, invoice:@invoice3)
+@payment5 = FactoryGirl.create(:payment, invoice:@invoice4)
+
+
+
+# ---------------- contractors ----------------
+FactoryGirl.define do
+  factory :contractor do
+    sequence(:name) {|n| "contractor_#{n}"}
+    fiscal_code {Faker::Code.ean}
+    tax_department 'Κομοτηνής'
+    address {Faker::Address.street_address + ", " + Faker::Address.zip + ", " + Faker::Address.city}
+    phone {Faker::PhoneNumber.phone_number}
+    fax {Faker::PhoneNumber.phone_number}
+    contact_person {Faker::Name.name}
+    email {Faker::Internet.email}
+    comments {Faker::Hacker.say_something_smart}
+    sequence(:normalized_name) {|n| "CONTRACTOR_#{n}"}
+  end
+end
+
+@contractor1 = FactoryGirl.create(:contractor)
+@contractor2 = FactoryGirl.create(:contractor)
+@contractor3 = FactoryGirl.create(:contractor)
+@contractor4 = FactoryGirl.create(:contractor)
+@contractor5 = FactoryGirl.create(:contractor)
+
+# ---------------- contracts ----------------
+FactoryGirl.define do
+  factory :contract do
+    amount_cents {rand(1000000..10000000)}
+    start_date {rand(1).years.ago}
+  end
+end
+
+@contract1 = FactoryGirl.create(:contract, contractor: @contractor1, contract_parent: @p2013ΕΠ03180036)
+@contract2 = FactoryGirl.create(:contract, contractor: @contractor1, contract_parent: @p2013ΕΠ03180037)
+@contract3 = FactoryGirl.create(:contract, contractor: @contractor2, contract_parent: @subproject1)
+@contract4 = FactoryGirl.create(:contract, contractor: @contractor3, contract_parent: @subproject2)
+@contract5 = FactoryGirl.create(:contract, contractor: @contractor4, contract_parent: @subproject3)
+
+
+
+
+# ---------------- contract_updates ----------------
+FactoryGirl.define do
+  factory :contract_update do
+    sequence(:update_version) {|n| "contract_update_#{n}"}
+    amount_cents {rand(1000000..10000000)}
+    start_date {rand(1).years.ago}
+    comments {Faker::Hacker.say_something_smart}
+  end
+end
+
+@contract_update1 = FactoryGirl.create(:contract_update, contract: @contract1)
+@contract_update2 = FactoryGirl.create(:contract_update, contract: @contract1)
+@contract_update3 = FactoryGirl.create(:contract_update, contract: @contract2)
+@contract_update4 = FactoryGirl.create(:contract_update, contract: @contract3)
+@contract_update5 = FactoryGirl.create(:contract_update, contract: @contract4)
+
+
+
+# ---------------- collective_decision_updates ----------------
+FactoryGirl.define do
+  factory :collective_decision_update do
+    protocol {rand(1..8000)}
+    start_date {rand(1).years.ago}
+    description {Faker::Hacker.say_something_smart}
+    comments {Faker::Hacker.say_something_smart}
+  end
+end
+
+@collective_decision_update1 = FactoryGirl.create(:collective_decision_update, collective_decision: @saep0318)
+@collective_decision_update2 = FactoryGirl.create(:collective_decision_update, collective_decision: @saep0318)
+@collective_decision_update3 = FactoryGirl.create(:collective_decision_update, collective_decision: @saep0318)
+@collective_decision_update4 = FactoryGirl.create(:collective_decision_update, collective_decision: @saep3312)
+@collective_decision_update5 = FactoryGirl.create(:collective_decision_update, collective_decision: @saep3312)
+
+
+
+
+
+# ---------------- allocations ----------------
+FactoryGirl.define do
+  factory :allocation do
+    protocol {rand(1..8000)}
+    start_date {rand(2).years.ago}
+    amount_cents {rand(100000000..1000000000)}
+  end
+end
+
+@allocation1 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180036)
+@allocation2 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180036)
+@allocation3 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180036)
+@allocation4 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180037)
+@allocation5 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180037)
+@allocation6 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180038)
+@allocation7 = FactoryGirl.create(:allocation, project: @p2013ΕΠ03180038)
+@allocation8 = FactoryGirl.create(:allocation, project: @p2013ΕΠ33120003)
+
+
+
+# ---------------- expence_forecasts ----------------
+FactoryGirl.define do
+  factory :expence_forecast do
+      january_cents           {rand(100000000..500000000)}
+      february_cents          {rand(100000000..500000000)}
+      march_cents             {rand(100000000..500000000)}
+      april_cents             {rand(100000000..500000000)}
+      may_cents               {rand(100000000..500000000)}
+      june_cents              {rand(100000000..500000000)}
+      july_cents              {rand(100000000..500000000)}
+      august_cents            {rand(100000000..500000000)}
+      september_cents         {rand(100000000..500000000)}
+      october_cents           {rand(100000000..500000000)}
+      november_cents          {rand(100000000..500000000)}
+      december_cents          {rand(100000000..500000000)}
+      next_year_cents         {rand(100000000..500000000)}
+      next_two_years_cents    {rand(100000000..500000000)}
+      next_three_years_cents  {rand(100000000..500000000)}
+      next_four_years_cents   {rand(100000000..500000000)}
+      next_five_years_cents   {rand(100000000..500000000)}
+  end
+end
+
+@expence_forecast1 = FactoryGirl.create(:expence_forecast, subproject: @subproject1)
+@expence_forecast2 = FactoryGirl.create(:expence_forecast, subproject: @subproject2)
+@expence_forecast3 = FactoryGirl.create(:expence_forecast, subproject: @subproject3)
+@expence_forecast4 = FactoryGirl.create(:expence_forecast, subproject: @subproject4)
+@expence_forecast5 = FactoryGirl.create(:expence_forecast, subproject: @subproject5)
+
+
+
+# ---------------- schedules ----------------
+FactoryGirl.define do
+  factory :schedule do
+  end
+end
+
+@schedule1=FactoryGirl.create(:schedule,  schedule_parent: @p2013ΕΠ03180036)
+@schedule2=FactoryGirl.create(:schedule,  schedule_parent: @p2013ΕΠ03180037)
+@schedule3=FactoryGirl.create(:schedule,  schedule_parent: @p2013ΕΠ03180038)
+@schedule4=FactoryGirl.create(:schedule,  schedule_parent: @p2013ΕΠ33120003)
+@schedule5=FactoryGirl.create(:schedule,  schedule_parent: @subproject1)
+@schedule6=FactoryGirl.create(:schedule,  schedule_parent: @subproject2)
+@schedule7=FactoryGirl.create(:schedule,  schedule_parent: @subproject3)
+@schedule8=FactoryGirl.create(:schedule,  schedule_parent: @subproject4)
+@schedule9=FactoryGirl.create(:schedule,  schedule_parent: @subproject5)
+
+
+# ---------------- schedule_actions ----------------
+FactoryGirl.define do
+  factory :schedule_action do
+    sequence(:description) {|n| "schedule_action_#{n}"}
+    start_date {rand(1).years.ago}
+    end_date {rand(1).years.ago}
+  end
+end
+
+@schedule_action1=FactoryGirl.create(:schedule_action, schedule: @schedule1)
+@schedule_action2=FactoryGirl.create(:schedule_action, schedule: @schedule1)
+@schedule_action3=FactoryGirl.create(:schedule_action, schedule: @schedule1)
+@schedule_action4=FactoryGirl.create(:schedule_action, schedule: @schedule2)
+@schedule_action5=FactoryGirl.create(:schedule_action, schedule: @schedule3)
+@schedule_action6=FactoryGirl.create(:schedule_action, schedule: @schedule3)
+@schedule_action7=FactoryGirl.create(:schedule_action, schedule: @schedule4)
+@schedule_action8=FactoryGirl.create(:schedule_action, schedule: @schedule5)
+@schedule_action9=FactoryGirl.create(:schedule_action, schedule: @schedule6)
+@schedule_action10=FactoryGirl.create(:schedule_action, schedule: @schedule7)

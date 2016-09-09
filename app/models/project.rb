@@ -1,7 +1,8 @@
 class Project < ApplicationRecord
-  has_many :subprojects,  :dependent => :destroy
-  has_many :allocations,  :dependent => :destroy
-  has_one  :schedule,     :dependent => :destroy
+  has_many :subprojects                      , :dependent => :destroy
+  has_many :allocations                      , :dependent => :destroy
+  has_one  :schedule  ,  as: :schedule_parent, :dependent => :destroy
+  has_many :contracts,   as: :contract_parent, :dependent => :destroy
 
   belongs_to :act
   belongs_to :manager,            :class_name => 'User',          :foreign_key => 'manager_id'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908111146) do
+ActiveRecord::Schema.define(version: 20160909081134) do
 
   create_table "act_plans", force: :cascade do |t|
     t.string   "code"
@@ -82,17 +82,19 @@ ActiveRecord::Schema.define(version: 20160908111146) do
     t.string   "contact_person"
     t.string   "email"
     t.text     "comments"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "normalized_name"
   end
 
   create_table "contracts", force: :cascade do |t|
     t.integer  "amount_cents"
     t.date     "start_date"
-    t.integer  "subproject_id"
     t.integer  "contractor_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "contract_parent_id"
+    t.string   "contract_parent_type"
   end
 
   create_table "expence_forecasts", force: :cascade do |t|
@@ -215,10 +217,10 @@ ActiveRecord::Schema.define(version: 20160908111146) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "project_id"
-    t.integer  "subproject_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "schedule_parent_id"
+    t.string   "schedule_parent_type"
   end
 
   create_table "subprojects", force: :cascade do |t|
