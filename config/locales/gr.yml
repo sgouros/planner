@@ -1,46 +1,215 @@
 gr:
   planner: Planner
   planner_description: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
-  edit_password: αλλαγή συνθηματικού
-  login: σύνδεση
-  logout: αποσύνδεση
-  welcome: καλώς ορίσατε!
-  please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
-  logged_in: καλώς ορίσατε!
-  invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
-  logged_out: αποσυνδεθήκατε επιτυχώς
-  access_denied: απαγορεύεται η πρόσβαση
-  current_user: χειριστής
-  cu: χειριστής
-  administrator: διαχειριστής
-  start_page: αρχική σελίδα
-  or: ή
-  to: προς
-  options: επιλογές
-  edit: τροποποίηση
-  delete: διαγραφή
-  show: προβολή
-  submit: καταχώρηση
-  back: επιστροφή
-  are_you_sure: "είστε σίγουρος-η;"
-  cancel: άκυρο
-  other_data: λοιπά στοιχεία
-  user_info: στοιχεία χειριστή
-  no_user: χωρίς χειριστή
-  confirm_delete: είστε σίγουρος/η οτι επιθυμείτε τη διαγραφή;
-  details: λεπτομέρειες
-  create: δημιουργία
-  page_not_found: η σελίδα που ζητήσατε δεν υπάρχει
-  admin_and_manager: διαχειριστής - συντονιστής
-  date: ημερομηνία
-  matrix: μητρώο δεσμεύσεων
-  Matrix: Μητρώο Δεσμεύσεων
-  current_user: χειριστής
-  implementationbody: Φορέας
-  email: ηλεκτρονικό ταχυδρομείο
-  password: κωδικός
-  print_footer: Bond - Ηλεκτρονικό Mητρώο Δεσμεύσεων Περιφέρειας Α.Μ.Θ.
-  manager: συντονιστής
+  # edit_password: αλλαγή συνθηματικού
+  # login: σύνδεση
+  # logout: αποσύνδεση
+  # welcome: καλώς ορίσατε!
+  # please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
+  # logged_in: καλώς ορίσατε!
+  # invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
+  # logged_out: αποσυνδεθήκατε επιτυχώς
+  # access_denied: απαγορεύεται η πρόσβαση
+  # current_user: χειριστής
+  # cu: χειριστής
+  # administrator: διαχειριστής
+  # start_page: αρχική σελίδα
+  # or: ή
+  # to: προς
+  # options: επιλογές
+  # edit: τροποποίηση
+  # delete: διαγραφή
+  # show: προβολή
+  # submit: καταχώρηση
+  # back: επιστροφή
+  # are_you_sure: "είστε σίγουρος-η;"
+  # cancel: άκυρο
+  # other_data: λοιπά στοιχεία
+  # user_info: στοιχεία χειριστή
+  # no_user: χωρίς χειριστή
+  # confirm_delete: είστε σίγουρος/η οτι επιθυμείτε τη διαγραφή;
+  # details: λεπτομέρειες
+  # create: δημιουργία
+  # page_not_found: η σελίδα που ζητήσατε δεν υπάρχει
+  # admin_and_manager: διαχειριστής - συντονιστής
+  # date: ημερομηνία
+  # matrix: μητρώο δεσμεύσεων
+  # Matrix: Μητρώο Δεσμεύσεων
+  # current_user: χειριστής
+  # implementationbody: Φορέας
+  # email: ηλεκτρονικό ταχυδρομείο
+  # password: κωδικός
+  # print_footer: Planner
+  # manager: συντονιστής
+
+#------------------------act_plans---------------------------
+  act_plan: σχέδιο δράσης
+  act_plans: σχέδια δράσης
+  act_plans_index: συνοπτικά στοιχεία σχεδίων δράσης
+  new_act_plan: νέο σχέδιο δράσης
+  edit_act_plan: τροποποίηση στοιχείων σχεδίου δράσης
+  show_act_plan: αναλυτικά στοιχεία σχεδίου δράσης
+  act_plan_created: το σχέδιο δράσης δημιουργήθηκε επιτυχώς
+  act_plan_updated: τα στοιχεία του σχεδίου δράσης ενημερώθηκαν επιτυχώς
+  act_plan_deleted: τα στοιχεία του σχεδίου δράσης διαγράφηκαν επιτυχώς
+  no_act_plans_exist: δεν υπάρχουν σχέδια δράσης
+
+  act_plan:
+    code: κωδικός
+    description: περιγραφή
+    target_id: στόχος
+
+
+#------------------------acts---------------------------
+  act: δράση
+  acts: δράσεις
+  acts_index: συνοπτικά στοιχεία δράσης
+  new_act: νέα δράσης
+  edit_act: τροποποίηση στοιχείων δράσης
+  show_act: αναλυτικά στοιχεία δράσης
+  act_created: η δράση δημιουργήθηκε επιτυχώς
+  act_updated: τα στοιχεία της δράσης ενημερώθηκαν επιτυχώς
+  act_deleted: τα στοιχεία της δράσης διαγράφηκαν επιτυχώς
+  no_acts_exist: δεν υπάρχουν δράσεις
+
+  act:
+    code: κωδικός
+    description: περιγραφή
+    act_plan_id: σχέδιο δράσης
+
+#------------------------allocations---------------------------
+  allocation: κατανομή
+  allocations: κατανομές
+  allocations_index: συνοπτικά στοιχεία κατανομής
+  new_allocation: νέα κατανομή
+  edit_allocation: τροποποίηση στοιχείων κατανομής
+  show_allocation: αναλυτικά στοιχεία κατανομής
+  allocation_created: η κατανομή δημιουργήθηκε επιτυχώς
+  allocation_updated: τα στοιχεία της κατανομής ενημερώθηκαν επιτυχώς
+  allocation_deleted: τα στοιχεία της κατανομής διαγράφηκαν επιτυχώς
+  no_allocations_exist: δεν υπάρχουν κατανομές
+
+  allocation:
+    protocol: πρωτόκολλο
+    start_date: ημερομηνία
+    amount_cents: ποσό
+    project_id: έργο
+
+#------------------------axes---------------------------
+  axis: άξωνας
+  axes: άξωνες
+  axes_index: συνοπτικά στοιχεία άξωνα
+  new_axis: νέος άξωνας
+  edit_axis: τροποποίηση στοιχείων άξωνα
+  show_axis: αναλυτικά στοιχεία άξωνα
+  axis_created: ο άξωνας δημιουργήθηκε επιτυχώς
+  axis_updated: τα στοιχεία του άξωνα ενημερώθηκαν επιτυχώς
+  axis_deleted: τα στοιχεία του άξωνα διαγράφηκαν επιτυχώς
+  no_axes_exist: δεν υπάρχουν άξωνες
+
+  axis:
+    protocol: πρωτόκολλο
+    start_date: ημερομηνία
+    amount_cents: ποσό
+    project_id: έργο
+
+#------------------------collective_decision_updates---------------------------
+  collective_decision_update: τροποποίηση συλλογικής απόφασης
+  collective_decision_updates: τροποποιήσεις συλλογικής απόφασης
+  collective_decision_updates_index: συνοπτικά στοιχεία τροποποίησης συλλογικής απόφασης
+  new_collective_decision_update: νέα τροποποίηση συλλογικής απόφασης
+  edit_collective_decision_update: επεξεργασία τροποποίησης συλλογικής απόφασης
+  show_collective_decision_update: αναλυτικά στοιχεία τροποποίησης συλλογικής απόφασης
+  collective_decision_update_created: η τροποποίηση συλλογικής απόφασης δημιουργήθηκε επιτυχώς
+  collective_decision_update_updated: η τροποποίηση συλλογικής απόφασης ενημερώθηκε επιτυχώς
+  collective_decision_update_deleted: η τροποποίηση συλλογικής απόφασης διεγράφη επιτυχώς
+  no_collective_decision_updates_exist: δεν υπάρχουν τροποποιήσεις της συλλογικής απόφασης
+
+  collective_decision_update:
+    protocol: πρωτόκολλο
+    start_date: ημερομηνία
+    description: περιγραφή
+    comments: παρατηρήσεις
+    collective_decision_id: σχετιζόμενη συλλογική απόφαση
+
+
+#------------------------collective_decision---------------------------
+  collective_decision: συλλογική απόφαση
+  collective_decisions: συλλογικές αποφάσεις
+  collective_decisions_index: συνοπτικά στοιχεία συλλογικών αποφάσεων
+  new_collective_decision: νέα συλλογική απόφαση
+  edit_collective_decision: επεξεργασία συλλογικής απόφασης
+  show_collective_decision: αναλυτικά στοιχεία συλλογικής απόφασης
+  collective_decision_created: η συλλογική απόφαση δημιουργήθηκε επιτυχώς
+  collective_decision_updated: η συλλογική απόφαση ενημερώθηκε επιτυχώς
+  collective_decision_deleted: η συλλογική απόφαση διεγράφη επιτυχώς
+  no_collective_decisions_exist: δεν υπάρχουν συλλογικές αποφάσεις
+
+  collective_decision:
+    code: κωδικός
+    description: περιγραφή
+
+
+
+#------------------------contract_updates---------------------------
+  contract_update: τροποποίηση σύμβασης
+  contract_updates: τροποποιήσεις σύμβασης
+  contract_updates_index: συνοπτικά στοιχεία τροποποίησης σύμβασης
+  new_contract_update: νέα τροποποίηση σύμβασης
+  edit_contract_update: επεξεργασία τροποποίησης σύμβασης
+  show_contract_update: αναλυτικά στοιχεία τροποποίησης σύμβασης
+  contract_update_created: η τροποποίηση σύμβασης δημιουργήθηκε επιτυχώς
+  contract_update_updated: η τροποποίηση σύμβασης ενημερώθηκε επιτυχώς
+  contract_update_deleted: η τροποποίηση σύμβασης διεγράφη επιτυχώς
+  no_contract_updates_exist: δεν υπάρχουν τροποποιήσεις σύμβασης
+
+  contract_update:
+    update_version: α/α τροποποίησης
+    amount_cents: ποσό
+    start_date: ημερομηνία
+    comments: παρατηρήσεις
+    contract_id: σχετιζόμενη σύμβαση
+
+#------------------------contractors---------------------------
+  contractor: εργολήπτης
+  contractors: εργολήπτες
+  contractors_index: συνοπτικά στοιχεία εργολήπτη
+  new_contractor: νέος εργολήπτης
+  edit_contractor: τροποποίηση στοιχείων εργολήπτη
+  show_contractor: αναλυτικά στοιχεία εργολήπτη
+  contractor_created: ο εργολήπτης δημιουργήθηκε επιτυχώς
+  contractor_updated: τα στοιχεία του εργολήπτη ενημερώθηκαν επιτυχώς
+  contractor_deleted: τα στοιχεία του εργολήπτη διαγράφηκαν επιτυχώς
+  no_contractors_exist: δεν υπάρχουν εργολήπτες
+
+  contractor:
+    name: πρωτόκολλο
+    fiscal_code: ημερομηνία
+    tax_department: ποσό
+    address: έργο
+    phone: τηλέφωνο
+    fax: φαξ
+    contact_person: υπεύθυνος για πληροφορίες
+    email: ηλεκτρονικό ταχυδρομείο
+    comments: σχόλια
+
+#------------------------contracts---------------------------
+  contract: σύμβαση
+  contracts: συμβάσεις
+  contracts_index: συνοπτικά στοιχεία σύμβασης
+  new_contract: νέα σύμβαση
+  edit_contract: τροποποίηση στοιχείων σύμβασης
+  show_contract: αναλυτικά στοιχεία σύμβασης
+  contract_created: η σύμβαση δημιουργήθηκε επιτυχώς
+  contract_updated: τα στοιχεία σύμβασης ενημερώθηκαν επιτυχώς
+  contract_deleted: τα στοιχεία σύμβασης διαγράφηκαν επιτυχώς
+  no_contracts_exist: δεν υπάρχουν συμβάσεις
+
+  contract:
+    amount_cents: ποσό
+    start_date: ημερομηνία
+    contractor_id: εργολήπτης
+    contract_parent_id: έργο ή υποέργο το οποίο αφορά
 
 #------------------------users---------------------------
   users_index: συνοπτικά στοιχεία χειριστών
@@ -70,7 +239,7 @@ gr:
     password_confirmation: επαλήθευση κωδικού
     manager: συντονιστής
     admin: διαχειριστής
-    implementation_body: φορέας στον οποίο ανήκει
+    organisation: φορέας στον οποίο ανήκει
     full_name: ονοματεπώνυμο
     comments: παρατηρήσεις
 
@@ -104,37 +273,31 @@ gr:
     due_90_plus: '> 90 ημερών'
     projects: έργα
 
+#--------------------- organisation --------------------------
 
+  organisation: φορέας
+  organisation_id: φορέας
+  organisation_deleted: τα στοιχεία του φορέα διαγράφηκαν
+  organisation_updated: τα στοιχεία του φορέα τροποποιήθηκαν επιτυχώς
+  edit_organisation: τροποποίηση στοιχείων φορέα
+  implementation_bodies_index: συνοπτικά στοιχεία φορέων
+  implementation_bodies: φορείς
+  no_implementation_bodies_exist: δεν υπάρχουν φορείς
+  new_organisation: νέος φορέας
+  organisation_details: προβολή στοιχείων φορέα
+  organisation_created: ο νέος φορέας καταχωρήθηκε επιτυχώς
 
-#--------------------- implementation_body --------------------------
-
-  implementation_body: φορέας υλοποίησης
-  implementation_body_id: φορέας υλοποίησης
-  implementation_body_deleted: τα στοιχεία του φορέα υλοποίησης διαγράφηκαν
-  implementation_body_updated: τα στοιχεία του φορέα υλοποίησης τροποποιήθηκαν επιτυχώς
-  edit_implementation_body: τροποποίηση στοιχείων φορέα υλοποίησης
-  implementation_bodies_index: συνοπτικά στοιχεία φορέων υλοποίησης
-  implementation_bodies: φορείς υλοποίησης
-  no_implementation_bodies_exist: δεν υπάρχουν φορείς υλοποίησης
-  new_implementation_body: νέος φορέας υλοποίησης
-  implementation_body_details: προβολή στοιχείων φορέα υλοποίησης
-  implementation_body_created: ο νέος φορέας υλοποίησης καταχωρήθηκε επιτυχώς
-
-  implementation_body:
-    central_body_name: ονομασία κεντρικού φορέα
-    central_body_code: κωδικός κεντρικού φορέα
-    central_body: κεντρικός φορέας
-    special_body_name: ονομασία ειδικού φορέα
-    special_body_code: κωδικός ειδικού φορέα
-    special_body: ειδικός φορέας
+  organisation:
+    code: κωδικός
+    name: ονομασία
+    address: ταχυδρομική διεύθυνση
+    phone: τηλέφωνο
+    fax: φαξ
+    email: email
     department_name: υπηρεσία
     department: υπηρεσία
-    tin: ΑΦΜ υπηρεσίας
-    tax_office: ΔΟΥ υπηρεσίας
-    address: ταχυδρομική διεύθυνση
-    phone: τηλέφωνο υπηρεσίας
-    fax: φαξ υπηρεσίας
-    email: email υπηρεσίας
+    contact_person: υπεύθυνος για πληροφορίες
+    is_this_my_organisation: οικείος φορέας
     comments: παρατηρήσεις
 
 #----------------------------projects ----------------------
@@ -663,3 +826,37 @@ gr:
       long: ! '%A %d %B %Y %H:%M:%S %Z'
       short: ! '%d %b %H:%M'
     pm: μ.μ.
+
+
+
+
+#--------------------- implementation_body --------------------------
+  #
+  # implementation_body: φορέας υλοποίησης
+  # implementation_body_id: φορέας υλοποίησης
+  # implementation_body_deleted: τα στοιχεία του φορέα υλοποίησης διαγράφηκαν
+  # implementation_body_updated: τα στοιχεία του φορέα υλοποίησης τροποποιήθηκαν επιτυχώς
+  # edit_implementation_body: τροποποίηση στοιχείων φορέα υλοποίησης
+  # implementation_bodies_index: συνοπτικά στοιχεία φορέων υλοποίησης
+  # implementation_bodies: φορείς υλοποίησης
+  # no_implementation_bodies_exist: δεν υπάρχουν φορείς υλοποίησης
+  # new_implementation_body: νέος φορέας υλοποίησης
+  # implementation_body_details: προβολή στοιχείων φορέα υλοποίησης
+  # implementation_body_created: ο νέος φορέας υλοποίησης καταχωρήθηκε επιτυχώς
+  #
+  # implementation_body:
+  #   central_body_name: ονομασία κεντρικού φορέα
+  #   central_body_code: κωδικός κεντρικού φορέα
+  #   central_body: κεντρικός φορέας
+  #   special_body_name: ονομασία ειδικού φορέα
+  #   special_body_code: κωδικός ειδικού φορέα
+  #   special_body: ειδικός φορέας
+  #   department_name: υπηρεσία
+  #   department: υπηρεσία
+  #   tin: ΑΦΜ υπηρεσίας
+  #   tax_office: ΔΟΥ υπηρεσίας
+  #   address: ταχυδρομική διεύθυνση
+  #   phone: τηλέφωνο υπηρεσίας
+  #   fax: φαξ υπηρεσίας
+  #   email: email υπηρεσίας
+  #   comments: παρατηρήσεις
