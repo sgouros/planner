@@ -96,16 +96,16 @@ gr:
     project_id: έργο
 
 #------------------------axes---------------------------
-  axis: άξωνας
-  axes: άξωνες
-  axes_index: άξωνες
-  new_axis: νέος άξωνας
-  edit_axis: τροποποίηση στοιχείων άξωνα
-  show_axis: αναλυτικά στοιχεία άξωνα
-  axis_created: ο άξωνας δημιουργήθηκε επιτυχώς
-  axis_updated: τα στοιχεία του άξωνα ενημερώθηκαν επιτυχώς
-  axis_deleted: τα στοιχεία του άξωνα διαγράφηκαν επιτυχώς
-  no_axes_exist: δεν υπάρχουν άξωνες
+  axis: άξoνας
+  axes: άξoνες
+  axes_index: άξoνες
+  new_axis: νέος άξoνας
+  edit_axis: τροποποίηση στοιχείων άξoνα
+  show_axis: αναλυτικά στοιχεία άξoνα
+  axis_created: ο άξoνας δημιουργήθηκε επιτυχώς
+  axis_updated: τα στοιχεία του άξoνα ενημερώθηκαν επιτυχώς
+  axis_deleted: τα στοιχεία του άξoνα διαγράφηκαν επιτυχώς
+  no_axes_exist: δεν υπάρχουν άξoνες
 
   axis:
     protocol: πρωτόκολλο
@@ -280,13 +280,226 @@ gr:
   measure:
     code: κωδικός
     description: περιγραφή
-    axis_id: άξωνας
+    axis_id: άξoνας
 
+#------------------------organisations---------------------------
+  organisation: φορέας
+  organisations: φορείς
+  organisations_index: συνοπτικά στοιχεία φορέα
+  new_organisation: νέος φορέας
+  edit_organisation: τροποποίηση στοιχείων φορέα
+  show_organisation: αναλυτικά στοιχεία φορέα
+  organisation_created: ο φορέας δημιουργήθηκε επιτυχώς
+  organisation_updated: ο φορέας ενημερώθηκε επιτυχώς
+  organisation_deleted: ο φορέας διεγράφη επιτυχώς
+  no_organisations_exist: δεν υπάρχουν φορείς
+
+  organisation:
+    code: κωδικός
+    name: περιγραφή
+    address: άξoνας
+    phone: τηλέφωνο
+    fax: φαξ
+    contact_person: υπεύθυνος επικοινωνίας
+    email: ηλεκτρονικό ταχυδρομείο
+    is_this_my_organisation: οικείος φορέας
+
+
+#------------------------payments---------------------------
+  payment: πληρωμη
+  payments: πληρωμές
+  payments_index: συνοπτικά στοιχεία πληρωμών
+  new_payment: νέα πληρωμή
+  edit_payment: τροποποίηση πληρωμής
+  show_payment: αναλυτικά στοιχεία πληρωμής
+  payment_created: η πληρωμή καταχωρήθηκε επιτυχώς
+  payment_updated: τα στοιχεία πληρωμής ενημερώθηκαν επιτυχώς
+  payment_deleted: η πληρωμή διεγράφη επιτυχώς
+  no_payments_exist: δεν υπάρχουν πληρωμές
+
+  payment:
+    code: κωδικός
+    amount_cents: ποσό
+    transaction_date: ημερομηνία
+    payment_type_code: τύπος πληρωμής
+    invoice_id: σχετιζόμενο τιμολόγιο
+
+#----------------------------projects ----------------------
+  project: έργο
+  projects: έργα
+  projects_index: συνοπτικά στοιχεία έργων
+  new_project: νέο έργο
+  edit_project: τροποποίηση στοιχείων έργου
+  show_project: αναλυτικά στοιχεία έργου
+  project_created: το έργο δημιουργήθηκε επιτυχώς
+  project_updated: τα στοιχεία έργου ενημερώθηκαν επιτυχώς
+  project_deleted: το έργο διεγράφη επιτυχώς
+  no_projects_exist: δεν υπάρχουν έργα
+
+  project:
+    code: κωδικός
+    title: τίτλος (4)
+    iis_code: κωδικός ΟΠΣ
+    prefecture_code: νομός
+    incorporation_date: ημερομηνία ένταξης
+    incorporation_protocol: πρωτόκολλο ένταξης
+    phase_code: φάση υλοποίησης
+    priority_code: προτεραιότητα
+    classification_code: χαρακτηρισμός
+    has_multiple_collective_decisions: έργο που ανήκει σε πολλαπλές ΣΑΕ
+    credit_first_quarter_cents: πίστωση 1ου τριμήνου
+    credit_second_quarter_cents: πίστωση 2ου τριμήνου
+    credit_third_quarter_cents: πίστωση 3ου τριμήνου
+    credit_fourth_quarter_cents: πίστωση 4ου τριμήνου
+    payments_until_last_year_according_to_sae_cents: πληρωμές έως τέλος προηγουμένου έτους βάσει ΣΑΕ
+    iban: ΙΒΑΝ
+    expense_code: κωδικός δαπάνης
+    ppi_payments_cents: πληρωμές μέσω ΠΔΕ
+    credit_limit_cents: όριο πίστωσης
+    comments: παρατηρήσεις
+    supervisor_body_id: επιβλέπουσα υπηρεσία
+    act_id: δράση
+    collective_decision_id: συλλογική απόφαση
+    budget_cents: προϋπολογισμός
+    budget_history: ιστορικό προϋπολογισμού
+    proposed_credit_1_cents: προτεινόμενη πίστωση 1
+    proposed_credit_2_cents: προτεινόμενη πίστωση 2
+    proposed_credit_3_cents: προτεινόμενη πίστωση 3
+    proposed_credit_4_cents: προτεινόμενη πίστωση 4
+    proposed_credit_5_cents: προτεινόμενη πίστωση 5
+    proposed_credit_year_1: προτεινόμενη πίστωση +1 έτους
+    proposed_credit_year_2: προτεινόμενη πίστωση +2 ετών
+    proposed_credit_year_3: προτεινόμενη πίστωση +3 ετών
+    proposed_credit_year_4: προτεινόμενη πίστωση +4 ετών
+    proposed_credit_year_5: προτεινόμενη πίστωση +5 ετών
+    accountable_id: υπόλογος
+    manager_id: manager
+    #  ppi_code: ΚΑΕ (3)
+    # collective_decision: συλλογική απόφαση (1)
+    # budget: προϋπολογισμός (5)
+    # credit: εγκεκριμένη πίστωση (6)
+    # implementation_body: φορέας υλοποίησης
+    # implementation_body_department: υπηρεσία υλοποίησης
+    # user: χειριστής
+    # credit_date: ημερομηνία έγκρισης πίστωσης (7)
+    # credit_protocol: πρωτόκολο έγκρισης πίστωσης
+    # credit_full_protocol: πρωτόκολο έγκρισης πίστωσης
+    # credit_tun: ΑΔΑ έγκρισης πίστωσης
+    # total_allocation: συνολικό ποσό κατανομής (8)
+    # credit_limit: όριο πίστωσης φορέα (2)
+    # credit_balance: υπολοιπόμενη πίστωση (13)
+    # total_due: απλήρωτες υποχρεώσεις
+    # due_30: 1-30 ημερών
+    # due_60: 30-60 ημερών
+    # due_90: 60-90 ημερών
+    # due_90_plus: '> 90 ημερών'
+
+#------------------------schedule_actions---------------------------
+  schedule_action: ενέργεια
+  schedule_actions: ενέργειες
+  schedule_actions_index: σύνολο ενεργειών
+  new_schedule_action: νέα ενέργεια
+  edit_schedule_action: τροποποίηση ενέργειας
+  show_schedule_action: στοιχεία ενέργειας
+  schedule_action_created: η ενέργεια προστέθηκε επιτυχώς
+  schedule_action_updated: τα στοιχεία ενέργειας ενημερώθηκαν επιτυχώς
+  schedule_action_deleted: η ενέργεια διεγράφη επιτυχώς
+  no_schedule_actions_exist: δεν υπάρχουν ενέργειες
+
+  schedule_action:
+    description: περιγραφή
+    start_date: έναρξη
+    end_date: λήξη
+    schedule_id: σχετιζόμενο χρονοδιάγραμμα
+
+#------------------------schedules---------------------------
+  schedule: χρονοδιάγραμμα
+  schedules: χρονοδιαγράμματα
+  schedules_index: σύνολο χρονοδιαγραμμάτων
+  new_schedule: νέο χρονοδιάγραμμα
+  edit_schedule: τροποποίηση χρονοδιαγράμματος
+  show_schedule: στοιχεία χρονοδιαγράμματος
+  schedule_created: το χρονοδιάγραμμα δημιουργήθηκε επιτυχώς
+  schedule_updated: το χρονοδιάγραμμα τροποποιήθηκε επιτυχώς
+  schedule_deleted: το χρονοδιάγραμμα διεγράφη επιτυχώς
+  no_schedules_exist: δεν υπάρχουν χρονοδιαγράμματα
+
+  schedule:
+    schedule_parent_id: σχετιζόμενο έργο ή υποέργο
+
+#----------------------------subprojects ----------------------
+  subproject: υποέργο
+  subprojects: υποέργα
+  subprojects_index: συνοπτικά στοιχεία υποέργων
+  new_subproject: νέο υποέργο
+  edit_subproject: τροποποίηση στοιχείων υποέργου
+  show_subproject: αναλυτικά στοιχεία υποέργου
+  subproject_created: το υποέργο δημιουργήθηκε επιτυχώς
+  subproject_updated: τα στοιχεία υποέργου ενημερώθηκαν επιτυχώς
+  subproject_deleted: το υποέργο διεγράφη επιτυχώς
+  no_subprojects_exist: δεν υπάρχουν υποέργα
+
+  subproject:
+    code: κωδικός
+    title: τίτλος
+    budget_cents: προϋπολογισμός
+    description: περιγραφή
+    progress_code: πρόοδος φυσικού αντικειμένου
+    prefecture_code: νομός
+    incorporation_date: ημερομηνία ένταξης
+    incorporation_protocol: πρωτόκολλο ένταξης
+    amendments: τροποποιήσεις
+    phase_code: φάση
+    implementation_code: τρόπος υλοποίησης
+    priority_code: προτεραιότητα
+    comments: σχόλια
+    proposed_budget_cents: προτεινόμενος προϋπολογισμός
+    supervisor_body_id: επιβλέπουσα υπηρεσία
+    project_id: έργο
+    accountable_id: υπόλογος
+    implementation_body_id: φορέας υλοποίησης
+
+#------------------------targets---------------------------
+  target: στόχος
+  targets: στόχοι
+  targets_index: σύνολο στόχων
+  new_target: νέος στόχος
+  edit_target: τροποποίηση στόχου
+  show_target: στοιχεία στόχου
+  target_created: ο στόχος δημιουργήθηκε επιτυχώς
+  target_updated: ο στόχος τροποποιήθηκε επιτυχώς
+  target_deleted: ο στόχος διεγράφη επιτυχώς
+  no_targets_exist: δεν υπάρχουν καταχωρημένοι στόχοι
+
+  target:
+    code: κωδικός
+    description: περιγραφή
+    measure_id: σχετιζόμενο μέτρο
+
+#------------------------undertaking_certificates---------------------------
+  undertaking_certificate: πιστοποίηση υποχρέωσης
+  undertaking_certificates: πιστοποιήσεις υποχρέωσης
+  undertaking_certificates_index: πιστοποιήσεις υποχρέωσης
+  new_undertaking_certificate: νέα πιστοποίηση υποχρέωσης
+  edit_undertaking_certificate: τροποποίηση πιστοποίησης υποχρέωσης
+  show_undertaking_certificate: στοιχεία πιστοποίησης υποχρέωσης
+  undertaking_certificate_created: η πιστοποίηση υποχρέωσης δημιουργήθηκε επιτυχώς
+  undertaking_certificate_updated: η πιστοποίηση υποχρέωσης τροποποιήθηκε επιτυχώς
+  undertaking_certificate_deleted: η πιστοποίηση υποχρέωσης διεγράφη επιτυχώς
+  no_undertaking_certificates_exist: δεν υπάρχουν πιστοποιήσεις υποχρέωσης
+
+  undertaking_certificate:
+    protocol: πρωτόκολλο
+    start_date: ημερομηνία
+    title: τίτλος
+    amount_cents: ποσό
+    subproject_id: υποέργο
 
 
 #------------------------users---------------------------
-  users_index: συνοπτικά στοιχεία χειριστών
+  user: χειριστής
   users: χειριστές
+  users_index: συνοπτικά στοιχεία χειριστών
   show_user: αναλυτικά στοιχεία χειριστή
   edit_user: τροποποίηση στοιχείων χειριστή
   user_created: ο νέος λογαριασμός χειριστή δημιουργήθηκε επιτυχώς
@@ -299,7 +512,6 @@ gr:
   my_user_info: τα στοιχεία μου
   user_added: τα στοιχεία χειριστή καταχωρήθηκαν με επιτυχία
   users_info: στοιχεία χειριστών
-  user: χειριστής
   all_users: όλοι οι χειριστές
 
   user:
@@ -321,220 +533,37 @@ gr:
   search: αναζήτηση
   no_search_results: δεν βρέθηκαν αποτελέσματα από την αναζήτησή σας
 
-#---------------- collective decision ---------------
-  collective_decision_id: συλλογική απόφαση
-  collective_decision: συλλογική απόφαση (1)
-  collective_decision_deleted: η συλλογική απόφαση διεγράφη
-  collective_decision_updated: τα στοιχεία της συλλογικής απόφασης τροποποιήθηκαν επιτυχώς
-  edit_collective_decision: τροποποίηση στοιχείων συλλογικής απόφασης
-  collective_decisions: συλλογικές αποφάσεις
-  collective_decisions_index: συνοπτικά στοιχεία συλλογικών αποφάσεων
-  no_collective_decisions_exist: δεν υπάρχουν συλλογικές αποφάσεις
-  new_collective_decision: νέα συλλογική απόφαση
-  collective_decision_created: η νέα συλλογική απόφαση καταχωρήθηκε επιτυχώς
-  collective_decision_details: προβολή στοιχείων συλλογικής απόφασης
-
-  collective_decision:
-    code: κωδικός (1)
-    year: έτος
-    description: περιγραφή
-    comments: παρατηρήσεις
-    total_due: απλήρωτες υποχρεώσεις
-    due_30: 1-30 ημερών
-    due_60: 30-60 ημερών
-    due_90: 60-90 ημερών
-    due_90_plus: '> 90 ημερών'
-    projects: έργα
-
-#--------------------- organisation --------------------------
-
-  organisation: φορέας
-  organisation_id: φορέας
-  organisation_deleted: τα στοιχεία του φορέα διαγράφηκαν
-  organisation_updated: τα στοιχεία του φορέα τροποποιήθηκαν επιτυχώς
-  edit_organisation: τροποποίηση στοιχείων φορέα
-  implementation_bodies_index: συνοπτικά στοιχεία φορέων
-  implementation_bodies: φορείς
-  no_implementation_bodies_exist: δεν υπάρχουν φορείς
-  new_organisation: νέος φορέας
-  organisation_details: προβολή στοιχείων φορέα
-  organisation_created: ο νέος φορέας καταχωρήθηκε επιτυχώς
-
-  organisation:
-    code: κωδικός
-    name: ονομασία
-    address: ταχυδρομική διεύθυνση
-    phone: τηλέφωνο
-    fax: φαξ
-    email: email
-    department_name: υπηρεσία
-    department: υπηρεσία
-    contact_person: υπεύθυνος για πληροφορίες
-    is_this_my_organisation: οικείος φορέας
-    comments: παρατηρήσεις
-
-#----------------------------projects ----------------------
-  projects_index: συνοπτικά στοιχεία έργων
-  projects: έργα
-  project: έργο
-  relative_project: σχετιζόμενο έργο
-  show_project: αναλυτικά στοιχεία έργου
-  edit_project: τροποποίηση στοιχείων έργου
-  project_created: το έργο δημιουργήθηκε επιτυχώς
-  project_updated: τα στοιχεία έργου ενημερώθηκαν επιτυχώς
-  new_project: νέο έργο
-  project_deleted: τα στοιχεία του έργου διαγράφηκαν επιτυχώς
-  project_info: στοιχεία έργου
-  project_details: στοιχεία έργου
-  no_projects_exist: δεν υπάρχουν έργα
-
-  project:
-    project: έργο
-    title: τίτλος (4)
-    ppi_code: ΚΑΕ (3)
-    collective_decision: συλλογική απόφαση (1)
-    budget: προϋπολογισμός (5)
-    credit: εγκεκριμένη πίστωση (6)
-    implementation_body: φορέας υλοποίησης
-    implementation_body_department: υπηρεσία υλοποίησης
-    user: χειριστής
-    credit_date: ημερομηνία έγκρισης πίστωσης (7)
-    credit_protocol: πρωτόκολο έγκρισης πίστωσης
-    credit_full_protocol: πρωτόκολο έγκρισης πίστωσης
-    credit_tun: ΑΔΑ έγκρισης πίστωσης
-    total_allocation: συνολικό ποσό κατανομής (8)
-    credit_limit: όριο πίστωσης φορέα (2)
-    credit_balance: υπολοιπόμενη πίστωση (13)
-    iban: ΙΒΑΝ
-    iis_code: κωδικός ΟΠΣ
-    prefecture: νομός
-    total_due: απλήρωτες υποχρεώσεις
-    due_30: 1-30 ημερών
-    due_60: 30-60 ημερών
-    due_90: 60-90 ημερών
-    due_90_plus: '> 90 ημερών'
-    comments: παρατηρήσεις
-
-#----------------- invoices --------------------
-  invoices_index: συνοπτικά στοιχεία τιμολογίων
-  invoices: τιμολόγια
-  invoice: τιμολόγιο
-  relative_invoice: σχετιζόμενο τιμολόγιο
-  show_invoice: αναλυτικά στοιχεία τιμολογίου
-  edit_invoice: τροποποίηση στοιχείων τιμολογίου
-  invoice_created: το τιμολόγιο δημιουργήθηκε επιτυχώς
-  invoice_updated: τα στοιχεία τιμολογίου ενημερώθηκαν επιτυχώς
-  new_invoice: νέο τιμολόγιο
-  invoice_deleted: τα στοιχεία του τιμολογίου διαγράφηκαν επιτυχώς
-  invoice_info: στοιχεία τιμολογίου
-  invoice_details: στοιχεία τιμολογίου
-  no_invoices_exist: δεν υπάρχουν τιμολόγια
-
-  invoice:
-    invoice: τιμολόγιο
-    related_project: σχετιζόμενο έργο
-    ppi_code: ΚΑΕ σχετιζόμενου έργου
-    related_certificate: σχετιζόμενη πιστοποίηση υποχρέωσης
-    date: ημερομηνία τιμολογίου(16)
-    i_number: α/α τιμολογίου (14)
-    contractor_tin: ΑΦΜ εκδότη τιμολογίου (17)
-    description: περιγραφή εργασιών (15)
-    payoff_deadline: υποχρέωση εξόφλησης έως (25)
-    contractor_name: επωνυμία εκδότη τιμολογίου
-    full_contractor: ΑΦΜ - επωνυμία αναδόχου
-    comments: σχόλια
-    amount: ποσό τιμολογίου (18)
-    total_invoice_due: απλήρωτες υποχρεώσεις (24)
-    due_30: 1-30 ημερών
-    due_60: 30-60 ημερών
-    due_90: 60-90 ημερών
-    due_90_plus: '> 90 ημερών'
-    comments: παρατηρήσεις
-
-#------------------- paychecks ----------------------
-  paychecks_index: συνοπτικά στοιχεία παραστατικών πληρωμής
-  paychecks: παραστατικά πληρωμής
-  paycheck: παραστατικό πληρωμής
-  relative_paycheck: σχετιζόμενο παραστατικό πληρωμής
-  show_paycheck: αναλυτικά στοιχεία παραστατικού πληρωμής
-  edit_paycheck: τροποποίηση στοιχείων παραστατικού πληρωμής
-  paycheck_created: το παραστατικό πληρωμής δημιουργήθηκε επιτυχώς
-  paycheck_updated: τα στοιχεία παραστατικού πληρωμής ενημερώθηκαν επιτυχώς
-  new_paycheck: νέο παραστατικό πληρωμής
-  paycheck_deleted: τα στοιχεία του παραστατικού πληρωμής διαγράφηκαν επιτυχώς
-  paycheck_info: στοιχεία παραστατικού πληρωμής
-  paycheck_details: στοιχεία παραστατικού πληρωμής
-  no_paychecks_exist: δεν υπάρχουν παραστατικά πληρωμής
-
-
-  paycheck:
-    paycheck: παραστατικό πληρωμής (22)
-    project: σχετιζόμενο έργο
-    ppi_code: ΚΑΕ σχετιζόμενου έργου
-    invoice: σχετιζόμενο τιμολόγιο
-    contractor_name: ονομασία αναδόχου
-    invoice_amount: ποσό τιμολογίου
-    p_number: α/α παραστατικού (19)
-    amount: ποσό (20)
-    payoff_date: ημερομηνία εξόφλησης (21)
-    kind: είδος παραστατικού (22)
-    note: 'Σημείωση:'
-    comments: παρατηρήσεις
-    note_body: Σε περίπτωση που ένα παραστατικό εξωφλεί πολλά τιμολόγια μαζί, στο πεδίο ποσό (20) δεν τοποθετούμε το συνολικό ποσό του παραστατικού πληρωμής, αλλά το ΕΠΙΜΕΡΟΥΣ ποσό που αναλογεί στην εξώφληση του ΣΥΓΚΕΚΡΙΜΕΝΟΥ τιμολογίου. Σε μία τέτοια περίπτωση σημειώνουμε το συνολικό ποσό της επιταγής στις παρατηρήσεις!
-    certificate: πιστοποίηση υποχρέωσης
-    invoice: τιμολόγιο
-
-#---------------------- certificates------------------
-  certificates_index: συνοπτικά στοιχεία πιστοποιήσεων υποχρέωσης
-  certificates: πιστοποιήσεις υποχρέωσης
-  certificate: πιστοποίηση υποχρέωσης
-  relative_certificate: σχετιζόμενη πιστοποίηση υποχρέωσης
-  show_certificate: αναλυτικά στοιχεία πιστοποίησης υποχρέωσης
-  edit_certificate: τροποποίηση στοιχείων πιστοποίησης υποχρέωσης
-  certificate_created: η πιστοποίηση υποχρέωσης δημιουργήθηκε επιτυχώς
-  certificate_updated: τα στοιχεία πιστοποίησης υποχρέωσης ενημερώθηκαν επιτυχώς
-  new_certificate: νέα πιστοποίηση υποχρέωσης
-  certificate_deleted: τα στοιχεία πιστοποίησης υποχρέωσης διαγράφηκαν επιτυχώς
-  certificate_info: στοιχεία πιστοποίησης υποχρέωσης
-  certificate_details: στοιχεία πιστοποίησης υποχρέωσης
-  no_certificates_exist: δεν υπάρχουν πιστοποιήσεις υποχρέωσης
-
-  certificate:
-    certificate: πιστοποίηση υποχρέωσης
-    related_project: σχετιζόμενο έργο
-    ppi_code: ΚΑΕ σχετιζόμενου έργου
-    full_protocol: αριθμός πρωτοκόλλου (9)
-    protocol: αριθμός πρωτοκόλλου (9)
-    date: ημερομηνία (10)
-    title: τίτλος (11)
-    amount: ποσό (12)
-    pending_undertakings: εκκρεμείς δεσμεύσεις (23)
-    total_due: απλήρωτες υποχρεώσεις
-    due_30: 1-30 ημερών
-    due_60: 30-60 ημερών
-    due_90: 60-90 ημερών
-    due_90_plus: '> 90 ημερών'
-    comments: σχόλια
 
 
 
-#---------------- acts ---------------
-  act_id: δράση
-  act: δράση
-  act_deleted: η δράση διεγράφη
-  act_updated: τα στοιχεία της δράση τροποποιήθηκαν επιτυχώς
-  edit_act: τροποποίηση στοιχείων δράση
-  acts: δράσεις
-  acts_index: συνοπτικά στοιχεία δράσεων
-  no_acts_exist: δεν υπάρχουν δράσεις
-  new_act: νέα δράση
-  act_created: η νέα δράση καταχωρήθηκε επιτυχώς
-  act_details: προβολή στοιχείων δράσης
 
-  act:
-    code: κωδικός
-    description: περιγραφή
-    act_plan_id: σχετιζόμενο σχέδιο δράσης
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #---------------------- misc ----------------------
 #rails g kaminari:views default      rails g kaminari:config     config/initializers/kaminari_config.rb
@@ -695,6 +724,30 @@ gr:
               blank: "καταχωρήστε email"
               too_short: "η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι πολύ μικρή"
               invalid: "συμπληρώστε έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -899,37 +952,3 @@ gr:
       long: ! '%A %d %B %Y %H:%M:%S %Z'
       short: ! '%d %b %H:%M'
     pm: μ.μ.
-
-
-
-
-#--------------------- implementation_body --------------------------
-  #
-  # implementation_body: φορέας υλοποίησης
-  # implementation_body_id: φορέας υλοποίησης
-  # implementation_body_deleted: τα στοιχεία του φορέα υλοποίησης διαγράφηκαν
-  # implementation_body_updated: τα στοιχεία του φορέα υλοποίησης τροποποιήθηκαν επιτυχώς
-  # edit_implementation_body: τροποποίηση στοιχείων φορέα υλοποίησης
-  # implementation_bodies_index: συνοπτικά στοιχεία φορέων υλοποίησης
-  # implementation_bodies: φορείς υλοποίησης
-  # no_implementation_bodies_exist: δεν υπάρχουν φορείς υλοποίησης
-  # new_implementation_body: νέος φορέας υλοποίησης
-  # implementation_body_details: προβολή στοιχείων φορέα υλοποίησης
-  # implementation_body_created: ο νέος φορέας υλοποίησης καταχωρήθηκε επιτυχώς
-  #
-  # implementation_body:
-  #   central_body_name: ονομασία κεντρικού φορέα
-  #   central_body_code: κωδικός κεντρικού φορέα
-  #   central_body: κεντρικός φορέας
-  #   special_body_name: ονομασία ειδικού φορέα
-  #   special_body_code: κωδικός ειδικού φορέα
-  #   special_body: ειδικός φορέας
-  #   department_name: υπηρεσία
-  #   department: υπηρεσία
-  #   tin: ΑΦΜ υπηρεσίας
-  #   tax_office: ΔΟΥ υπηρεσίας
-  #   address: ταχυδρομική διεύθυνση
-  #   phone: τηλέφωνο υπηρεσίας
-  #   fax: φαξ υπηρεσίας
-  #   email: email υπηρεσίας
-  #   comments: παρατηρήσεις
