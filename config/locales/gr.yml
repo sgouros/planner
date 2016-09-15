@@ -45,7 +45,7 @@ gr:
 #------------------------act_plans---------------------------
   act_plan: σχέδιο δράσης
   act_plans: σχέδια δράσης
-  act_plans_index: συνοπτικά στοιχεία σχεδίων δράσης
+  act_plans_index: σχέδια δράσης
   new_act_plan: νέο σχέδιο δράσης
   edit_act_plan: τροποποίηση στοιχείων σχεδίου δράσης
   show_act_plan: αναλυτικά στοιχεία σχεδίου δράσης
@@ -63,7 +63,7 @@ gr:
 #------------------------acts---------------------------
   act: δράση
   acts: δράσεις
-  acts_index: συνοπτικά στοιχεία δράσης
+  acts_index: δράσεις
   new_act: νέα δράσης
   edit_act: τροποποίηση στοιχείων δράσης
   show_act: αναλυτικά στοιχεία δράσης
@@ -80,7 +80,7 @@ gr:
 #------------------------allocations---------------------------
   allocation: κατανομή
   allocations: κατανομές
-  allocations_index: συνοπτικά στοιχεία κατανομής
+  allocations_index: κατανομές
   new_allocation: νέα κατανομή
   edit_allocation: τροποποίηση στοιχείων κατανομής
   show_allocation: αναλυτικά στοιχεία κατανομής
@@ -98,7 +98,7 @@ gr:
 #------------------------axes---------------------------
   axis: άξωνας
   axes: άξωνες
-  axes_index: συνοπτικά στοιχεία άξωνα
+  axes_index: άξωνες
   new_axis: νέος άξωνας
   edit_axis: τροποποίηση στοιχείων άξωνα
   show_axis: αναλυτικά στοιχεία άξωνα
@@ -116,7 +116,7 @@ gr:
 #------------------------collective_decision_updates---------------------------
   collective_decision_update: τροποποίηση συλλογικής απόφασης
   collective_decision_updates: τροποποιήσεις συλλογικής απόφασης
-  collective_decision_updates_index: συνοπτικά στοιχεία τροποποίησης συλλογικής απόφασης
+  collective_decision_updates_index: τροποποιήσεις συλλογικής απόφασης
   new_collective_decision_update: νέα τροποποίηση συλλογικής απόφασης
   edit_collective_decision_update: επεξεργασία τροποποίησης συλλογικής απόφασης
   show_collective_decision_update: αναλυτικά στοιχεία τροποποίησης συλλογικής απόφασης
@@ -154,7 +154,7 @@ gr:
 #------------------------contract_updates---------------------------
   contract_update: τροποποίηση σύμβασης
   contract_updates: τροποποιήσεις σύμβασης
-  contract_updates_index: συνοπτικά στοιχεία τροποποίησης σύμβασης
+  contract_updates_index: τροποποιήσεις σύμβασης
   new_contract_update: νέα τροποποίηση σύμβασης
   edit_contract_update: επεξεργασία τροποποίησης σύμβασης
   show_contract_update: αναλυτικά στοιχεία τροποποίησης σύμβασης
@@ -171,16 +171,16 @@ gr:
     contract_id: σχετιζόμενη σύμβαση
 
 #------------------------contractors---------------------------
-  contractor: εργολήπτης
-  contractors: εργολήπτες
-  contractors_index: συνοπτικά στοιχεία εργολήπτη
-  new_contractor: νέος εργολήπτης
-  edit_contractor: τροποποίηση στοιχείων εργολήπτη
-  show_contractor: αναλυτικά στοιχεία εργολήπτη
-  contractor_created: ο εργολήπτης δημιουργήθηκε επιτυχώς
-  contractor_updated: τα στοιχεία του εργολήπτη ενημερώθηκαν επιτυχώς
-  contractor_deleted: τα στοιχεία του εργολήπτη διαγράφηκαν επιτυχώς
-  no_contractors_exist: δεν υπάρχουν εργολήπτες
+  contractor: ανάδοχος
+  contractors: ανάδοχοι
+  contractors_index: συνοπτικά στοιχεία αναδόχων
+  new_contractor: νέος ανάδοχος
+  edit_contractor: τροποποίηση στοιχείων αναδόχου
+  show_contractor: αναλυτικά στοιχεία αναδόχου
+  contractor_created: ο ανάδοχος δημιουργήθηκε επιτυχώς
+  contractor_updated: τα στοιχεία του αναδόχου ενημερώθηκαν επιτυχώς
+  contractor_deleted: τα στοιχεία του αναδόχου διαγράφηκαν επιτυχώς
+  no_contractors_exist: δεν υπάρχουν ανάδοχοι
 
   contractor:
     name: πρωτόκολλο
@@ -196,7 +196,7 @@ gr:
 #------------------------contracts---------------------------
   contract: σύμβαση
   contracts: συμβάσεις
-  contracts_index: συνοπτικά στοιχεία σύμβασης
+  contracts_index: συνοπτικά στοιχεία συμβάσεων
   new_contract: νέα σύμβαση
   edit_contract: τροποποίηση στοιχείων σύμβασης
   show_contract: αναλυτικά στοιχεία σύμβασης
@@ -210,6 +210,79 @@ gr:
     start_date: ημερομηνία
     contractor_id: εργολήπτης
     contract_parent_id: έργο ή υποέργο το οποίο αφορά
+
+#------------------------expence_forecasts---------------------------
+  expence_forecast: εκτίμηση μελλοντικών δαπανών
+  expence_forecasts: εκτιμήσεις μελλοντικών δαπανών
+  expence_forecasts_index: εκτιμήσεις μελλοντικών δαπανών
+  new_expence_forecast: νέα εκτίμηση μελλοντικών δαπανών
+  edit_expence_forecast: τροποποίηση εκτίμησης μελλοντικών δαπανών
+  show_expence_forecast: αναλυτικά στοιχεία εκτίμησης μελλοντικών δαπανών
+  expence_forecast_created: η εκτίμηση μελλοντικών δαπανών δημιουργήθηκε επιτυχώς
+  expence_forecast_updated: η εκτίμηση μελλοντικών δαπανών ενημερώθηκε επιτυχώς
+  expence_forecast_deleted: η εκτίμηση μελλοντικών δαπανών διεγράφη επιτυχώς
+  no_expence_forecasts_exist: δεν υπάρχουν εκτιμήσεις μελλοντικών δαπανών
+
+  expence_forecast:
+    january_cents: ποσό Ιανουαρίου
+    february_cents: ποσό Φεβρουαρίου
+    march_cents: ποσό Μαρτίου
+    april_cents: ποσό Απριλίου
+    may_cents: ποσό Μαίου
+    june_cents: ποσό Ιουνίου
+    july_cents: ποσό Ιουλίου
+    august_cents: ποσό Αυγούστου
+    september_cents: ποσό Σεπτεμβρίου
+    october_cents: ποσό Οκτωβρίου
+    november_cents: ποσό Νοεμβρίου
+    december_cents: ποσό Δεκεμβρίου
+    next_year_cents: ποσό +1 έτους
+    next_two_years_cents: ποσό +2 ετών
+    next_three_years_cents: ποσό +3 ετών
+    next_four_years_cents: ποσό +4 ετών
+    next_five_years_cents: ποσό +5 ετών
+    subproject_id: υποέργο
+
+#------------------------invoices---------------------------
+  invoice: τιμολόγιο
+  invoices: τιμολόγια
+  invoices_index: συνοπτικά στοιχεία τιμολογίων
+  new_invoice: νέο τιμολόγιο
+  edit_invoice: τροποποίηση στοιχείων τιμολογίου
+  show_invoice: αναλυτικά στοιχεία τιμολογίου
+  invoice_created: το τιμολόγιο δημιουργήθηκε επιτυχώς
+  invoice_updated: το τιμολόγιο ενημερώθηκε επιτυχώς
+  invoice_deleted: το τιμολόγιο διεγράφη επιτυχώς
+  no_invoices_exist: δεν υπάρχουν τιμολόγια
+
+  invoice:
+    code: αριθμός
+    description: περιγραφή
+    date_of_issue: ημερομηνία
+    contractor_fiscal_code: ΑΦΜ αναδόχου
+    contractor_name: Επωνυμία αναδόχου
+    amount_cents: ποσό
+    payoff_deadline: ημερομηνία υποχρέωσης εξώφλησης
+    undertaking_certificate_id: πιστοποίηση υποχρέωσης
+
+#------------------------measures---------------------------
+  measure: μέτρο
+  measures: μέτρα
+  measures_index: συνοπτικά στοιχεία μέτρων
+  new_measure: νέο μέτρο
+  edit_measure: τροποποίηση στοιχείων μέτρου
+  show_measure: αναλυτικά στοιχεία μέτρου
+  measure_created: το μέτρο δημιουργήθηκε επιτυχώς
+  measure_updated: το μέτρο ενημερώθηκε επιτυχώς
+  measure_deleted: το μέτρο διεγράφη επιτυχώς
+  no_measures_exist: δεν υπάρχουν μέτρα
+
+  measure:
+    code: κωδικός
+    description: περιγραφή
+    axis_id: άξωνας
+
+
 
 #------------------------users---------------------------
   users_index: συνοπτικά στοιχεία χειριστών
