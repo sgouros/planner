@@ -1,6 +1,9 @@
 gr:
   planner: Planner
   planner_description: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
+  show: προβολή
+  edit: επεξεργασία
+  delete: διαγραφή
   # edit_password: αλλαγή συνθηματικού
   # login: σύνδεση
   # logout: αποσύνδεση

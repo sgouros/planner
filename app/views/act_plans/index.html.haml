@@ -1,20 +1,21 @@
 %p#notice= notice
-%h1 Act Plans
-%table
-  %thead
-    %tr
-      %th Code
-      %th Description
-      %th Target
-      %th{:colspan => "3"}
-  %tbody
-    - @act_plans.each do |act_plan|
+%h2.sub-header= t('act_plans')
+
+.table-responsive
+  %table.table.table-striped
+    %thead
       %tr
-        %td= act_plan.code
-        %td= act_plan.description
-        %td= act_plan.target_id
-        %td= link_to 'Show', act_plan
-        %td= link_to 'Edit', edit_act_plan_path(act_plan)
-        %td= link_to 'Destroy', act_plan, method: :delete, data: { confirm: 'Are you sure?' }
+        %th= t('act_plan.code')
+        %th= t('act_plan.description')
+        %th= t('act_plan.target_id')
+    %tbody
+      - @act_plans.each do |act_plan|
+        %tr
+          %td= act_plan.code
+          %td= act_plan.description
+          %td= act_plan.target_id
+          %td= link_to t(:show), act_plan
+          %td= link_to t(:edit), edit_act_plan_path(act_plan)
+          %td= link_to t(:delete), act_plan, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Act Plan', new_act_plan_path
+= link_to t(:new_act_plan), new_act_plan_path
