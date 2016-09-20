@@ -8,6 +8,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %p.notice= notice
+    %p.alert= alert
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
@@ -16,69 +18,39 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Planner
+          %a.navbar-brand{:href => "#"}= t(:planner)
         #navbar.navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#"} Dashboard
-            %li
-              %a{:href => "#"} Settings
-            %li
-              %a{:href => "#"} Profile
-            %li
-              %a{:href => "#"} Help
+            %li= link_to t(:my_user_info)
+            %li= link_to t(:logout)
           %form.navbar-form.navbar-right
-            %input.form-control{:placeholder => "Search...", :type => "text"}/
+            %input.form-control{:placeholder => t(:search_placeholder), :type => "text"}/
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
           %ul.nav.nav-sidebar
-            %li.active
-              %a{:href => "#"}
-                Overview
-                %span.sr-only (current)
-            %li
-              = link_to "act_plans", act_plans_path
-            %li
-              = link_to "acts", acts_path
-            %li
-              = link_to "allocations", allocations_path
-            %li
-              = link_to "axes", axes_path
-            %li
-              = link_to "collective_decision_updates", collective_decision_updates_path
-            %li
-              = link_to "collective_decisions", collective_decisions_path
-            %li
-              = link_to "contract_updates", contract_updates_path
-            %li
-              = link_to "contractors", contractors_path
-            %li
-              = link_to "contracts", contracts_path
-            %li
-              = link_to "expence_forecasts", expence_forecasts_path
-            %li
-              = link_to "invoices", invoices_path
-            %li
-              = link_to "measures", measures_path
-            %li
-              = link_to "organisations", organisations_path
-            %li
-              = link_to "payments", payments_path
-            %li
-              = link_to "projects", projects_path
-            %li
-              = link_to "schedule_actions", schedule_actions_path
-            %li
-              = link_to "schedules", schedules_path
-            %li
-              = link_to "subprojects", subprojects_path
-            %li
-              = link_to "targets", targets_path
-            %li
-              = link_to "undertaking_certificates", undertaking_certificates_path
-            %li
-              = link_to "users", users_path
+
+            %li.active= link_to t(:act_plans),            act_plans_path
+            %li= link_to t(:acts),                        acts_path
+            %li= link_to t(:allocations),                 allocations_path
+            %li= link_to t(:axes),                        axes_path
+            %li= link_to t(:collective_decision_updates), collective_decision_updates_path
+            %li= link_to t(:collective_decisions),        collective_decisions_path
+            %li= link_to t(:contract_updates),            contract_updates_path
+            %li= link_to t(:contractors),                 contractors_path
+            %li= link_to t(:contracts),                   contracts_path
+            %li= link_to t(:expence_forecasts),           expence_forecasts_path
+            %li= link_to t(:invoices),                    invoices_path
+            %li= link_to t(:measures),                    measures_path
+            %li= link_to t(:organisations),               organisations_path
+            %li= link_to t(:payments),                    payments_path
+            %li= link_to t(:projects),                    projects_path
+            %li= link_to t(:schedule_actions),            schedule_actions_path
+            %li= link_to t(:schedules),                   schedules_path
+            %li= link_to t(:subprojects),                 subprojects_path
+            %li= link_to t(:targets),                     targets_path
+            %li= link_to t(:undertaking_certificates),    undertaking_certificates_path
+            %li= link_to t(:users),                       users_path
 
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
           = yield
@@ -136,5 +108,4 @@
 
   %footer.footer
     .container-fluid
-      %p.text-muted
-        = t(:copyright)
+      %p.text-muted= t(:copyright)

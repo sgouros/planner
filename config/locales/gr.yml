@@ -1,20 +1,20 @@
 gr:
   planner: Planner
   planner_description: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
-  planner_full_title: Planner: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
+  planner_full_title: 'Planner: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ'
   show: προβολή
   edit: επεξεργασία
   delete: διαγραφή
-  copyright: Planner: Copyright Περιφέρεια Ανατολικής Μακεδονίας και Θράκης
-  # edit_password: αλλαγή συνθηματικού
-  # login: σύνδεση
-  # logout: αποσύνδεση
-  # welcome: καλώς ορίσατε!
-  # please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
-  # logged_in: καλώς ορίσατε!
-  # invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
-  # logged_out: αποσυνδεθήκατε επιτυχώς
-  # access_denied: απαγορεύεται η πρόσβαση
+  copyright: 'Planner: Copyright Περιφέρεια Ανατολικής Μακεδονίας και Θράκης'
+  edit_password: αλλαγή συνθηματικού
+  login: σύνδεση
+  logout: αποσύνδεση
+  welcome: καλώς ορίσατε!
+  please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
+  logged_in: καλώς ορίσατε!
+  invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
+  logged_out: αποσυνδεθήκατε επιτυχώς
+  access_denied: απαγορεύεται η πρόσβαση
   # current_user: χειριστής
   # cu: χειριστής
   # administrator: διαχειριστής
@@ -536,6 +536,7 @@ gr:
 # ------------------- search ------------------------
   search_results: αποτελέσματα αναζήτησης
   search: αναζήτηση
+  search_placeholder: αναζήτηση...
   no_search_results: δεν βρέθηκαν αποτελέσματα από την αναζήτησή σας
 
 

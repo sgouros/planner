@@ -139,15 +139,15 @@ end
 # ---------------- users ----------------
 FactoryGirl.define do
   factory :user do
-      email {Faker::Internet.email}
+    admin true
   end
 end
 
-@user1 = FactoryGirl.create(:user,organisation:@organisation1,name:'Γιώργος',surname: 'Σγούρος'    ,normalized_name:'ΓΙΩΡΓΟΣ',normalized_surname:'ΣΓΟΥΡΟΣ'    ,manager:true ,admin:true)
-@user2 = FactoryGirl.create(:user,organisation:@organisation1,name:'Νατάσα' ,surname: 'Λαμπρινίδου',normalized_name:'ΝΑΤΑΣΑ' ,normalized_surname:'ΛΑΜΠΡΙΝΙΔΟΥ',manager:false,admin:false)
-@user3 = FactoryGirl.create(:user,organisation:@organisation1,name:'Θανάσης',surname: 'Ναλμπάντης' ,normalized_name:'ΘΑΝΑΣΗΣ',normalized_surname:'ΝΑΛΜΠΑΝΤΗΣ' ,manager:false,admin:false)
-@user4 = FactoryGirl.create(:user,organisation:@organisation1,name:'Μαρίνα' ,surname: 'Κούρου'     ,normalized_name:'ΜΑΡΙΝΑ' ,normalized_surname:'ΚΟΥΡΟΥ'     ,manager:false,admin:false)
-@user5 = FactoryGirl.create(:user,organisation:@organisation1,name:'Χρύσα'  ,surname: 'Γκουντέλα'  ,normalized_name:'ΧΡΥΣΑ'  ,normalized_surname:'ΓΚΟΥΝΤΕΛΑ'  ,manager:false,admin:false)
+@user1 = FactoryGirl.create(:user,password:'123456',password_confirmation:'123456',email:'sgouros@pamth.gov.gr',    organisation:@organisation1,name:'Γιώργος',surname: 'Σγούρος'    ,normalized_name:'ΓΙΩΡΓΟΣ',normalized_surname:'ΣΓΟΥΡΟΣ'    ,manager:true ,admin:true)
+@user2 = FactoryGirl.create(:user,password:'123456',password_confirmation:'123456',email:'lamprinidou@pamth.gov.gr',organisation:@organisation1,name:'Νατάσα' ,surname: 'Λαμπρινίδου',normalized_name:'ΝΑΤΑΣΑ' ,normalized_surname:'ΛΑΜΠΡΙΝΙΔΟΥ',manager:false,admin:false)
+@user3 = FactoryGirl.create(:user,password:'123456',password_confirmation:'123456',email:'nalmpantis@pamth.gov.gr', organisation:@organisation1,name:'Θανάσης',surname: 'Ναλμπάντης' ,normalized_name:'ΘΑΝΑΣΗΣ',normalized_surname:'ΝΑΛΜΠΑΝΤΗΣ' ,manager:false,admin:false)
+@user4 = FactoryGirl.create(:user,password:'123456',password_confirmation:'123456',email:'kourou@pamth.gov.gr',     organisation:@organisation1,name:'Μαρίνα' ,surname: 'Κούρου'     ,normalized_name:'ΜΑΡΙΝΑ' ,normalized_surname:'ΚΟΥΡΟΥ'     ,manager:false,admin:false)
+@user5 = FactoryGirl.create(:user,password:'123456',password_confirmation:'123456',email:'goudela@pamth.gov.gr',    organisation:@organisation1,name:'Χρύσα'  ,surname: 'Γκουντέλα'  ,normalized_name:'ΧΡΥΣΑ'  ,normalized_surname:'ΓΚΟΥΝΤΕΛΑ'  ,manager:false,admin:false)
 
 
 # ---------------- projects ----------------
