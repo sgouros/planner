@@ -1,9 +1,11 @@
 gr:
   planner: Planner
   planner_description: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
+  planner_full_title: Planner: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ
   show: προβολή
   edit: επεξεργασία
   delete: διαγραφή
+  copyright: Planner: Copyright Περιφέρεια Ανατολικής Μακεδονίας και Θράκης
   # edit_password: αλλαγή συνθηματικού
   # login: σύνδεση
   # logout: αποσύνδεση
