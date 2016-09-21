@@ -8,8 +8,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
+
+
+
+
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
@@ -18,42 +20,55 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"}= t(:planner)
+          %a.navbar-brand{:href => "#"}= t(:planner_full_title)
         #navbar.navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to t(:my_user_info)
-            %li= link_to t(:logout)
-          %form.navbar-form.navbar-right
-            %input.form-control{:placeholder => t(:search_placeholder), :type => "text"}/
-    .container-fluid
-      .row
-        .col-sm-3.col-md-2.sidebar
-          %ul.nav.nav-sidebar
+            %li= link_to t(:my_user_info) if user_signed_in?
+            %li= link_to t(:logout) + " " + current_user.email, destroy_user_session_path, method: :delete if user_signed_in?
+          = if user_signed_in?
+            %form.navbar-form.navbar-right
+              = form_tag users_path, :method=>'post' do
+                = text_field_tag  :search, params[:search], :id => 'search_field', :class=>"sidebarinput"
 
-            %li.active= link_to t(:act_plans),            act_plans_path
-            %li= link_to t(:acts),                        acts_path
-            %li= link_to t(:allocations),                 allocations_path
-            %li= link_to t(:axes),                        axes_path
-            %li= link_to t(:collective_decision_updates), collective_decision_updates_path
-            %li= link_to t(:collective_decisions),        collective_decisions_path
-            %li= link_to t(:contract_updates),            contract_updates_path
-            %li= link_to t(:contractors),                 contractors_path
-            %li= link_to t(:contracts),                   contracts_path
-            %li= link_to t(:expence_forecasts),           expence_forecasts_path
-            %li= link_to t(:invoices),                    invoices_path
-            %li= link_to t(:measures),                    measures_path
-            %li= link_to t(:organisations),               organisations_path
-            %li= link_to t(:payments),                    payments_path
-            %li= link_to t(:projects),                    projects_path
-            %li= link_to t(:schedule_actions),            schedule_actions_path
-            %li= link_to t(:schedules),                   schedules_path
-            %li= link_to t(:subprojects),                 subprojects_path
-            %li= link_to t(:targets),                     targets_path
-            %li= link_to t(:undertaking_certificates),    undertaking_certificates_path
-            %li= link_to t(:users),                       users_path
+            -# %input.form-control{:placeholder => t(:search_placeholder), :type => "text"}/ if user_signed_in?
+    = if user_signed_in?
+      .container-fluid
 
-        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-          = yield
+        .row
+          .col-sm-3.col-md-2.sidebar
+            %ul.nav.nav-sidebar
+
+              %li= link_to_auto_active t(:act_plans),            act_plans_path
+              %li= link_to_auto_active t(:acts),                        acts_path
+              %li= link_to_auto_active t(:allocations),                 allocations_path
+              %li= link_to_auto_active t(:axes),                        axes_path
+              %li= link_to_auto_active t(:collective_decision_updates), collective_decision_updates_path
+              %li= link_to_auto_active t(:collective_decisions),        collective_decisions_path
+              %li= link_to_auto_active t(:contract_updates),            contract_updates_path
+              %li= link_to_auto_active t(:contractors),                 contractors_path
+              %li= link_to_auto_active t(:contracts),                   contracts_path
+              %li= link_to_auto_active t(:expence_forecasts),           expence_forecasts_path
+              %li= link_to_auto_active t(:invoices),                    invoices_path
+              %li= link_to_auto_active t(:measures),                    measures_path
+              %li= link_to_auto_active t(:organisations),               organisations_path
+              %li= link_to_auto_active t(:payments),                    payments_path
+              %li= link_to_auto_active t(:projects),                    projects_path
+              %li= link_to_auto_active t(:schedule_actions),            schedule_actions_path
+              %li= link_to_auto_active t(:schedules),                   schedules_path
+              %li= link_to_auto_active t(:subprojects),                 subprojects_path
+              %li= link_to_auto_active t(:targets),                     targets_path
+              %li= link_to_auto_active t(:undertaking_certificates),    undertaking_certificates_path
+              %li= link_to_auto_active t(:users),                       users_path
+
+    .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+      = content_tag(:p, notice, :class => 'notice') if notice.present?
+      = content_tag(:p, alert, :class => 'alert') if alert.present?
+      = yield
+
+    %footer.footer
+      .container-fluid
+        %p.text-muted= t(:copyright)
+
         -#   %h1.page-header Dashboard
         -#   .row.placeholders
         -#     .col-xs-6.col-sm-3.placeholder
@@ -105,7 +120,3 @@
 
 
             -# = yield
-
-  %footer.footer
-    .container-fluid
-      %p.text-muted= t(:copyright)

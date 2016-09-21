@@ -1,5 +1,7 @@
 class ActPlansController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
+
 
   # GET /act_plans
   # GET /act_plans.json
