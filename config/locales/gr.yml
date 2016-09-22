@@ -1,7 +1,7 @@
 gr:
   planner: Planner
   planner_description: 'ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ'
-  planner_full_title: 'Planner - ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ'
+  planner_full_title: 'Planner: ΟΠΣ προγραμματισμού και παρακολούθησης έργων Περιφέρειας ΑΜΘ'
   show: προβολή
   edit: επεξεργασία
   delete: διαγραφή
@@ -14,55 +14,58 @@ gr:
   logged_in: καλώς ορίσατε!
   invalid_login_password_combination: μη αποδεκτός συνδυασμός αναγνωριστικού/κωδικού
   logged_out: αποσυνδεθήκατε επιτυχώς
+  logout_confirmation: είστε σίγουρος/σίγουρη οτι θέλετε να αποσυνδεθείτε;
   access_denied: απαγορεύεται η πρόσβαση
-  # current_user: χειριστής
-  # cu: χειριστής
-  # administrator: διαχειριστής
-  # start_page: αρχική σελίδα
-  # or: ή
-  # to: προς
-  # options: επιλογές
-  # edit: τροποποίηση
-  # delete: διαγραφή
-  # show: προβολή
-  # submit: καταχώρηση
-  # back: επιστροφή
-  # are_you_sure: "είστε σίγουρος-η;"
-  # cancel: άκυρο
-  # other_data: λοιπά στοιχεία
-  # user_info: στοιχεία χειριστή
-  # no_user: χωρίς χειριστή
-  # confirm_delete: είστε σίγουρος/η οτι επιθυμείτε τη διαγραφή;
-  # details: λεπτομέρειες
-  # create: δημιουργία
-  # page_not_found: η σελίδα που ζητήσατε δεν υπάρχει
-  # admin_and_manager: διαχειριστής - συντονιστής
-  # date: ημερομηνία
-  # matrix: μητρώο δεσμεύσεων
-  # Matrix: Μητρώο Δεσμεύσεων
-  # current_user: χειριστής
-  # implementationbody: Φορέας
-  # email: ηλεκτρονικό ταχυδρομείο
-  # password: κωδικός
-  # print_footer: Planner
-  # manager: συντονιστής
+  current_user: χειριστής
+  cu: χειριστής
+  administrator: διαχειριστής
+  start_page: αρχική σελίδα
+  or: ή
+  to: προς
+  options: επιλογές
+  edit: τροποποίηση
+  delete: διαγραφή
+  show: προβολή
+  submit: καταχώρηση
+  back: επιστροφή
+  are_you_sure: "είστε σίγουρος-η;"
+  cancel: άκυρο
+  other_data: λοιπά στοιχεία
+  user_info: στοιχεία χειριστή
+  no_user: χωρίς χειριστή
+  confirm_delete: είστε σίγουρος/η οτι επιθυμείτε τη διαγραφή;
+  details: λεπτομέρειες
+  create: δημιουργία
+  page_not_found: η σελίδα που ζητήσατε δεν υπάρχει
+  admin_and_manager: διαχειριστής - συντονιστής
+  date: ημερομηνία
+  matrix: μητρώο δεσμεύσεων
+  Matrix: Μητρώο Δεσμεύσεων
+  current_user: χειριστής
+  implementationbody: Φορέας
+  email: ηλεκτρονικό ταχυδρομείο
+  password: κωδικός
+  print_footer: Planner
+  manager: συντονιστής
 
 #------------------------act_plans---------------------------
   act_plan: σχέδιο δράσης
   act_plans: σχέδια δράσης
   act_plans_index: σχέδια δράσης
-  new_act_plan: νέο σχέδιο δράσης
+  new_act_plan: + νέο σχέδιο δράσης
   edit_act_plan: τροποποίηση στοιχείων σχεδίου δράσης
   show_act_plan: αναλυτικά στοιχεία σχεδίου δράσης
   act_plan_created: το σχέδιο δράσης δημιουργήθηκε επιτυχώς
   act_plan_updated: τα στοιχεία του σχεδίου δράσης ενημερώθηκαν επιτυχώς
-  act_plan_deleted: τα στοιχεία του σχεδίου δράσης διαγράφηκαν επιτυχώς
+  act_plan_deleted: το σχέδιο δράσης διαγράφη επιτυχώς
   no_act_plans_exist: δεν υπάρχουν σχέδια δράσης
+  act_plan_delete_confirmation: είστε σίγουρος/σίγουρη οτι θέλετε να διαγράψετε το συγκεκριμένο σχέδιο δράσης;
 
   act_plan:
     code: κωδικός
     description: περιγραφή
     target_id: στόχος
+    target: στόχος
 
 
 #------------------------acts---------------------------

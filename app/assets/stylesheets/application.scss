@@ -25,6 +25,29 @@
    margin-bottom: 10px;
  }
 
+.navbar-form {
+  margin-top:12px;
+}
+
+
+
+a.tooltips.glyphicon-plus
+{
+  position: relative;
+  font-size: 40px;
+  top:8px;
+  text-decoration: none;
+}
+
+a.tooltips.glyphicon.glyphicon
+{
+  text-decoration: none;
+}
+
+ .table > thead > tr > th {
+   border-bottom: 1px solid #ddd
+ }
+
  .notice {
    color: #2EDB31;
   //  font-weight:bold;
