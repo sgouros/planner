@@ -48,12 +48,50 @@ gr:
   print_footer: Planner
   manager: συντονιστής
 
+
+  simple_form:
+    labels:
+      act_plan:
+        code: κωδικός
+        description: περιγραφή
+        target_id: στόχος
+      act:
+        code: κωδικός
+        description: περιγραφή
+        act_plan_id: σχέδιο δράσης
+
+
+    hints:
+      act_plan:
+        code: ο κωδικός του σχεδίου δράσης
+        description: σύντομη περιγραφή του σχεδίου δράσης
+        target_id: ο σχετιζόμενος στόχος
+        target: ο σχετιζόμενος στόχος
+
+    placeholders:
+      act_plan:
+        code: της μορφής xxx
+        description: σύντομη περιγραφή του σχεδίου δράσης
+        target_id: ο σχετιζόμενος στόχος
+        target: ο σχετιζόμενος στόχος
+
+    prompts:
+      act_plan:
+        target_id: Παρακαλώ επιλέξτε στόχο
+        target: Παρακαλώ επιλέξτε στόχο
+
+  helpers:
+    submit:
+      create: "δημιουργία %{model}"
+      update: "τροποποίηση %{model}"
+
+
 #------------------------act_plans---------------------------
   act_plan: σχέδιο δράσης
   act_plans: σχέδια δράσης
   act_plans_index: σχέδια δράσης
-  new_act_plan: + νέο σχέδιο δράσης
-  edit_act_plan: τροποποίηση στοιχείων σχεδίου δράσης
+  new_act_plan: προσθήκη σχεδίου δράσης
+  edit_act_plan: τροποποίηση σχεδίου δράσης
   show_act_plan: αναλυτικά στοιχεία σχεδίου δράσης
   act_plan_created: το σχέδιο δράσης δημιουργήθηκε επιτυχώς
   act_plan_updated: τα στοιχεία του σχεδίου δράσης ενημερώθηκαν επιτυχώς
@@ -68,11 +106,13 @@ gr:
     target: στόχος
 
 
+
+
 #------------------------acts---------------------------
   act: δράση
   acts: δράσεις
   acts_index: δράσεις
-  new_act: νέα δράσης
+  new_act: νέα δράση
   edit_act: τροποποίηση στοιχείων δράσης
   show_act: αναλυτικά στοιχεία δράσης
   act_created: η δράση δημιουργήθηκε επιτυχώς
@@ -84,6 +124,8 @@ gr:
     code: κωδικός
     description: περιγραφή
     act_plan_id: σχέδιο δράσης
+
+
 
 #------------------------allocations---------------------------
   allocation: κατανομή
@@ -762,6 +804,29 @@ gr:
 
 #------------------------------------------------------------------------------------------------------
   activerecord:
+    models:
+      act: δράσης
+      act_plan: σχεδίου δράσης
+      allocation: κατανομής
+      axis: άξωνα
+      collective_decision_update: τροποποίησης συλλογικής απόφασης
+      collective_decision: συλλογικής απόφασης
+      contract_update: τροποίησης σύμβασης
+      contractor: αναδόχου
+      contract: σύμβασης
+      expence_forecast: εκτίμησης μελλοντικών δαπανών
+      invoice: τιμολογίου
+      measure: μέτρου
+      organisation: φορέα
+      payment: πληρωμής
+      project: έργου
+      schedule_action: ενέργειας
+      schedule: χρονοδιαγράμματος
+      subproject: υποέργου
+      target: στόχου
+      undertaking_certificate: πιστοποίησης υποχρέωσης
+      user: χειριστή
+
     errors:
       messages:
         record_invalid: ! 'Η επικύρωση απέτυχε: %{errors}'
@@ -895,13 +960,12 @@ gr:
       header:
         one: 1 λάθος εμπόδισε αυτό το %{model} να αποθηκευτεί.
         other: ! '%{count} λάθη εμπόδισαν αυτό το %{model} να αποθηκευτεί.'
-  helpers:
-    select:
-      prompt: Παρακαλώ επιλέξτε
-    submit:
-      create: Δημιουργήστε %{model}
-      submit: Αποθηκεύστε %{model}
-      update: Ενημερώστε %{model}
+  # helpers:
+  #   select:
+  #     prompt: Παρακαλώ επιλέξτε
+
+
+
   number:
     currency:
       format:

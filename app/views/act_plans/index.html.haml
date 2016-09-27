@@ -3,11 +3,13 @@
 
 .table-responsive
   %table.table.table-striped
+  
     %thead
       %tr
         %th= t('act_plan.code')
         %th= t('act_plan.description')
         %th= t('act_plan.target')
+
     %tbody
       - @act_plans.each do |act_plan|
         %tr
@@ -16,4 +18,6 @@
           %td= link_to act_plan.target_code, target_path(act_plan.target_id), class: 'tooltips', title: act_plan.target_title
           %td= link_to "", edit_act_plan_path(act_plan), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
           %td= link_to "", act_plan, method: :delete, data: { confirm: t(:act_plan_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
+
+
 = link_to t(:new_act_plan), new_act_plan_path, class: "tooltips", title: t(:new_act_plan)

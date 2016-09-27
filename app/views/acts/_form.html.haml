@@ -1,23 +1,12 @@
-= form_for(act) do |f|
+= simple_form_for(act) do |f|
   - if act.errors.any?
     #error_explanation
-      %h2
-        = pluralize(act.errors.count, "error")
-        prohibited this act from being saved:
-      %ul
-        - act.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :code
-    = f.text_field :code
+      - act.errors.full_messages.each do |message|
+        .alert.alert-danger{:role => "alert"}
+          %span.glyphicon.glyphicon-exclamation-sign
+          =message
 
-  .field
-    = f.label :description
-    = f.text_area :description
-
-  .field
-    = f.label :act_plan_id
-    = f.number_field :act_plan_id
-
-  .actions
-    = f.submit
+  = f.input :code, disabled: is_disabled
+  = f.input :description, as: :text
+  = f.input :act_plan_id
+  = f.button :submit

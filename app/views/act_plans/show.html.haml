@@ -1,13 +1,9 @@
- 
-%p
-  %strong Code:
-  = @act_plan.code
-%p
-  %strong Description:
-  = @act_plan.description
-%p
-  %strong Target:
-  = @act_plan.target_id
-= link_to 'Edit', edit_act_plan_path(@act_plan)
-|
-= link_to 'Back', act_plans_path
+.page-header.h2= t(:show_act_plan)
+
+= simple_form_for(@act_plan) do |f|
+  = f.input :code, disabled: true
+  = f.input :description, as: :text, disabled: true
+  = f.input :target_id, disabled: true
+
+= link_to t(:back), act_plans_path
+= link_to t(:edit), edit_act_plan_path(@act_plan)

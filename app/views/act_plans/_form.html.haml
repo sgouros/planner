@@ -6,7 +6,7 @@
           %span.glyphicon.glyphicon-exclamation-sign
           =message
 
-  = f.input :code, label: t('act_plan.code')
-  = f.input :description, as: :text, label: t('act_plan.description')
-  = f.input :target_id, label: t('act_plan.target')
-  = f.button :submit, label: t('submit')
+  = f.input :code
+  = f.input :description, as: :text
+  = f.input :target_id
+  = f.button :submit
