@@ -48,6 +48,11 @@ gr:
   print_footer: Planner
   manager: συντονιστής
 
+  devise:
+    sessions:
+      user:
+        signed_in: καλώς ορίσατε στην εφαρμογή Planner!
+
 
   simple_form:
     labels:
@@ -104,8 +109,6 @@ gr:
     description: περιγραφή
     target_id: στόχος
     target: στόχος
-
-
 
 
 #------------------------acts---------------------------
