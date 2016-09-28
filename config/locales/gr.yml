@@ -67,6 +67,14 @@ gr:
         code: κωδικός
         description: περιγραφή
         act_plan_id: σχέδιο δράσης
+      user:
+        surname: επίθετο
+        name: όνομα
+        email: email
+        organisation_id: φορέας
+        phone: τηλέφωνο
+        admin: administrator
+        manager: συντονιστής
 
 
     hints:
@@ -580,9 +588,11 @@ gr:
     password_confirmation: επαλήθευση κωδικού
     manager: συντονιστής
     admin: διαχειριστής
-    organisation: φορέας στον οποίο ανήκει
+    organisation: φορέας
     full_name: ονοματεπώνυμο
     comments: παρατηρήσεις
+    sign_in_count: συνδέσεις
+    last_sign_in_at: τελευταία σύνδεση
 
 # ------------------- search ------------------------
   search_results: αποτελέσματα αναζήτησης

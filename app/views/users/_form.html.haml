@@ -1,35 +1,19 @@
-= form_for(user) do |f|
+= simple_form_for(user) do |f|
   - if user.errors.any?
     #error_explanation
-      %h2
-        = pluralize(user.errors.count, "error")
-        prohibited this user from being saved:
-      %ul
-        - user.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :surname
-    = f.text_field :surname
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :admin
-    = f.text_field :admin
-  .field
-    = f.label :organisation_id
-    = f.number_field :organisation_id
-  .field
-    = f.label :manager
-    = f.check_box :manager
-  .field
-    = f.label :normalized_name
-    = f.text_area :normalized_name
-  .field
-    = f.label :normalized_surname
-    = f.text_area :normalized_surname
-  .actions
-    = f.submit
+      - user.errors.full_messages.each do |message|
+        .alert.alert-danger{:role => "alert"}
+          %span.glyphicon.glyphicon-exclamation-sign
+          =message
+
+  = f.input :surname
+  = f.input :name
+  = f.input :email
+  = f.input :organisation_id
+  = f.input :phone
+  = f.input :admin
+  = f.input :manager
+
+
+  = f.button :submit, class:"btn btn-success"
+  = link_to t(:cancel), 'javascript:history.go(-1);', class:"btn btn-danger pull-right"

@@ -1,30 +1,30 @@
- 
-%h1 Users
-%table
-  %thead
-    %tr
-      %th Surname
-      %th Phone
-      %th Email
-      %th Admin
-      %th Organisation
-      %th Manager
-      %th Normalized name
-      %th Normalized surname
-      %th{:colspan => "3"}
-  %tbody
-    - @users.each do |user|
+%h2.sub-header= t(:users)
+.table-responsive
+  %table.table.table-striped
+    %thead
       %tr
-        %td= user.surname
-        %td= user.phone
-        %td= user.email
-        %td= user.admin
-        %td= user.organisation_id
-        %td= user.manager
-        %td= user.normalized_name
-        %td= user.normalized_surname
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New User', new_user_path
+        %th= t('user.surname')
+        %th= t('user.name')
+        %th= t('user.email')
+        %th= t('user.organisation')
+        %th= t('user.phone')
+        %th= t('user.admin')
+        %th= t('user.manager')
+        %th= t('user.sign_in_count')
+        %th= t('user.last_sign_in_at')
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= link_to user.surname, user
+          %td= user.name
+          %td= user.email
+          %td= link_to user.organisation_id, organisation_path(user.organisation_id), class: 'tooltips', title: user.organisation.name
+          %td= user.phone
+          %td= user.admin
+          %td= user.manager
+          %td= user.sign_in_count
+          %td= user.last_sign_in_at.to_formatted_s(:short) if user.last_sign_in_at
+          %td= link_to "", edit_user_path(user), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
+          %td= link_to "", user, method: :delete, data: { confirm: t(:user_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
+= link_to t(:new_user), new_user_path, class:"btn btn-primary"
