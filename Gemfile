@@ -21,6 +21,8 @@ gem 'jquery-rails'
 
 gem 'awesome_print'
 
+gem 'data-confirm-modal'
+
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

@@ -3,7 +3,7 @@
 
 .table-responsive
   %table.table.table-striped
-  
+
     %thead
       %tr
         %th= t('act_plan.code')
@@ -19,5 +19,4 @@
           %td= link_to "", edit_act_plan_path(act_plan), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
           %td= link_to "", act_plan, method: :delete, data: { confirm: t(:act_plan_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
 
-
-= link_to t(:new_act_plan), new_act_plan_path, class: "tooltips", title: t(:new_act_plan)
+= link_to t(:new_act_plan), new_act_plan_path, class:"btn btn-primary"

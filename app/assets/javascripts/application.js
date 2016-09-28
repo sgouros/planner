@@ -15,3 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require data-confirm-modal
+
+dataConfirmModal.setDefaults({
+  title: 'Confirm your action',
+  commit: 'επιβεβαίωση',
+  cancel: 'άκυρο',
+  commitClass: 'btn btn-success',
+  cancelClass: 'btn btn-danger',
+  });

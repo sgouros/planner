@@ -9,4 +9,5 @@
   = f.input :code
   = f.input :description, as: :text
   = f.input :target_id
-  = f.button :submit
+  = f.button :submit, class:"btn btn-success"
+  = link_to t(:cancel), 'javascript:history.go(-1);', class:"btn btn-danger pull-right"

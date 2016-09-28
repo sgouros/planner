@@ -5,5 +5,5 @@
   = f.input :description, as: :text, disabled: true
   = f.input :target_id, disabled: true
 
-= link_to t(:back), act_plans_path
-= link_to t(:edit), edit_act_plan_path(@act_plan)
+= link_to t(:edit), edit_act_plan_path(@act_plan), class:"btn btn-primary"
+= link_to t(:back), act_plans_path, class:"btn btn-danger pull-right"

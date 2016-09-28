@@ -52,6 +52,9 @@ gr:
     sessions:
       user:
         signed_in: καλώς ορίσατε στην εφαρμογή Planner!
+    failure:
+      user:
+        unauthenticated: παρακαλώ συνδεθείτε για να αποκτήσετε πρόσβαση στην εφαρμογή
 
 
   simple_form:
@@ -95,7 +98,7 @@ gr:
   act_plan: σχέδιο δράσης
   act_plans: σχέδια δράσης
   act_plans_index: σχέδια δράσης
-  new_act_plan: προσθήκη σχεδίου δράσης
+  new_act_plan: δημιουργία σχεδίου δράσης
   edit_act_plan: τροποποίηση σχεδίου δράσης
   show_act_plan: αναλυτικά στοιχεία σχεδίου δράσης
   act_plan_created: το σχέδιο δράσης δημιουργήθηκε επιτυχώς
