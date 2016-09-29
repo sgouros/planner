@@ -9,7 +9,7 @@
   = f.input :surname
   = f.input :name
   = f.input :email
-  = f.input :organisation_id
+  = f.input :organisation_id, as: :select, collection: @organisations_for_select_box, class: 'sel2'
   = f.input :phone
   = f.input :admin
   = f.input :manager
@@ -17,3 +17,5 @@
 
   = f.button :submit, class:"btn btn-success"
   = link_to t(:cancel), 'javascript:history.go(-1);', class:"btn btn-danger pull-right"
+http://stackoverflow.com/questions/15146269/how-do-i-use-select2-rails-with-simple-form
+https://github.com/plataformatec/simple_form

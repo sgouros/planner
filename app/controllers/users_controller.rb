@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    setup_organisations_for_select_box
   end
 
   # GET /users/1/edit
@@ -63,6 +64,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def setup_organisations_for_select_box
+      @organisations_for_select_box = Organisation.all.collect{|org| [org.name, org.id]}
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -72,4 +78,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:surname, :phone, :email, :admin, :organisation_id, :manager, :normalized_name, :normalized_surname)
     end
+
+
 end

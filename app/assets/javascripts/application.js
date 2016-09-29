@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 //= require data-confirm-modal
+//= require select2
 
 dataConfirmModal.setDefaults({
   title: 'Confirm your action',
@@ -24,3 +25,7 @@ dataConfirmModal.setDefaults({
   commitClass: 'btn btn-success',
   cancelClass: 'btn btn-danger',
   });
+
+$( "#dropdown" ).select2({
+  theme: "bootstrap"
+});
