@@ -1,0 +1,19 @@
+----------------------------------------------
+οδηγίες για branch
+----------------------------------------------
+αρχικά:
+
+git checkout -b my_todo
+κάνω αλλαγές στα αρχεία
+git commit -a -m 'changes regarding my_todo'
+git push origin my_todo
+
+τελικά:
+git checkout master
+git merge my_todo
+git push origin master
+
+git branch -d my_todo
+git push origin :my_todo
+
+
