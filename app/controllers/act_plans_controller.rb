@@ -1,5 +1,6 @@
 class ActPlansController < ApplicationController
   before_action :authenticate_user!
+  before_action :setup_targets_for_select_box
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
 
 
@@ -21,6 +22,7 @@ class ActPlansController < ApplicationController
 
   # GET /act_plans/1/edit
   def edit
+
   end
 
   # POST /act_plans
@@ -42,6 +44,7 @@ class ActPlansController < ApplicationController
   # PATCH/PUT /act_plans/1
   # PATCH/PUT /act_plans/1.json
   def update
+    
     respond_to do |format|
       if @act_plan.update(act_plan_params)
         format.html { redirect_to @act_plan, notice: t(:act_plan_updated)  }
@@ -64,6 +67,11 @@ class ActPlansController < ApplicationController
   end
 
   private
+
+    def setup_targets_for_select_box
+      @targets_for_select_box = Target.all.collect{|t| [t.code + ": " + t.description, t.id]}
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_act_plan
       @act_plan = ActPlan.find(params[:id])

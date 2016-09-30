@@ -15,6 +15,6 @@
     = f.text_area :description
   .field
     = f.label :measure_id
-    = f.number_field :measure_id
+    = f.select( :measure_id, 1..99, {} )
   .actions
     = f.submit
