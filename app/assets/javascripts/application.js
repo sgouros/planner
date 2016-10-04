@@ -14,8 +14,8 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require data-confirm-modal
+//= require_tree .
 
 
 dataConfirmModal.setDefaults({
@@ -25,3 +25,5 @@ dataConfirmModal.setDefaults({
   commitClass: 'btn btn-success',
   cancelClass: 'btn btn-danger',
   });
+
+$('select').select2();
