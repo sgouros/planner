@@ -7,7 +7,7 @@ class ActPlansController < ApplicationController
   # GET /act_plans
   # GET /act_plans.json
   def index
-    @act_plans = ActPlan.all
+    @act_plans = ActPlan.all.includes(:target)
   end
 
   # GET /act_plans/1
@@ -44,7 +44,7 @@ class ActPlansController < ApplicationController
   # PATCH/PUT /act_plans/1
   # PATCH/PUT /act_plans/1.json
   def update
-    
+
     respond_to do |format|
       if @act_plan.update(act_plan_params)
         format.html { redirect_to @act_plan, notice: t(:act_plan_updated)  }
