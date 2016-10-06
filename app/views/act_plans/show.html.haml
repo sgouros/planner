@@ -2,8 +2,9 @@
 
 = simple_form_for(@act_plan) do |f|
   = f.input :code, disabled: true
-  = f.input :description, as: :text, disabled: true
+  = f.input :description, as: :fake
   = f.input :target_id, disabled: true
+
 
 = link_to t(:edit), edit_act_plan_path(@act_plan), class:"btn btn-primary"
 = link_to t(:back), act_plans_path, class:"btn btn-danger pull-right"
