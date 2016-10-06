@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    setup_organisations_for_select_box
   end
 
   # GET /users/1/edit
