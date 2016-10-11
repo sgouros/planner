@@ -1,12 +1,11 @@
 class DisplayInput < SimpleForm::Inputs::Base
   # This method usually returns input's html like <input ... />
   # but in this case it returns just a value of the attribute.
-  def input
-    # label code from https://github.com/plataformatec/simple_form/blob/master/lib/simple_form/components/labels.rb#28
-    template.label_tag(nil, object.send(attribute_name), label_html_options)
+  def input(wrapper_options)
+    merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
+
+    "hello #{@builder.text_field(attribute_name, merged_input_options)}".html_safe
   end
 
-  def additional_classes
-    @additional_classes ||= [input_type].compact # original is `[input_type, required_class, readonly_class, disabled_class].compact`
-  end
+
 end

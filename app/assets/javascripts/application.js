@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require data-confirm-modal
 //= require_tree .
 
@@ -26,4 +26,4 @@ dataConfirmModal.setDefaults({
   cancelClass: 'btn btn-danger',
   });
 
-$('select').select2();
+// $('select').select2();
