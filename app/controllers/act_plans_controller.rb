@@ -69,7 +69,7 @@ class ActPlansController < ApplicationController
   private
 
     def setup_targets_for_select_box
-      @targets_for_select_box = Target.all.collect{|t| [t.code + ": " + t.description, t.id]}
+      @targets_for_select_box = Target.all.collect{|targ| [targ.full_title, targ.id]}
     end
 
     # Use callbacks to share common setup or constraints between actions.

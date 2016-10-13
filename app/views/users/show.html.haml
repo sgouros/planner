@@ -4,7 +4,7 @@
   = f.input :surname, disabled: true
   = f.input :name, disabled: true
   = f.input :email, disabled: true
-  = f.input :organisation_id, as: :select, collection: @organisations_for_select_box, class: 'sel2', disabled: true
+  = f.input :organisation_id, as: :string, input_html: { value: @user.organisation_full_title }, disabled: true
   = f.input :phone, disabled: true
   = f.input :admin, disabled: true
   = f.input :manager, disabled: true

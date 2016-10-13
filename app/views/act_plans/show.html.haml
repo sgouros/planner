@@ -1,20 +1,9 @@
 .page-header.h2= t(:show_act_plan)
 
-%div.form-group
-  %label.control-label
-    code
-  .static_field_normal
-    =@act_plan.code
-%div.form-group
-  %label.control-label
-    description
-  .static_field_big
-    =@act_plan.description
-%div.form-group
-  %label.control-label
-    target
-  .static_field_normal
-    =@act_plan.target_full_title
+= simple_form_for(@act_plan) do |f|
+  = f.input :code, disabled: true
+  = f.input :description, as: :text, disabled: true
+  = f.input :target_id, as: :string, input_html: { value: @act_plan.target_full_title }, disabled: true
 
 = link_to t(:edit), edit_act_plan_path(@act_plan), class:"btn btn-primary"
 = link_to t(:back), act_plans_path, class:"btn btn-danger pull-right"

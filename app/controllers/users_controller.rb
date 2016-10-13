@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   private
 
     def setup_organisations_for_select_box
-      @organisations_for_select_box = Organisation.all.collect{|org| [org.name, org.id]}
+      @organisations_for_select_box = Organisation.all.collect{|org| [org.full_title, org.id]}
     end
 
     # Use callbacks to share common setup or constraints between actions.
