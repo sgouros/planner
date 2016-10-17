@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  as :user do
+    get 'users/edit' => 'users/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'users/registrations#update', :as => 'user_registration'
+  end
   resources :collective_decisions
   resources :users
   resources :allocations

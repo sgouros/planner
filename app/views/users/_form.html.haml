@@ -14,5 +14,6 @@
   = f.input :admin
   = f.input :manager
 
+  = link_to "edit password", edit_user_registration_path(1)
   = f.button :submit, class:"btn btn-success"
   = link_to t(:cancel), 'javascript:history.go(-1);', class:"btn btn-danger pull-right"
