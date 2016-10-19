@@ -48,13 +48,7 @@ gr:
   print_footer: Planner
   manager: συντονιστής
 
-  devise:
-    sessions:
-      user:
-        signed_in: καλώς ορίσατε στην εφαρμογή Planner!
-    failure:
-      user:
-        unauthenticated: παρακαλώ συνδεθείτε για να αποκτήσετε πρόσβαση στην εφαρμογή
+  
 
 
   simple_form:

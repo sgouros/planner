@@ -10,8 +10,7 @@
         %th= t('user.phone')
         %th= t('user.admin')
         %th= t('user.manager')
-        %th= t('user.sign_in_count')
-        %th= t('user.last_sign_in_at')
+
 
     %tbody
       - @users.each do |user|
@@ -23,8 +22,6 @@
           %td= user.phone
           %td= user.admin
           %td= user.manager
-          %td= user.sign_in_count
-          %td= user.last_sign_in_at.to_formatted_s(:short) if user.last_sign_in_at
           %td= link_to "", edit_user_path(user), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
           %td= link_to "", user, method: :delete, data: { confirm: t(:user_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
 = link_to t(:new_user), new_user_path, class:"btn btn-primary"

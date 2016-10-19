@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920084201) do
+ActiveRecord::Schema.define(version: 20161019095502) do
 
   create_table "act_plans", force: :cascade do |t|
     t.string   "code"
@@ -223,6 +223,15 @@ ActiveRecord::Schema.define(version: 20160920084201) do
     t.string   "schedule_parent_type"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
   create_table "subprojects", force: :cascade do |t|
     t.string   "code"
     t.text     "title"
@@ -273,21 +282,12 @@ ActiveRecord::Schema.define(version: 20160920084201) do
     t.boolean  "manager"
     t.text     "normalized_name"
     t.text     "normalized_surname"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "name"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "email"
+    t.string   "hashed_password"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
