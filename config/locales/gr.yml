@@ -48,7 +48,7 @@ gr:
   print_footer: Planner
   manager: συντονιστής
 
-  
+
 
 
   simple_form:
@@ -69,6 +69,8 @@ gr:
         phone: τηλέφωνο
         admin: administrator
         manager: συντονιστής
+        password: συνθηματικό
+        password_confirmation: επαλήθευση συνθηματικού
 
 
     hints:
@@ -76,6 +78,9 @@ gr:
         # code: ο κωδικός του σχεδίου δράσης
         # target_id: ο σχετιζόμενος στόχος
         # target: ο σχετιζόμενος στόχος
+      user:
+        # password: για να κρατήσετε το ίδιο συνθηματικό, αφήστε το κενό
+        # password_confirmation: για να κρατήσετε το ίδιο συνθηματικό, αφήστε το κενό
 
     placeholders:
       act_plan:
@@ -83,7 +88,9 @@ gr:
         description: σύντομη περιγραφή του σχεδίου δράσης
         target_id: ο σχετιζόμενος στόχος
         target: ο σχετιζόμενος στόχος
-
+      user:
+        password: για να κρατήσετε το ίδιο συνθηματικό, αφήστε το κενό
+        password_confirmation: για να κρατήσετε το ίδιο συνθηματικό, αφήστε το κενό
     prompts:
       act_plan:
         target_id: Παρακαλώ επιλέξτε στόχο

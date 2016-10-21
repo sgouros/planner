@@ -6,14 +6,17 @@
           %span.glyphicon.glyphicon-exclamation-sign
           =message
 
-  = f.input :surname
+
   = f.input :name
-  = f.input :email
+  = f.input :surname
   = f.input :organisation_id, as: :select, collection: @organisations_for_select_box, class: 'sel2'
   = f.input :phone
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
   = f.input :admin
   = f.input :manager
 
-  = link_to "edit password", edit_user_registration_path(1)
+
   = f.button :submit, class:"btn btn-success"
   = link_to t(:cancel), 'javascript:history.go(-1);', class:"btn btn-danger pull-right"

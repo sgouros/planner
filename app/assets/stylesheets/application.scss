@@ -203,21 +203,27 @@ a.tooltips.glyphicon.glyphicon
  html {
    position: relative;
    min-height: 100%;
+
  }
  body {
    /* Margin bottom by footer height */
-   margin-bottom: 25px;
+//   margin-bottom: 20px;
 
  }
+
+
+ .footerspacer{
+   position:relative;
+   display:block;
+   height: 60px;
+ }
+
+
  .footer {
    position: absolute;
+   right: 0;
    bottom: 0px;
-//   width: 100%;
-   /* Set the fixed height of the footer here */
-//   height: 25px;
-  //  background-color: #DDDDFF;
-  //  left:250px;
-   right: 5px;
+   left: 0;
+   text-align: right;
    font-size: 13px;
-  //  padding-top: 4px;
  }
