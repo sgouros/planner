@@ -7,7 +7,7 @@ gr:
   delete: διαγραφή
   copyright: 'Planner - Copyright Περιφέρεια Ανατολικής Μακεδονίας και Θράκης'
   edit_password: αλλαγή συνθηματικού
-  login: σύνδεση
+  login: σύνδεση στο σύστημα
   logout: αποσύνδεση
   welcome: καλώς ορίσατε!
   please_log_in_to_continue: παρακαλούμε συνδεθείτε στο σύστημα
@@ -71,6 +71,9 @@ gr:
         manager: συντονιστής
         password: συνθηματικό
         password_confirmation: επαλήθευση συνθηματικού
+      session:
+        email: ηλεκτρονικό ταχυδρομείο
+        password: συνθηματικό
 
 
     hints:

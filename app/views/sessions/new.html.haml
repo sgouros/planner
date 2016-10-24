@@ -1,12 +1,6 @@
-.page-header.h2= t(:login)
-= form_tag session_path do
-  .field
-    = label_tag t(:email) +":"
-    = text_field_tag :email
-  .field
-    = label_tag t(:password) +":"
-    = password_field_tag :password
-  %br
-  %br
-  .standard_form_buttons
-    = submit_tag t(:login), :class => 'form_submit'
+
+
+= simple_form_for :session, url: session_path do |f|
+  = f.input :email, required: false
+  = f.input :password, required: false
+  = f.button :submit, t(:login), class:"btn btn-primary"

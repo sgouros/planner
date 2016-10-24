@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-    logger.info "Processing the login request..."
-		if user = User.authenticate(params[:email], params[:password])
+		if user = User.authenticate(params[:session][:email], params[:session][:password])
       logger.info "authentication successfull"
 			session[:user_id] = user.id
 			redirect_to root_path, :notice => t(:welcome)
@@ -17,5 +16,9 @@ class SessionsController < ApplicationController
 		reset_session
 		redirect_to login_path, :notice => t(:logged_out)
 	end
+
+  def show
+    redirect_to root_path
+  end
 
 end

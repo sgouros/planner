@@ -36,8 +36,11 @@ class User < ApplicationRecord
 
   def self.authenticate(email, password)
     user = find_by_email(email)
-    Rails.logger.info("found user" + user.inspect) if user
-    Rails.logger.info("user " + email + " not found") unless user
+    if user
+      Rails.logger.info("found user" + user.inspect)
+    else
+      Rails.logger.info("user " + email + " not found") unless user
+    end
     return user if user && user.authenticated?(password)
   end
 
