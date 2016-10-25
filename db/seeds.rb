@@ -508,3 +508,4 @@ end
 @schedule_action8=FactoryGirl.create(:schedule_action, schedule: @schedule5)
 @schedule_action9=FactoryGirl.create(:schedule_action, schedule: @schedule6)
 @schedule_action10=FactoryGirl.create(:schedule_action, schedule: @schedule7)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

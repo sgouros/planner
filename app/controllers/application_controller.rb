@@ -40,4 +40,8 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new(t :page_not_found)
   end
 
+  def set_admin_locale
+    I18n.locale = :en
+  end
+  
 end

@@ -34,6 +34,13 @@ gem 'simple_form'
 
 gem 'activerecord-session_store'
 
+
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'active_admin_theme'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
