@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  check_authorization
   protect_from_forgery with: :exception
 
   protected
@@ -43,5 +44,5 @@ class ApplicationController < ActionController::Base
   def set_admin_locale
     I18n.locale = :en
   end
-  
+
 end
