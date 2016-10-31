@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+skip_authorization_check
 
   def create
 		if user = User.authenticate(params[:session][:email], params[:session][:password])

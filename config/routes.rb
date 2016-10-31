@@ -25,11 +25,18 @@ Rails.application.routes.draw do
   resources :users
 
   resource :session
+
+
+
   match '/login' => "sessions#new", :as => "login", via: [:get, :post]
   match '/logout' => "sessions#destroy", :as => "logout", via: [:get, :post]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root :to => "users#index"
+  root :to => "act_plans#index"
+
+  get 'access_denied', to:'static#access_denied', as: :access_denied
+
+
 
 end

@@ -2,11 +2,14 @@ class ApplicationController < ActionController::Base
   check_authorization
   protect_from_forgery with: :exception
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to access_denied_url(:message => exception.message)
+  end
+
   protected
   	helper_method :user_signed_in?
     helper_method :current_user
     helper_method :admin?
-
 
   def authenticate
 	  user_signed_in? ? true : redirect_to_root
@@ -27,10 +30,6 @@ class ApplicationController < ActionController::Base
     else
       return false
     end
-  end
-
-  def access_denied
-    render '/access_denied'
   end
 
   def redirect_to_root

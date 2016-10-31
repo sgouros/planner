@@ -2,11 +2,13 @@ class ActPlansController < ApplicationController
   before_action :authenticate
   before_action :setup_targets_for_select_box
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
 
   # GET /act_plans
   # GET /act_plans.json
   def index
+
     @act_plans = ActPlan.all.includes(:target)
   end
 

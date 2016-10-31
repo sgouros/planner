@@ -34,6 +34,11 @@ class User < ApplicationRecord
     surname + " " + name
   end
 
+  def admin?
+    Rails.logger.info(admin)
+    admin
+  end
+
   def self.authenticate(email, password)
     user = find_by_email(email)
     if user
