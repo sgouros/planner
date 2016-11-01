@@ -8,8 +8,8 @@
         %th= t('user.email')
         %th= t('user.organisation')
         %th= t('user.phone')
-        %th= t('user.admin')
-        %th= t('user.manager')
+        %th= t('user.role')
+
 
 
     %tbody
@@ -20,8 +20,8 @@
           %td= user.email
           %td= link_to user.organisation_id, organisation_path(user.organisation_id), class: 'tooltips', title: user.organisation.name
           %td= user.phone
-          %td= user.admin
-          %td= user.manager
+          %td= user.role
+          
           %td= link_to "", edit_user_path(user), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
           %td= link_to "", user, method: :delete, data: { confirm: t(:user_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
 = link_to t(:new_user), new_user_path, class:"btn btn-primary"

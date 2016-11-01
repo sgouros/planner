@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :setup_organisations_for_select_box
+  load_and_authorize_resource
 
   # GET /users
   # GET /users.json
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:password, :password_confirmation, :surname, :phone, :email, :admin, :organisation_id, :manager, :normalized_name, :normalized_surname)
+      params.require(:user).permit(:password, :password_confirmation, :surname, :phone, :email, :role, :organisation_id, :normalized_name, :normalized_surname)
     end
 
 

@@ -6,8 +6,8 @@
   = f.input :email, disabled: true
   = f.input :organisation_id, as: :string, input_html: { value: @user.organisation_full_title }, disabled: true
   = f.input :phone, disabled: true
-  = f.input :admin, disabled: true
-  = f.input :manager, disabled: true
+  = f.input :role, disabled: true
+  
 
 = link_to t(:edit), edit_user_path(@user), class:"btn btn-primary"
 = link_to t(:back), users_path, class:"btn btn-danger pull-right"

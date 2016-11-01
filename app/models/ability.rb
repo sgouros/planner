@@ -18,16 +18,31 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    @user=user
 
-    user ||= User.new
+    set_basic_user_abilities
+
+    if user.manager?
+      set_manager_abilities
+    end
 
     if user.admin?
-      can :manage, :all
-    elsif user.manager?
-      can [:read, :create, :update, :destroy], [ActPlan, Act]
-    elsif user.plain?
-      can :read, [ActPlan, Act]
+      set_admin_abilities
     end
 
   end
+
+  def set_basic_user_abilities
+    can :read, [ActPlan, Act]
+    can [:show, :edit, :update], User, :id => @user.id
+  end
+
+  def set_manager_abilities
+    can [:create, :show, :index, :update, :destroy], [ActPlan, Act]
+  end
+
+  def set_admin_abilities
+    can :manage, :all
+  end
+
 end

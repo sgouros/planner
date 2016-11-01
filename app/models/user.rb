@@ -22,8 +22,6 @@ class User < ApplicationRecord
   					:presence => true,
   					:if => :password_validation_required?
 
-
-
   def set_normalized_fields
     Rails.logger.info("set_normalized_fields_called")
     self.normalized_name = normalize_string name
@@ -34,31 +32,16 @@ class User < ApplicationRecord
     surname + " " + name
   end
 
-  def type
-    if manager?
-      "manager"
-    elsif admin?
-      "admin"
-    elsif admin? && manager?
-      "admin and manager"
-    elsif plain?
-      "plain user"
-    else
-      "error in user classification"
-    end
-
-  end
-
   def admin?
-    admin
+    role == "admin"
   end
 
   def manager?
-    manager
+    role == "manager"
   end
 
-  def plain?
-    !admin && !manager
+  def basic?
+    role == "basic"
   end
 
   def self.authenticate(email, password)

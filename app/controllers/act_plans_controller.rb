@@ -8,7 +8,6 @@ class ActPlansController < ApplicationController
   # GET /act_plans
   # GET /act_plans.json
   def index
-
     @act_plans = ActPlan.all.includes(:target)
   end
 

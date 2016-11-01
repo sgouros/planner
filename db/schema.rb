@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025113332) do
+ActiveRecord::Schema.define(version: 20161101114355) do
 
   create_table "act_plans", force: :cascade do |t|
     t.string   "code"
@@ -308,9 +308,7 @@ ActiveRecord::Schema.define(version: 20161025113332) do
   create_table "users", force: :cascade do |t|
     t.string   "surname"
     t.string   "phone"
-    t.boolean  "admin"
     t.integer  "organisation_id"
-    t.boolean  "manager"
     t.text     "normalized_name"
     t.text     "normalized_surname"
     t.datetime "created_at",         null: false
@@ -318,6 +316,7 @@ ActiveRecord::Schema.define(version: 20161025113332) do
     t.string   "name"
     t.string   "email"
     t.string   "hashed_password"
+    t.string   "role"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
