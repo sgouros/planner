@@ -56,6 +56,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'faker'
   gem 'factory_girl_rails'
+  gem 'meta_request'
 end
 
 group :development do
