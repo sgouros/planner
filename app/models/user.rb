@@ -34,9 +34,31 @@ class User < ApplicationRecord
     surname + " " + name
   end
 
+  def type
+    if manager?
+      "manager"
+    elsif admin?
+      "admin"
+    elsif admin? && manager?
+      "admin and manager"
+    elsif plain?
+      "plain user"
+    else
+      "error in user classification"
+    end
+
+  end
+
   def admin?
-    Rails.logger.info(admin)
     admin
+  end
+
+  def manager?
+    manager
+  end
+
+  def plain?
+    !admin && !manager
   end
 
   def self.authenticate(email, password)

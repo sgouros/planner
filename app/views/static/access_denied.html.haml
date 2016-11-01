@@ -1,1 +1,16 @@
-.access_denied= @message
+.access_denied= t(:access_denied)
+%p
+  %strong
+    user:
+  =@failed_user.email
+  (
+  =@failed_user.type
+  )
+%p
+  %strong
+    action:
+  =@failed_action
+%p
+  %strong
+    model:
+  =@failed_model

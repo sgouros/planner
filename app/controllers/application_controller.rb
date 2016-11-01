@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to access_denied_url(:message => exception.message)
+    logger.info("ACCESS DENIED for #{current_user.type} #{current_user.email} on #{exception.action} for #{exception.subject.inspect}")
+    redirect_to access_denied_url(:failed_user => current_user, :failed_action => exception.action, :failed_model => exception.subject.inspect )
   end
 
   protected
