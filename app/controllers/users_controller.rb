@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :setup_organisations_for_select_box
   load_and_authorize_resource
-
+  add_breadcrumb 'users', :users_path
   # GET /users
   # GET /users.json
   def index
-    console
+
     @users = User.all
   end
 

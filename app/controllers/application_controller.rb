@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     redirect_to access_denied_url(:failed_user => current_user, :failed_action => exception.action, :failed_model => exception.subject.inspect )
   end
 
+  add_breadcrumb 'home', :root_path
+
   protected
   	helper_method :user_signed_in?
     helper_method :current_user

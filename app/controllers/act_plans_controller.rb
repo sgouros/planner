@@ -4,6 +4,7 @@ class ActPlansController < ApplicationController
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+  add_breadcrumb 'act plans', :act_plans_path
 
   # GET /act_plans
   # GET /act_plans.json
@@ -18,12 +19,13 @@ class ActPlansController < ApplicationController
 
   # GET /act_plans/new
   def new
+    add_breadcrumb 'new act plan', :new_act_plan_path
     @act_plan = ActPlan.new
   end
 
   # GET /act_plans/1/edit
   def edit
-
+    add_breadcrumb 'edit', :edit_act_plan_path
   end
 
   # POST /act_plans

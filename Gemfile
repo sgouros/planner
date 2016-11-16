@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'simple_form'
 
 gem 'activerecord-session_store'
+gem 'breadcrumbs_on_rails'
 
 
 gem 'devise'
