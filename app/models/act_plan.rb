@@ -7,7 +7,6 @@ class ActPlan < ApplicationRecord
   end
 
   def target_title
-    # tt
     target.description
   end
 
