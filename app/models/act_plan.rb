@@ -3,11 +3,11 @@ class ActPlan < ApplicationRecord
   belongs_to :target
 
   def target_full_title
-    # ok
     target.full_title
   end
 
   def target_title
+    # tt
     target.description
   end
 
