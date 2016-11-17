@@ -11,6 +11,7 @@ class ActPlan < ApplicationRecord
   end
 
   def target_code
+    # return parent target code
     target.code
   end
 
