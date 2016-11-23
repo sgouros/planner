@@ -10,6 +10,8 @@ module ApplicationHelper
     end
   end
 
+
+
   def normalize_string(str) #κάνει ένα string στα κεφαλαία αφαιρώντας όλους τους τόνους. Χρησιμοποιείται στο database search
     map = { 'ά' => 'α',
             'έ' => 'ε',

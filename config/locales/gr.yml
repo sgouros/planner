@@ -48,8 +48,12 @@ gr:
   print_footer: Planner
   manager: συντονιστής
 
-
-
+  breadcrumbs:
+    home: αρχική
+    act_plan:
+      index: σχέδια δράσης
+    new: δημιουργία
+    edit: τροποποίηση
 
   simple_form:
     labels:

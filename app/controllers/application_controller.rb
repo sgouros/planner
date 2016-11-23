@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper :all
   check_authorization
   protect_from_forgery with: :exception
 
@@ -7,12 +8,30 @@ class ApplicationController < ActionController::Base
     redirect_to access_denied_url(:failed_user => current_user, :failed_action => exception.action, :failed_model => exception.subject.inspect )
   end
 
-  add_breadcrumb 'home', :root_path
+  add_breadcrumb I18n.t('breadcrumbs.home'), :root_path
 
   protected
   	helper_method :user_signed_in?
     helper_method :current_user
     helper_method :admin?
+    helper_method :add_breadcrumb_for_index
+    helper_method :add_breadcrumb_for
+
+  def add_breadcrumb_for_index
+    model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
+    breadcrumb_text = 'breadcrumbs.' + model_name + '.index'  #eg breadcrumbs.act_plan.index
+    breadcrumb_path = (model_name.pluralize + '_path').to_sym #eg act_plans_path
+
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
+  end
+
+  def add_breadcrumb_for(action)
+    model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
+    breadcrumb_text = 'breadcrumbs.' + action.to_s
+    breadcrumb_path = (action.to_s + '_' + model_name +'_path').to_sym # e.g. edit_act_plan_path
+
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
+  end
 
   def authenticate
 	  user_signed_in? ? true : redirect_to_root
@@ -46,5 +65,8 @@ class ApplicationController < ActionController::Base
   def set_admin_locale
     I18n.locale = :en
   end
+
+
+
 
 end

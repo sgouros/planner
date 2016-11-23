@@ -2,9 +2,9 @@ class ActPlansController < ApplicationController
   before_action :authenticate
   before_action :setup_targets_for_select_box
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  before_action :add_breadcrumb_for_index
 
-  add_breadcrumb 'act plans', :act_plans_path
+  load_and_authorize_resource
 
   # GET /act_plans
   # GET /act_plans.json
@@ -15,17 +15,19 @@ class ActPlansController < ApplicationController
   # GET /act_plans/1
   # GET /act_plans/1.json
   def show
+    add_breadcrumb_for(:show)
   end
 
   # GET /act_plans/new
   def new
-    add_breadcrumb 'new act plan', :new_act_plan_path
+    add_breadcrumb_for(:new)
+
     @act_plan = ActPlan.new
   end
 
   # GET /act_plans/1/edit
   def edit
-    add_breadcrumb 'edit', :edit_act_plan_path
+    add_breadcrumb_for(:edit)
   end
 
   # POST /act_plans
@@ -50,7 +52,7 @@ class ActPlansController < ApplicationController
 
     respond_to do |format|
       if @act_plan.update(act_plan_params)
-        format.html { redirect_to @act_plan, notice: t(:act_plan_updated)  }
+        format.html { redirect_to @act_plan, notice: t(:act_plan_updated) }
         format.json { render :show, status: :ok, location: @act_plan }
       else
         format.html { render :edit }
@@ -64,24 +66,24 @@ class ActPlansController < ApplicationController
   def destroy
     @act_plan.destroy
     respond_to do |format|
-      format.html { redirect_to act_plans_url,  notice: t(:act_plan_deleted)  }
+      format.html { redirect_to act_plans_url, notice: t(:act_plan_deleted) }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def setup_targets_for_select_box
-      @targets_for_select_box = Target.all.collect{|targ| [targ.full_title, targ.id]}
-    end
+  def setup_targets_for_select_box
+    @targets_for_select_box = Target.all.collect { |targ| [targ.full_title, targ.id] }
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_act_plan
-      @act_plan = ActPlan.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_act_plan
+    @act_plan = ActPlan.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def act_plan_params
-      params.require(:act_plan).permit(:code, :description, :target_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def act_plan_params
+    params.require(:act_plan).permit(:code, :description, :target_id)
+  end
 end
