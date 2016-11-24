@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  helper :all
+  before_action :set_default_locale
+
   check_authorization
   protect_from_forgery with: :exception
 
@@ -15,23 +16,49 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :admin?
     helper_method :add_breadcrumb_for_index
-    helper_method :add_breadcrumb_for
+    helper_method :add_breadcrumb_for_show
+    helper_method :add_breadcrumb_for_new
+    helper_method :add_breadcrumb_for_edit
 
   def add_breadcrumb_for_index
     model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
     breadcrumb_text = 'breadcrumbs.' + model_name + '.index'  #eg breadcrumbs.act_plan.index
-    breadcrumb_path = (model_name.pluralize + '_path').to_sym #eg act_plans_path
+    breadcrumb_path = model_name.pluralize + '_path' #eg act_plans_path
 
-    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
 
-  def add_breadcrumb_for(action)
+  def add_breadcrumb_for_show
+    model_name = controller_name.classify.underscore
+    breadcrumb_text = 'breadcrumbs.show'
+    breadcrumb_path = model_name1 +'_path'
+
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
+  end
+
+  def add_breadcrumb_for_new
     model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
-    breadcrumb_text = 'breadcrumbs.' + action.to_s
-    breadcrumb_path = (action.to_s + '_' + model_name +'_path').to_sym # e.g. edit_act_plan_path
+    breadcrumb_text = 'breadcrumbs.new'
+    breadcrumb_path = 'new_' + model_name +'_path'
 
-    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
+
+  def add_breadcrumb_for_edit
+    model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
+    breadcrumb_text = 'breadcrumbs.edit'
+    breadcrumb_path = 'edit_' + model_name +'_path'
+
+    add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
+  end
+
+  # def add_breadcrumb_for(action)
+  #   model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
+  #   breadcrumb_text = 'breadcrumbs.' + action.to_s
+  #   breadcrumb_path = (action.to_s + '_' + model_name +'_path').to_sym # e.g. edit_act_plan_path
+  #
+  #   add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
+  # end
 
   def authenticate
 	  user_signed_in? ? true : redirect_to_root
@@ -62,11 +89,17 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new(t :page_not_found)
   end
 
+
+
+  private
+
+  def set_default_locale
+    I18n.default_locale = :gr
+  end
+
   def set_admin_locale
     I18n.locale = :en
   end
-
-
 
 
 end

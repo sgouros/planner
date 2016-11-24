@@ -54,6 +54,7 @@ gr:
       index: σχέδια δράσης
     new: δημιουργία
     edit: τροποποίηση
+    show: προβολή
 
   simple_form:
     labels:
