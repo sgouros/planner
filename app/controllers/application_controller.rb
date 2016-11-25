@@ -28,18 +28,20 @@ class ApplicationController < ActionController::Base
     add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
 
-  def add_breadcrumb_for_show
+
+  def add_breadcrumb_for_new
     model_name = controller_name.classify.underscore
-    breadcrumb_text = 'breadcrumbs.show'
-    breadcrumb_path = model_name1 +'_path'
+    breadcrumb_text = 'breadcrumbs.new'
+    breadcrumb_path = 'new_' + model_name +'_path'
 
     add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
 
-  def add_breadcrumb_for_new
-    model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
-    breadcrumb_text = 'breadcrumbs.new'
-    breadcrumb_path = 'new_' + model_name +'_path'
+
+  def add_breadcrumb_for_show
+    model_name = controller_name.classify.underscore
+    breadcrumb_text = 'breadcrumbs.show'
+    breadcrumb_path = model_name +'_path'
 
     add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
@@ -51,14 +53,6 @@ class ApplicationController < ActionController::Base
 
     add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path.to_sym
   end
-
-  # def add_breadcrumb_for(action)
-  #   model_name = controller_name.classify.underscore # e.g. ActPlansController => act_plan
-  #   breadcrumb_text = 'breadcrumbs.' + action.to_s
-  #   breadcrumb_path = (action.to_s + '_' + model_name +'_path').to_sym # e.g. edit_act_plan_path
-  #
-  #   add_breadcrumb I18n.t(breadcrumb_text), breadcrumb_path
-  # end
 
   def authenticate
 	  user_signed_in? ? true : redirect_to_root

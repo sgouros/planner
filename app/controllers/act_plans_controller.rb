@@ -9,7 +9,7 @@ class ActPlansController < ApplicationController
   # GET /act_plans
   # GET /act_plans.json
   def index
-    @act_plans = ActPlan.all.includes(:target)
+    @act_plans = ActPlan.all.includes(:target).page(params[:page]).per(5)
   end
 
   # GET /act_plans/1
