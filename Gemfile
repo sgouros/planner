@@ -44,6 +44,8 @@ gem 'active_admin_theme'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -9,25 +9,24 @@ class ActPlansController < ApplicationController
   # GET /act_plans
   # GET /act_plans.json
   def index
-    @act_plans = ActPlan.all.includes(:target)
+    @act_plans = ActPlan.all.includes(:target).page(params[:page]).per(5)
   end
 
   # GET /act_plans/1
   # GET /act_plans/1.json
   def show
-    add_breadcrumb_for(:show)
+    add_breadcrumb_for_show
   end
 
   # GET /act_plans/new
   def new
-    add_breadcrumb_for(:new)
-
+    add_breadcrumb_for_new
     @act_plan = ActPlan.new
   end
 
   # GET /act_plans/1/edit
   def edit
-    add_breadcrumb_for(:edit)
+    add_breadcrumb_for_edit
   end
 
   # POST /act_plans
