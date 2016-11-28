@@ -1,7 +1,7 @@
 class MyControllerGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
-  argument :model_name, :type => :string   #e.g. ActPlan
+  argument :model_name, :type => :string, :default => ActPlan   #e.g. ActPlan
 
   def generate_controller_files
     template "controller.rb", "app/controllers/"+controller_name+".rb"

@@ -1,8 +1,0 @@
-Description:
-    Generates Controllers for George Sgouros apps
-
-Example:
-    rails generate gs_controller ActPlan
-
-    This will create:
-        app/controllers/act_plans_controller.rb
