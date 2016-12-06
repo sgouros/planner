@@ -1,4 +1,4 @@
-class <%=controller_class%> < ApplicationController
+class <%=controllerName%> < ApplicationController
   before_action :authenticate
   # before_action :setup_targets_for_select_box
   before_action :set_<%=model_name%>, only: [:show, :edit, :update, :destroy]
@@ -6,34 +6,33 @@ class <%=controller_class%> < ApplicationController
 
   load_and_authorize_resource
 
-  # GET /<%=model_name_plural%>
-  # GET /<%=model_name_plural%>.json
+  # GET /<%=model_names%>
+  # GET /<%=model_names%>.json
   def index
-    @<%=model_name_plural%> = <%=model_class%>.all.includes(:target)
+    @<%=model_names%> = <%=modelName%>.all.includes(:target).page(params[:page]).per(20)
   end
 
-  # GET /<%=model_name_plural%>/1
-  # GET /<%=model_name_plural%>/1.json
+  # GET /<%=model_names%>/1
+  # GET /<%=model_names%>/1.json
   def show
-    add_breadcrumb_for(:show)
+    add_breadcrumb_for_show
   end
 
-  # GET /<%=model_name_plural%>/new
+  # GET /<%=model_names%>/new
   def new
-    add_breadcrumb_for(:new)
-
-    @<%=model_name%> = <%=model_class%>.new
+    add_breadcrumb_for_new
+    @<%=model_name%> = <%=modelName%>.new
   end
 
-  # GET /<%=model_name_plural%>/1/edit
+  # GET /<%=model_names%>/1/edit
   def edit
-    add_breadcrumb_for(:edit)
+    add_breadcrumb_for_edit
   end
 
-  # POST /<%=model_name_plural%>
-  # POST /<%=model_name_plural%>.json
+  # POST /<%=model_names%>
+  # POST /<%=model_names%>.json
   def create
-    @<%=model_name%> = <%=model_class%>.new(<%=model_name%>_params)
+    @<%=model_name%> = <%=modelName%>.new(<%=model_name%>_params)
 
     respond_to do |format|
       if @<%=model_name%>.save
@@ -46,8 +45,8 @@ class <%=controller_class%> < ApplicationController
     end
   end
 
-  # PATCH/PUT /<%=model_name_plural%>/1
-  # PATCH/PUT /<%=model_name_plural%>/1.json
+  # PATCH/PUT /<%=model_names%>/1
+  # PATCH/PUT /<%=model_names%>/1.json
   def update
 
     respond_to do |format|
@@ -61,12 +60,12 @@ class <%=controller_class%> < ApplicationController
     end
   end
 
-  # DELETE /<%=model_name_plural%>/1
-  # DELETE /<%=model_name_plural%>/1.json
+  # DELETE /<%=model_names%>/1
+  # DELETE /<%=model_names%>/1.json
   def destroy
     @<%=model_name%>.destroy
     respond_to do |format|
-      format.html { redirect_to <%=model_name_plural%>_url, notice: t(:<%=model_name%>_deleted) }
+      format.html { redirect_to <%=model_names%>_url, notice: t(:<%=model_name%>_deleted) }
       format.json { head :no_content }
     end
   end
@@ -79,7 +78,7 @@ class <%=controller_class%> < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_<%=model_name%>
-    @<%=model_name%> = <%=model_class%>.find(params[:id])
+    @<%=model_name%> = <%=modelName%>.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

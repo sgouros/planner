@@ -14,6 +14,7 @@ module Planner
     config.i18n.default_locale = :gr
     Faker::Config.locale = 'gr'
 
+
     console do
       require "awesome_print"
       AwesomePrint.irb!

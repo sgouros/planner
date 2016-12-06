@@ -1,9 +1,0 @@
-Description:
-    Generates Controllers for George Sgouros apps
-
-Example:
-    rails generate my_controller 
-		και γράφουμε μέσα στο my_controller_generator την κλάση που θέλουμε να δημιουργηθεί (τα 2 arguments)
-
-    This will create:
-        app/controllers/act_plans_controller.rb
