@@ -1,0 +1,8 @@
+Description:
+    Custom controller generator by George Sgouros
+
+Example:
+    rails generate gscontroller ActPlan
+
+    This will create:
+        app/controllers/ActPlan.rb
