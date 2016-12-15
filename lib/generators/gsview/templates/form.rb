@@ -1,7 +1,7 @@
-= simple_form_for(act_plan) do |f|
-  - if act_plan.errors.any?
+= simple_form_for(<%=model_name%>) do |f|
+  - if <%=model_name%>.errors.any?
     #error_explanation
-      - act_plan.errors.full_messages.each do |message|
+      - <%=model_name%>.errors.full_messages.each do |message|
         .alert.alert-danger{:role => 'alert'}
           %span.glyphicon.glyphicon-exclamation-sign
           =message
