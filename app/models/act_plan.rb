@@ -2,6 +2,12 @@ class ActPlan < ApplicationRecord
   has_many :acts, :dependent => :destroy
   belongs_to :target
 
+  validates :code, presence: true, uniqueness: true
+  validates :description, presence: true
+  # validates :target, presence: true
+  validates :target_id, presence: true
+
+
   def target_full_title
     target.full_title
   end

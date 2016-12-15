@@ -1,9 +1,10 @@
+#  use: rails g gscontroller ActPlan
 class GscontrollerGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
   def generate_controller_files
     puts("Custom controller generator by George Sgouros. Model: " + name)
-    new_file_name = "app/controllers/"+modelName+".rb"
+    new_file_name = "app/controllers/"+model_names_controller+".rb"
     template "controller.rb", new_file_name
   end
 
@@ -28,6 +29,10 @@ class GscontrollerGenerator < Rails::Generators::NamedBase
 
   def controllerName
     modelNames+"Controller"
+  end
+
+  def model_names_controller
+    model_names+"_controller"
   end
 
 

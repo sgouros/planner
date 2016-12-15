@@ -1,0 +1,12 @@
+Description:
+    Custom view generator by George Sgouros
+
+Example:
+    rails generate gsview ActPlan
+
+    This will create:
+        app/views/act_plans._form.html.haml
+        app/views/act_plans.edit.html.haml
+        app/views/act_plans.index.html.haml
+        app/views/act_plans.new.html.haml
+        app/views/act_plans.show.html.haml

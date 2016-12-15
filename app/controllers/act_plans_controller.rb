@@ -1,6 +1,6 @@
 class ActPlansController < ApplicationController
   before_action :authenticate
-  # before_action :setup_targets_for_select_box
+  before_action :setup_targets_for_select_box
   before_action :set_act_plan, only: [:show, :edit, :update, :destroy]
   before_action :add_breadcrumb_for_index
 
@@ -72,9 +72,9 @@ class ActPlansController < ApplicationController
 
   private
 
-#  def setup_targets_for_select_box
-#    @targets_for_select_box = Target.all.collect { |targ| [targ.full_title, targ.id] }
-#  end
+  def setup_targets_for_select_box
+    @targets_for_select_box = Target.all.collect { |targ| [targ.full_title, targ.id] }
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_act_plan
@@ -83,6 +83,6 @@ class ActPlansController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def act_plan_params
-#    params.require(:act_plan).permit(:code, :description, :target_id)
+    params.require(:act_plan).permit(:code, :description, :target_id)
   end
 end
