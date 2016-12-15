@@ -8,6 +8,6 @@
 
   = f.input :code
   = f.input :description, as: :text
-  = f.input :target_id, collection: @targets_for_select_box
+  = f.input :parent_id, collection: @parents_for_select_box
   = f.button :submit, class:'btn btn-success'
   = link_to t(:cancel), 'javascript:history.go(-1);', class:'btn btn-danger pull-right'

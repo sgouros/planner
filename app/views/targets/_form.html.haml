@@ -1,20 +1,13 @@
-= form_for(target) do |f|
+= simple_form_for(target) do |f|
   - if target.errors.any?
     #error_explanation
-      %h2
-        = pluralize(target.errors.count, "error")
-        prohibited this target from being saved:
-      %ul
-        - target.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :code
-    = f.text_field :code
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :measure_id
-    = f.select( :measure_id, 1..99, {} )
-  .actions
-    = f.submit
+      - target.errors.full_messages.each do |message|
+        .alert.alert-danger{:role => 'alert'}
+          %span.glyphicon.glyphicon-exclamation-sign
+          =message
+
+  = f.input :code
+  = f.input :description, as: :text
+  = f.input :measure_id, collection: @measures_for_select_box
+  = f.button :submit, class:'btn btn-success'
+  = link_to t(:cancel), 'javascript:history.go(-1);', class:'btn btn-danger pull-right'

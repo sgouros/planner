@@ -7,13 +7,13 @@
       %tr
         %th= t('<%=model_name%>.code')
         %th= t('<%=model_name%>.description')
-        %th= t('<%=model_name%>.target')
+        %th= t('<%=model_name%>.parent')
     %tbody
       - @<%=model_names%>.each do |<%=model_name%>|
         %tr
           %td= link_to <%=model_name%>.code, <%=model_name%>
           %td= <%=model_name%>.description
-          %td= link_to <%=model_name%>.target_code, target_path(<%=model_name%>.target_id), class: 'tooltips', title: <%=model_name%>.target_title
+          %td= link_to <%=model_name%>.parent_code, parent_path(<%=model_name%>.parent_id), class: 'tooltips', title: <%=model_name%>.parent_title
           %td= link_to "", edit_<%=model_name%>_path(<%=model_name%>), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
           %td= link_to "", <%=model_name%>, method: :delete, data: { confirm: t(:<%=model_name%>_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
   = paginate @<%=model_names%>

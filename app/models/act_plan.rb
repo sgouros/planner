@@ -4,8 +4,8 @@ class ActPlan < ApplicationRecord
 
   validates :code, presence: true, uniqueness: true
   validates :description, presence: true
-  # validates :target, presence: true
   validates :target_id, presence: true
+  # validates :target, presence: true
 
 
   def target_full_title

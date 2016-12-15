@@ -1,6 +1,6 @@
 class <%=controllerName%> < ApplicationController
   before_action :authenticate
-  # before_action :setup_targets_for_select_box
+  before_action :setup_parents_for_select_box
   before_action :set_<%=model_name%>, only: [:show, :edit, :update, :destroy]
   before_action :add_breadcrumb_for_index
 
@@ -9,7 +9,7 @@ class <%=controllerName%> < ApplicationController
   # GET /<%=model_names%>
   # GET /<%=model_names%>.json
   def index
-    @<%=model_names%> = <%=modelName%>.all.includes(:target).page(params[:page]).per(20)
+    @<%=model_names%> = <%=modelName%>.all.includes(:parent).page(params[:page]).per(20)
   end
 
   # GET /<%=model_names%>/1
@@ -72,9 +72,9 @@ class <%=controllerName%> < ApplicationController
 
   private
 
-#  def setup_targets_for_select_box
-#    @targets_for_select_box = Target.all.collect { |targ| [targ.full_title, targ.id] }
-#  end
+  def setup_parents_for_select_box
+    @parents_for_select_box = Parent.all.collect { |par| [par.full_title, par.id] }
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_<%=model_name%>
@@ -83,6 +83,6 @@ class <%=controllerName%> < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def <%=model_name%>_params
-#    params.require(:<%=model_name%>).permit(:code, :description, :target_id)
+    params.require(:<%=model_name%>).permit(:var1, :var2, :var3
   end
 end

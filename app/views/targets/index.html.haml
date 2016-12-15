@@ -1,20 +1,21 @@
- 
-%h1 Targets
-%table
-  %thead
-    %tr
-      %th Code
-      %th Description
-      %th Measure
-      %th{:colspan => "3"}
-  %tbody
-    - @targets.each do |target|
+
+%h2.sub-header= t(:targets)
+= paginate @targets
+.table-responsive
+  %table.table.table-striped
+    %thead
       %tr
-        %td= target.code
-        %td= target.description
-        %td= target.measure_id
-        %td= link_to 'Show', target
-        %td= link_to 'Edit', edit_target_path(target)
-        %td= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Target', new_target_path
+        %th= t('target.code')
+        %th= t('target.description')
+        %th= t('target.measure')
+    %tbody
+      - @targets.each do |target|
+        %tr
+          %td= link_to target.code, target
+          %td= target.description
+          %td= link_to target.measure_code, measure_path(target.measure_id), class: 'tooltips', title: target.measure_title
+          %td= link_to "", edit_target_path(target), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
+          %td= link_to "", target, method: :delete, data: { confirm: t(:target_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
+  = paginate @targets
+
+= link_to t(:new_target), new_target_path, class:"btn btn-primary"
