@@ -1,13 +1,9 @@
- 
-%p
-  %strong Code:
-  = @act.code
-%p
-  %strong Description:
-  = @act.description
-%p
-  %strong Act plan:
-  = @act.act_plan_id
-= link_to 'Edit', edit_act_path(@act)
-|
-= link_to 'Back', acts_path
+.page-header.h2= t(:show_act)
+
+= simple_form_for(@act) do |f|
+  = f.input :code, disabled: true
+  = f.input :description, as: :text, disabled: true
+  = f.input :act_plan_id, as: :string, input_html: { value: @act.act_plan_full_title }, disabled: true
+
+= link_to t(:edit), edit_act_path(@act), class:"btn btn-primary"
+= link_to t(:back), acts_path, class:"btn btn-danger pull-right"

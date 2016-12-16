@@ -46,6 +46,8 @@ gem 'cancancan', '~> 1.10'
 
 gem 'kaminari'
 
+gem 'money-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

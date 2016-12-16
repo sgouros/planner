@@ -2,11 +2,12 @@
   - if act.errors.any?
     #error_explanation
       - act.errors.full_messages.each do |message|
-        .alert.alert-danger{:role => "alert"}
+        .alert.alert-danger{:role => 'alert'}
           %span.glyphicon.glyphicon-exclamation-sign
           =message
 
-  = f.input :code, disabled: is_disabled
+  = f.input :code
   = f.input :description, as: :text
-  = f.input :act_plan_id
-  = f.button :submit
+  = f.input :act_plan_id, collection: @act_plans_for_select_box
+  = f.button :submit, class:'btn btn-success'
+  = link_to t(:cancel), 'javascript:history.go(-1);', class:'btn btn-danger pull-right'

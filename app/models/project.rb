@@ -9,4 +9,15 @@ class Project < ApplicationRecord
   belongs_to :accountable,        :class_name => 'User',          :foreign_key => 'accountable_id'
   belongs_to :supervisor_body,    :class_name => 'Organisation',  :foreign_key => 'supervisor_body_id'
   belongs_to :collective_decision
+
+
+  def full_title
+    code + ": " + title
+  end
+
+
+
+
+
+
 end

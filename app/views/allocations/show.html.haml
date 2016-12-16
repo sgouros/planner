@@ -1,16 +1,10 @@
- 
-%p
-  %strong Protocol:
-  = @allocation.protocol
-%p
-  %strong Start date:
-  = @allocation.start_date
-%p
-  %strong Amount:
-  = @allocation.amount_cents
-%p
-  %strong Project:
-  = @allocation.project_id
-= link_to 'Edit', edit_allocation_path(@allocation)
-|
-= link_to 'Back', allocations_path
+.page-header.h2= t(:show_allocation)
+
+= simple_form_for(@allocation) do |f|
+  = f.input :protocol, as: :string, disabled: true
+  = f.input :start_date, as: :date, disabled: true
+  = f.input :amount, as: :string, disabled: true
+  = f.input :project_id, as: :string, input_html: { value: @allocation.project_full_title }, disabled: true
+
+= link_to t(:edit), edit_allocation_path(@allocation), class:"btn btn-primary"
+= link_to t(:back), allocations_path, class:"btn btn-danger pull-right"

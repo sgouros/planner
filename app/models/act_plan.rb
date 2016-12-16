@@ -20,4 +20,8 @@ class ActPlan < ApplicationRecord
     target.code
   end
 
+  def full_title
+    code + ": " + description
+  end
+
 end

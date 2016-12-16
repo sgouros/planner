@@ -1,22 +1,23 @@
- 
-%h1 Allocations
-%table
-  %thead
-    %tr
-      %th Protocol
-      %th Start date
-      %th Amount
-      %th Project
-      %th{:colspan => "3"}
-  %tbody
-    - @allocations.each do |allocation|
+
+%h2.sub-header= t(:allocations)
+= paginate @allocations
+.table-responsive
+  %table.table.table-striped
+    %thead
       %tr
-        %td= allocation.protocol
-        %td= allocation.start_date
-        %td= allocation.amount_cents
-        %td= allocation.project_id
-        %td= link_to 'Show', allocation
-        %td= link_to 'Edit', edit_allocation_path(allocation)
-        %td= link_to 'Destroy', allocation, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Allocation', new_allocation_path
+        %th= t('allocation.protocol')
+        %th= t('allocation.start_date')
+        %th= t('allocation.amount_cents')
+        %th= t('allocation.project')
+    %tbody
+      - @allocations.each do |allocation|
+        %tr
+          %td= link_to allocation.protocol, allocation
+          %td= allocation.start_date
+          %td= allocation.amount
+          %td= link_to allocation.project_code, project_path(allocation.project_id), class: 'tooltips', title: allocation.project_title
+          %td= link_to "", edit_allocation_path(allocation), class: "tooltips glyphicon glyphicon-pencil", title: t(:edit)
+          %td= link_to "", allocation, method: :delete, data: { confirm: t(:allocation_delete_confirmation) }, class: "tooltips glyphicon glyphicon-trash", title: t(:delete)
+  = paginate @allocations
+
+= link_to t(:new_allocation), new_allocation_path, class:"btn btn-primary"

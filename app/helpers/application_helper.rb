@@ -38,5 +38,12 @@ module ApplicationHelper
   end
 
 
+  def dt(date)
+    date.to_formatted_s(:date_with_numbers) if date
+  end
+
+  def eu(amount)
+    number_to_currency(amount,:unit=>' € ', :separator => ",", :delimiter => ".", :format => "%n %u")
+  end
 
 end
